@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='baseStyle.css') }}">
+    <script src="https://d3js.org/d3.v7.min.js" charset="utf-8"></script>
+    <title>Human Intestinal Ecosystem</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='data/favicon_HIE_notransp.ico') }}">
+</head>
+<body>
+    <center>
+<a href="{{ url_for('landing_page') }}" style = "text-decoration: none; color: black">
+    <div class = "title" onclick="location.href='{{url_for('landing_page')}}';" style="cursor: pointer;"> 
+        <div style = "display: flex; flex-direction: column; row-gap: -30px; justify-content: space-around;">
+            <div style = "display: flex; justify-content: center;  align-items: center;">
+                <div style = "float:left; margin-right:15px"> <img src="{{url_for('static', filename='data/favicon_HIE_large.ico')}}" /></div>
+                <div style = "float:left"><h1 style="font-family: Arial, Verdana;">Human Intestinal Ecosystem </h1></div>
+            </div>
+        <div >
+             <h2 style="font-family: Arial, Verdana;"> Microbiomes and Health</a> </h2>
+        </div>
+        </div>
+    </div>
+    </a>
+    </center>
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>

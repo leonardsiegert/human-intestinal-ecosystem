@@ -1,0 +1,521 @@
+,PC,bacteria_id,loading,sign,bacteria_name
+0,PC1,1,1.5836382478084523,positive,Actinomycetaceae
+1,PC1,2,1.9318448169677085,positive,Aerococcus
+2,PC1,3,0.9368999929193791,positive,Aeromonas
+3,PC1,4,282.5051543821406,negative,Akkermansia
+4,PC1,5,9.71977021460729,positive,Alcaligenes faecalis et rel.
+5,PC1,6,176.3685713661314,positive,Allistipes et rel.
+6,PC1,7,1.850936034294309,positive,Anaerobiospirillum
+7,PC1,8,1.5106714568975834,positive,Anaerofustis
+8,PC1,9,1871.901750457669,negative,Anaerostipes caccae et rel.
+9,PC1,10,996.533931813039,positive,Anaerotruncus colihominis et rel.
+10,PC1,11,99.78277744155608,negative,Anaerovorax odorimutans et rel.
+11,PC1,12,1.6673019016772712,positive,Aneurinibacillus
+12,PC1,13,2.156368850719709,positive,Aquabacterium
+13,PC1,14,1.8064218739438886,positive,Asteroleplasma et rel.
+14,PC1,15,1.7970365093477254,positive,Atopobium
+15,PC1,16,4.817148736151418,positive,Bacillus
+16,PC1,17,1092.2841284626156,negative,Bacteroides fragilis et rel.
+17,PC1,18,108.3055737108931,negative,Bacteroides intestinalis et rel.
+18,PC1,19,167.167623831839,negative,Bacteroides ovatus et rel.
+19,PC1,20,197.63775994553893,positive,Bacteroides plebeius et rel.
+20,PC1,21,525.409053265672,positive,Bacteroides splachnicus et rel.
+21,PC1,22,180.02477632956862,negative,Bacteroides stercoris et rel.
+22,PC1,23,2089.9574058681,negative,Bacteroides uniformis et rel.
+23,PC1,24,8878.072904704744,negative,Bacteroides vulgatus et rel.
+24,PC1,25,1244.097635788924,negative,Bifidobacterium
+25,PC1,26,5.091955541185263,positive,Bilophila et rel.
+26,PC1,27,4.027270148002759,positive,Brachyspira
+27,PC1,28,299.4870186593186,negative,Bryantella formatexigens et rel.
+28,PC1,29,6.8928669253562225,positive,Bulleidia moorei et rel.
+29,PC1,30,4.545428732517292,positive,Burkholderia
+30,PC1,31,1632.6897375711933,positive,Butyrivibrio crossotus et rel.
+31,PC1,32,15.246375857426763,positive,Campylobacter
+32,PC1,33,22.691208755262597,negative,Catenibacterium mitsuokai et rel.
+33,PC1,34,183.53681900375784,negative,Clostridium (sensu stricto)
+34,PC1,35,311.32464973719095,negative,Clostridium cellulosi et rel.
+35,PC1,36,388.725046765735,positive,Clostridium colinum et rel.
+36,PC1,37,547.6556462912139,negative,Clostridium difficile et rel.
+37,PC1,38,1.876492342228262,positive,Clostridium felsineum et rel.
+38,PC1,39,1715.1016210180237,negative,Clostridium leptum et rel.
+39,PC1,40,843.2864536644155,negative,Clostridium nexile et rel.
+40,PC1,41,1725.2481421184393,negative,Clostridium orbiscindens et rel.
+41,PC1,42,15.094328511675249,negative,Clostridium ramosum et rel.
+42,PC1,43,65.3420287647906,negative,Clostridium sphenoides et rel.
+43,PC1,44,157.2060578857622,negative,Clostridium stercorarium et rel.
+44,PC1,45,1005.310286006708,negative,Clostridium symbiosum et rel.
+45,PC1,46,2.007959185380236,positive,Clostridium thermocellum et rel.
+46,PC1,47,158.07717838960258,negative,Collinsella
+47,PC1,48,28.90700002922959,negative,Coprobacillus catenaformis et rel.
+48,PC1,49,3027.9888828134235,negative,Coprococcus eutactus et rel.
+49,PC1,50,8.117724856152321,positive,Corynebacterium
+50,PC1,51,16.594386749080837,positive,Desulfovibrio et rel.
+51,PC1,52,290.5715078180094,negative,Dialister
+52,PC1,53,1521.4622647285582,negative,Dorea formicigenerans et rel.
+53,PC1,54,36.1973115250574,negative,Eggerthella lenta et rel.
+54,PC1,55,2.926925196334713,positive,Enterobacter aerogenes et rel.
+55,PC1,56,11.483737087474138,negative,Enterococcus
+56,PC1,57,32.873252062756826,negative,Escherichia coli et rel.
+57,PC1,58,100.16900634158877,negative,Eubacterium biforme et rel.
+58,PC1,59,4.705372699574064,positive,Eubacterium cylindroides et rel.
+59,PC1,60,861.8085373214017,negative,Eubacterium hallii et rel.
+60,PC1,61,1.6123056669229054,negative,Eubacterium limosum et rel.
+61,PC1,62,127.14282802266054,negative,Eubacterium rectale et rel.
+62,PC1,63,49.31481996622714,positive,Eubacterium siraeum et rel.
+63,PC1,64,378.4191027263491,negative,Eubacterium ventriosum et rel.
+64,PC1,65,6340.884192960103,positive,Faecalibacterium prausnitzii et rel.
+65,PC1,66,22.839228213504825,positive,Fusobacteria
+66,PC1,67,1.2950813161834753,positive,Gemella
+67,PC1,68,4.848528801970542,positive,Granulicatella
+68,PC1,69,0.5767669964666154,negative,Haemophilus
+69,PC1,70,9.641423299912246,positive,Helicobacter
+70,PC1,71,3.560706968430535,positive,Klebisiella pneumoniae et rel.
+71,PC1,72,296.3018009915871,negative,Lachnobacillus bovis et rel.
+72,PC1,73,637.383583327404,negative,Lachnospira pectinoschiza et rel.
+73,PC1,74,4.531146456536203,positive,Lactobacillus catenaformis et rel.
+74,PC1,75,21.661172909194118,positive,Lactobacillus gasseri et rel.
+75,PC1,76,31.504018751414076,positive,Lactobacillus plantarum et rel.
+76,PC1,77,8.461457468542923,positive,Lactobacillus salivarius et rel.
+77,PC1,78,0.8438153943756267,negative,Lactococcus
+78,PC1,79,2.7539363414333256,positive,Leminorella
+79,PC1,80,152.9158630362278,positive,Megamonas hypermegale et rel.
+80,PC1,81,165.2604226476633,positive,Megasphaera elsdenii et rel.
+81,PC1,82,1.7892516118549477,positive,Methylobacterium
+82,PC1,83,2.215633470393161,positive,Micrococcaceae
+83,PC1,84,276.9247546256795,positive,Mitsuokella multiacida et rel.
+84,PC1,85,4.369472947392099,positive,Moraxellaceae
+85,PC1,86,2.3421925413940863,positive,Novosphingobium
+86,PC1,87,31.338383683523826,positive,Oceanospirillum
+87,PC1,88,23822.281739161204,positive,Oscillospira guillermondii et rel.
+88,PC1,89,1200.577114290703,negative,Outgrouping clostridium cluster XIVa
+89,PC1,90,180.42941842680688,negative,Oxalobacter formigenes et rel.
+90,PC1,91,444.5305827721436,negative,Papillibacter cinnamivorans et rel.
+91,PC1,92,99.69121754997823,negative,Parabacteroides distasonis et rel.
+92,PC1,93,14.929787741627608,positive,Peptococcus niger et rel.
+93,PC1,94,1.2718734963641225,positive,Peptostreptococcus anaerobius et rel.
+94,PC1,95,9.65493303690919,positive,Peptostreptococcus micros et rel.
+95,PC1,96,124.0561278866018,negative,Phascolarctobacterium faecium et rel.
+96,PC1,97,209768.12420873376,positive,Prevotella melaninogenica et rel.
+97,PC1,98,28701.669191325862,positive,Prevotella oralis et rel.
+98,PC1,99,27.052419160369737,positive,Prevotella ruminicola et rel.
+99,PC1,100,159.2067185637365,negative,Prevotella tannerae et rel.
+100,PC1,101,3.674384513965476,positive,Propionibacterium
+101,PC1,102,13.547069682789827,positive,Proteus et rel.
+102,PC1,103,3.5642000331530195,positive,Pseudomonas
+103,PC1,104,95.97065073005476,negative,Roseburia intestinalis et rel.
+104,PC1,105,2041.8263993931375,negative,Ruminococcus bromii et rel.
+105,PC1,106,1016.4866547791,positive,Ruminococcus callidus et rel.
+106,PC1,107,891.614075979196,negative,Ruminococcus gnavus et rel.
+107,PC1,108,404.90092081285104,negative,Ruminococcus lactaris et rel.
+108,PC1,109,6174.716994224739,negative,Ruminococcus obeum et rel.
+109,PC1,110,9.414028176586983,negative,Serratia
+110,PC1,111,2340.5102009085012,positive,Sporobacter termitidis et rel.
+111,PC1,112,3.4373143755520976,positive,Staphylococcus
+112,PC1,113,461.34907596751896,negative,Streptococcus bovis et rel.
+113,PC1,114,9.833316809244241,negative,Streptococcus intermedius et rel.
+114,PC1,115,104.98545511930728,negative,Streptococcus mitis et rel.
+115,PC1,116,7012.224492889513,negative,Subdoligranulum variable at rel.
+116,PC1,117,95.68884552457148,positive,Sutterella wadsworthia et rel.
+117,PC1,118,23.335976082548623,positive,Tannerella et rel.
+118,PC1,119,149.3236601937911,positive,Uncultured Bacteroidetes
+119,PC1,120,31.720539862096597,negative,Uncultured Chroococcales
+120,PC1,121,814.7604945848095,positive,Uncultured Clostridium (sensu stricto)les I
+121,PC1,122,1214.4315449165606,negative,Uncultured Clostridium (sensu stricto)les II
+122,PC1,123,171.96783881343654,negative,Uncultured Mollicutes
+123,PC1,124,0.13558141595697873,negative,Uncultured Selenomonadaceae
+124,PC1,125,10.618022843911168,positive,Veillonella
+125,PC1,126,5.81405866261493,positive,Vibrio
+126,PC1,127,0.9881484063357501,positive,Weissella et rel.
+127,PC1,128,2.702005363035748,positive,Wissella et rel.
+128,PC1,129,6.0447473369109135,positive,Xanthomonadaceae
+129,PC1,130,7.017076850819612,positive,Yersinia et rel.
+130,PC2,1,0.7291338982800035,negative,Actinomycetaceae
+131,PC2,2,1.467456030649657,negative,Aerococcus
+132,PC2,3,1.663155143052657,negative,Aeromonas
+133,PC2,4,1043.1404925632107,positive,Akkermansia
+134,PC2,5,28.016858026940522,positive,Alcaligenes faecalis et rel.
+135,PC2,6,9244.791439032006,positive,Allistipes et rel.
+136,PC2,7,0.8796084905698973,negative,Anaerobiospirillum
+137,PC2,8,5.379576069608636,positive,Anaerofustis
+138,PC2,9,1109.947046939775,negative,Anaerostipes caccae et rel.
+139,PC2,10,1869.8940735765743,positive,Anaerotruncus colihominis et rel.
+140,PC2,11,25.82105149716166,positive,Anaerovorax odorimutans et rel.
+141,PC2,12,2.107213271515712,positive,Aneurinibacillus
+142,PC2,13,0.29332516687663684,negative,Aquabacterium
+143,PC2,14,0.8795634928657415,negative,Asteroleplasma et rel.
+144,PC2,15,3.108605726636663,negative,Atopobium
+145,PC2,16,3.1611135303406304,negative,Bacillus
+146,PC2,17,1199.9402427132195,positive,Bacteroides fragilis et rel.
+147,PC2,18,179.89425726299004,positive,Bacteroides intestinalis et rel.
+148,PC2,19,464.8067081187779,positive,Bacteroides ovatus et rel.
+149,PC2,20,95.14662880223203,positive,Bacteroides plebeius et rel.
+150,PC2,21,586.5230491932614,positive,Bacteroides splachnicus et rel.
+151,PC2,22,171.5586033140065,positive,Bacteroides stercoris et rel.
+152,PC2,23,1600.4640493917063,positive,Bacteroides uniformis et rel.
+153,PC2,24,4251.549195792306,positive,Bacteroides vulgatus et rel.
+154,PC2,25,1735.8406826518587,negative,Bifidobacterium
+155,PC2,26,7.127120729705866,negative,Bilophila et rel.
+156,PC2,27,1.7823844374580549,negative,Brachyspira
+157,PC2,28,1209.2146584083428,negative,Bryantella formatexigens et rel.
+158,PC2,29,1.4630047519006528,negative,Bulleidia moorei et rel.
+159,PC2,30,7.143483160406127,positive,Burkholderia
+160,PC2,31,443.61507992059654,negative,Butyrivibrio crossotus et rel.
+161,PC2,32,4.675344607465394,negative,Campylobacter
+162,PC2,33,24.262027657355816,positive,Catenibacterium mitsuokai et rel.
+163,PC2,34,131.13221578463936,negative,Clostridium (sensu stricto)
+164,PC2,35,9231.868786039113,positive,Clostridium cellulosi et rel.
+165,PC2,36,533.5944730165011,positive,Clostridium colinum et rel.
+166,PC2,37,269.4190651168743,negative,Clostridium difficile et rel.
+167,PC2,38,0.9760443961744822,negative,Clostridium felsineum et rel.
+168,PC2,39,2171.5822537379368,positive,Clostridium leptum et rel.
+169,PC2,40,712.8108921451864,negative,Clostridium nexile et rel.
+170,PC2,41,7260.358106795574,positive,Clostridium orbiscindens et rel.
+171,PC2,42,11.136545710034428,negative,Clostridium ramosum et rel.
+172,PC2,43,1112.8988784473067,positive,Clostridium sphenoides et rel.
+173,PC2,44,159.6834897000211,negative,Clostridium stercorarium et rel.
+174,PC2,45,3981.3658883855055,positive,Clostridium symbiosum et rel.
+175,PC2,46,0.505635468941649,negative,Clostridium thermocellum et rel.
+176,PC2,47,116.02136348718993,negative,Collinsella
+177,PC2,48,28.569379975908106,negative,Coprobacillus catenaformis et rel.
+178,PC2,49,660.6107098133169,negative,Coprococcus eutactus et rel.
+179,PC2,50,1.4766201143985456,negative,Corynebacterium
+180,PC2,51,9.29245023729534,negative,Desulfovibrio et rel.
+181,PC2,52,139.42299882176465,negative,Dialister
+182,PC2,53,421.9570205298506,negative,Dorea formicigenerans et rel.
+183,PC2,54,3.3869203398889653,negative,Eggerthella lenta et rel.
+184,PC2,55,10.409840098239524,negative,Enterobacter aerogenes et rel.
+185,PC2,56,69.26211440865706,negative,Enterococcus
+186,PC2,57,66.05286700966005,negative,Escherichia coli et rel.
+187,PC2,58,204.57678534281615,negative,Eubacterium biforme et rel.
+188,PC2,59,1.22008316943257,negative,Eubacterium cylindroides et rel.
+189,PC2,60,1483.9201586259628,negative,Eubacterium hallii et rel.
+190,PC2,61,6.525286803981138,positive,Eubacterium limosum et rel.
+191,PC2,62,1040.2115018689549,negative,Eubacterium rectale et rel.
+192,PC2,63,110.33684873881279,positive,Eubacterium siraeum et rel.
+193,PC2,64,551.8089109746395,negative,Eubacterium ventriosum et rel.
+194,PC2,65,12037.675711095848,negative,Faecalibacterium prausnitzii et rel.
+195,PC2,66,7.916011962372108,negative,Fusobacteria
+196,PC2,67,1.3112582473812442,negative,Gemella
+197,PC2,68,5.5636370877910535,negative,Granulicatella
+198,PC2,69,11.17314539769561,negative,Haemophilus
+199,PC2,70,4.925796481804308,negative,Helicobacter
+200,PC2,71,8.148342370484368,negative,Klebisiella pneumoniae et rel.
+201,PC2,72,1390.1246020147018,negative,Lachnobacillus bovis et rel.
+202,PC2,73,229.62985290177474,negative,Lachnospira pectinoschiza et rel.
+203,PC2,74,0.09246499949081147,positive,Lactobacillus catenaformis et rel.
+204,PC2,75,12.062080815077309,negative,Lactobacillus gasseri et rel.
+205,PC2,76,25.96734527208088,negative,Lactobacillus plantarum et rel.
+206,PC2,77,2.4907047046453403,negative,Lactobacillus salivarius et rel.
+207,PC2,78,4.427896775029602,negative,Lactococcus
+208,PC2,79,10.031524247883715,positive,Leminorella
+209,PC2,80,72.31041733430166,negative,Megamonas hypermegale et rel.
+210,PC2,81,108.75343490377948,negative,Megasphaera elsdenii et rel.
+211,PC2,82,1.309624176282993,negative,Methylobacterium
+212,PC2,83,1.1471732426569443,negative,Micrococcaceae
+213,PC2,84,19.582426977491277,positive,Mitsuokella multiacida et rel.
+214,PC2,85,1.8168843831508918,negative,Moraxellaceae
+215,PC2,86,0.7041609092533343,positive,Novosphingobium
+216,PC2,87,46.771668662365414,positive,Oceanospirillum
+217,PC2,88,97581.63788473015,positive,Oscillospira guillermondii et rel.
+218,PC2,89,1878.8393284469005,negative,Outgrouping clostridium cluster XIVa
+219,PC2,90,177.93603647419874,positive,Oxalobacter formigenes et rel.
+220,PC2,91,980.8604992282287,positive,Papillibacter cinnamivorans et rel.
+221,PC2,92,1850.0684433429597,positive,Parabacteroides distasonis et rel.
+222,PC2,93,48.34683055245207,positive,Peptococcus niger et rel.
+223,PC2,94,1.0674634598932147,negative,Peptostreptococcus anaerobius et rel.
+224,PC2,95,3.5040751512365618,negative,Peptostreptococcus micros et rel.
+225,PC2,96,371.74493769242974,positive,Phascolarctobacterium faecium et rel.
+226,PC2,97,10704.68221974533,negative,Prevotella melaninogenica et rel.
+227,PC2,98,903.4359359408236,negative,Prevotella oralis et rel.
+228,PC2,99,0.16484807152947484,negative,Prevotella ruminicola et rel.
+229,PC2,100,634.5957188421334,positive,Prevotella tannerae et rel.
+230,PC2,101,0.1427093289389405,negative,Propionibacterium
+231,PC2,102,7.363248291353454,negative,Proteus et rel.
+232,PC2,103,0.8964086784326366,negative,Pseudomonas
+233,PC2,104,43.902881291043364,negative,Roseburia intestinalis et rel.
+234,PC2,105,1254.01205985142,positive,Ruminococcus bromii et rel.
+235,PC2,106,420.58282311405054,positive,Ruminococcus callidus et rel.
+236,PC2,107,1022.9301898298271,negative,Ruminococcus gnavus et rel.
+237,PC2,108,39.260168982153544,positive,Ruminococcus lactaris et rel.
+238,PC2,109,6923.224347677188,negative,Ruminococcus obeum et rel.
+239,PC2,110,17.178465754143673,negative,Serratia
+240,PC2,111,19872.624384251132,positive,Sporobacter termitidis et rel.
+241,PC2,112,0.6947123559967044,negative,Staphylococcus
+242,PC2,113,981.2658973860778,negative,Streptococcus bovis et rel.
+243,PC2,114,32.72949087968591,negative,Streptococcus intermedius et rel.
+244,PC2,115,364.34405893430204,negative,Streptococcus mitis et rel.
+245,PC2,116,1874.580799668357,positive,Subdoligranulum variable at rel.
+246,PC2,117,65.80679254114447,negative,Sutterella wadsworthia et rel.
+247,PC2,118,996.3852690561142,positive,Tannerella et rel.
+248,PC2,119,23.59867571026009,positive,Uncultured Bacteroidetes
+249,PC2,120,100.94094755233691,positive,Uncultured Chroococcales
+250,PC2,121,9918.121088728463,positive,Uncultured Clostridium (sensu stricto)les I
+251,PC2,122,7584.695131971144,positive,Uncultured Clostridium (sensu stricto)les II
+252,PC2,123,785.5935803069136,positive,Uncultured Mollicutes
+253,PC2,124,2.1612231433660067,negative,Uncultured Selenomonadaceae
+254,PC2,125,33.83431926652153,negative,Veillonella
+255,PC2,126,16.796249579129135,positive,Vibrio
+256,PC2,127,6.312904962776403,positive,Weissella et rel.
+257,PC2,128,3.2445448902335716,negative,Wissella et rel.
+258,PC2,129,1.2601118234647724,positive,Xanthomonadaceae
+259,PC2,130,1.090482051168487,negative,Yersinia et rel.
+260,PC3,1,4.384018515666035,negative,Actinomycetaceae
+261,PC3,2,0.5189522897427011,positive,Aerococcus
+262,PC3,3,1.7896937279722982,positive,Aeromonas
+263,PC3,4,1006.2120392598495,negative,Akkermansia
+264,PC3,5,0.30757370578142373,negative,Alcaligenes faecalis et rel.
+265,PC3,6,4033.4486014101076,positive,Allistipes et rel.
+266,PC3,7,0.5942423662711974,positive,Anaerobiospirillum
+267,PC3,8,0.8535366904352277,positive,Anaerofustis
+268,PC3,9,3196.7410716547097,positive,Anaerostipes caccae et rel.
+269,PC3,10,563.4531490404613,negative,Anaerotruncus colihominis et rel.
+270,PC3,11,269.7633890816003,negative,Anaerovorax odorimutans et rel.
+271,PC3,12,1.2567579127518993,positive,Aneurinibacillus
+272,PC3,13,8.761589839724778,positive,Aquabacterium
+273,PC3,14,0.6629137202929495,positive,Asteroleplasma et rel.
+274,PC3,15,0.3378781482112368,negative,Atopobium
+275,PC3,16,1.2661801079880473,positive,Bacillus
+276,PC3,17,2251.1370952711236,positive,Bacteroides fragilis et rel.
+277,PC3,18,211.21727768956848,positive,Bacteroides intestinalis et rel.
+278,PC3,19,2336.1199189285244,positive,Bacteroides ovatus et rel.
+279,PC3,20,849.7144326545994,positive,Bacteroides plebeius et rel.
+280,PC3,21,807.1235782840201,positive,Bacteroides splachnicus et rel.
+281,PC3,22,234.0194475130805,positive,Bacteroides stercoris et rel.
+282,PC3,23,1965.6547414012962,positive,Bacteroides uniformis et rel.
+283,PC3,24,62570.71322449334,positive,Bacteroides vulgatus et rel.
+284,PC3,25,1832.4842222215193,negative,Bifidobacterium
+285,PC3,26,0.4016716718132435,positive,Bilophila et rel.
+286,PC3,27,1.5164092147564776,positive,Brachyspira
+287,PC3,28,1944.2495238659144,positive,Bryantella formatexigens et rel.
+288,PC3,29,5.828721878440017,positive,Bulleidia moorei et rel.
+289,PC3,30,8.367371162053935,positive,Burkholderia
+290,PC3,31,1677.2415031747344,positive,Butyrivibrio crossotus et rel.
+291,PC3,32,6.473040248288248,positive,Campylobacter
+292,PC3,33,112.28317181908007,negative,Catenibacterium mitsuokai et rel.
+293,PC3,34,422.6007937695319,negative,Clostridium (sensu stricto)
+294,PC3,35,139.04524314137336,negative,Clostridium cellulosi et rel.
+295,PC3,36,29.005448283994276,positive,Clostridium colinum et rel.
+296,PC3,37,1103.5754045530928,negative,Clostridium difficile et rel.
+297,PC3,38,0.21647922023243424,positive,Clostridium felsineum et rel.
+298,PC3,39,2914.550123980967,negative,Clostridium leptum et rel.
+299,PC3,40,788.3233985031484,negative,Clostridium nexile et rel.
+300,PC3,41,2095.5504035635586,negative,Clostridium orbiscindens et rel.
+301,PC3,42,5.199153170454625,positive,Clostridium ramosum et rel.
+302,PC3,43,466.8142543511975,positive,Clostridium sphenoides et rel.
+303,PC3,44,30.168557689719933,positive,Clostridium stercorarium et rel.
+304,PC3,45,5700.596951650562,positive,Clostridium symbiosum et rel.
+305,PC3,46,1.595960471304146,positive,Clostridium thermocellum et rel.
+306,PC3,47,393.3918093359611,negative,Collinsella
+307,PC3,48,20.37387099811592,positive,Coprobacillus catenaformis et rel.
+308,PC3,49,2658.949900612942,negative,Coprococcus eutactus et rel.
+309,PC3,50,1.693973495626094,positive,Corynebacterium
+310,PC3,51,6.951233299705273,negative,Desulfovibrio et rel.
+311,PC3,52,1399.900020099227,positive,Dialister
+312,PC3,53,1104.979271356113,negative,Dorea formicigenerans et rel.
+313,PC3,54,109.96271793925054,negative,Eggerthella lenta et rel.
+314,PC3,55,7.280566394063983,positive,Enterobacter aerogenes et rel.
+315,PC3,56,75.10348288094919,negative,Enterococcus
+316,PC3,57,32.241496188234414,negative,Escherichia coli et rel.
+317,PC3,58,23.75021915325945,negative,Eubacterium biforme et rel.
+318,PC3,59,0.11512645736772548,negative,Eubacterium cylindroides et rel.
+319,PC3,60,762.20293460976,negative,Eubacterium hallii et rel.
+320,PC3,61,16.601608088459628,negative,Eubacterium limosum et rel.
+321,PC3,62,842.546250773301,positive,Eubacterium rectale et rel.
+322,PC3,63,2.6380450634493045,positive,Eubacterium siraeum et rel.
+323,PC3,64,1078.1865949582434,negative,Eubacterium ventriosum et rel.
+324,PC3,65,25329.02311680282,positive,Faecalibacterium prausnitzii et rel.
+325,PC3,66,7.321647529855017,positive,Fusobacteria
+326,PC3,67,0.31729349157189557,positive,Gemella
+327,PC3,68,2.267576947821665,negative,Granulicatella
+328,PC3,69,21.335926731992988,positive,Haemophilus
+329,PC3,70,3.56355612757401,positive,Helicobacter
+330,PC3,71,6.979248657440391,positive,Klebisiella pneumoniae et rel.
+331,PC3,72,119.05679350366317,positive,Lachnobacillus bovis et rel.
+332,PC3,73,456.4126469789528,positive,Lachnospira pectinoschiza et rel.
+333,PC3,74,2.125945380010774,positive,Lactobacillus catenaformis et rel.
+334,PC3,75,4.561110006439522,positive,Lactobacillus gasseri et rel.
+335,PC3,76,24.28478790024932,positive,Lactobacillus plantarum et rel.
+336,PC3,77,1.6488223824542463,negative,Lactobacillus salivarius et rel.
+337,PC3,78,6.474421419838887,positive,Lactococcus
+338,PC3,79,6.1452507462134935,positive,Leminorella
+339,PC3,80,123.67298752570537,positive,Megamonas hypermegale et rel.
+340,PC3,81,221.9458634817093,positive,Megasphaera elsdenii et rel.
+341,PC3,82,1.340710536136874,positive,Methylobacterium
+342,PC3,83,0.5725330575235082,positive,Micrococcaceae
+343,PC3,84,9.055654342449813,negative,Mitsuokella multiacida et rel.
+344,PC3,85,1.3889692329087917,positive,Moraxellaceae
+345,PC3,86,0.4891290587754009,negative,Novosphingobium
+346,PC3,87,63.57965288943455,positive,Oceanospirillum
+347,PC3,88,973.5296251598995,positive,Oscillospira guillermondii et rel.
+348,PC3,89,239.1133257821384,negative,Outgrouping clostridium cluster XIVa
+349,PC3,90,250.30490131325547,negative,Oxalobacter formigenes et rel.
+350,PC3,91,233.66873445305032,negative,Papillibacter cinnamivorans et rel.
+351,PC3,92,1661.2924294139157,positive,Parabacteroides distasonis et rel.
+352,PC3,93,90.1450345071788,negative,Peptococcus niger et rel.
+353,PC3,94,0.15159756054738835,positive,Peptostreptococcus anaerobius et rel.
+354,PC3,95,2.1316653599673305,positive,Peptostreptococcus micros et rel.
+355,PC3,96,262.25368622386213,positive,Phascolarctobacterium faecium et rel.
+356,PC3,97,1190.0110733269203,positive,Prevotella melaninogenica et rel.
+357,PC3,98,21.70114257357226,negative,Prevotella oralis et rel.
+358,PC3,99,10.853162117297725,positive,Prevotella ruminicola et rel.
+359,PC3,100,1390.6299729933921,positive,Prevotella tannerae et rel.
+360,PC3,101,6.8995922395694445,positive,Propionibacterium
+361,PC3,102,3.87830790675457,positive,Proteus et rel.
+362,PC3,103,3.1791066704581192,positive,Pseudomonas
+363,PC3,104,349.1291845784692,positive,Roseburia intestinalis et rel.
+364,PC3,105,1972.594964551232,negative,Ruminococcus bromii et rel.
+365,PC3,106,1565.0089919621219,positive,Ruminococcus callidus et rel.
+366,PC3,107,1657.2068594997572,negative,Ruminococcus gnavus et rel.
+367,PC3,108,9.635048350994246,negative,Ruminococcus lactaris et rel.
+368,PC3,109,6562.890214687588,negative,Ruminococcus obeum et rel.
+369,PC3,110,11.452785145511228,positive,Serratia
+370,PC3,111,6086.839501798795,negative,Sporobacter termitidis et rel.
+371,PC3,112,1.3117373871790898,positive,Staphylococcus
+372,PC3,113,555.4463473423926,negative,Streptococcus bovis et rel.
+373,PC3,114,9.720301877397965,negative,Streptococcus intermedius et rel.
+374,PC3,115,47.93253234822882,negative,Streptococcus mitis et rel.
+375,PC3,116,11963.741348783677,negative,Subdoligranulum variable at rel.
+376,PC3,117,405.15598101222446,positive,Sutterella wadsworthia et rel.
+377,PC3,118,857.6665127024705,positive,Tannerella et rel.
+378,PC3,119,29.985827641682253,positive,Uncultured Bacteroidetes
+379,PC3,120,90.63849952062715,positive,Uncultured Chroococcales
+380,PC3,121,309.308289286518,negative,Uncultured Clostridium (sensu stricto)les I
+381,PC3,122,1151.062285602712,positive,Uncultured Clostridium (sensu stricto)les II
+382,PC3,123,225.82569171512193,positive,Uncultured Mollicutes
+383,PC3,124,10.681182735743182,positive,Uncultured Selenomonadaceae
+384,PC3,125,61.91910342888414,positive,Veillonella
+385,PC3,126,6.345558946764623,positive,Vibrio
+386,PC3,127,1.7871178328027433,negative,Weissella et rel.
+387,PC3,128,8.102560981327807,positive,Wissella et rel.
+388,PC3,129,8.641432447479513,positive,Xanthomonadaceae
+389,PC3,130,3.8330173001196544,positive,Yersinia et rel.
+390,PC4,1,4.7423355112619925,positive,Actinomycetaceae
+391,PC4,2,0.7917246303845489,positive,Aerococcus
+392,PC4,3,1.7180632364048984,positive,Aeromonas
+393,PC4,4,240.76127588408235,positive,Akkermansia
+394,PC4,5,13.672638241295815,negative,Alcaligenes faecalis et rel.
+395,PC4,6,2295.1352864093874,negative,Allistipes et rel.
+396,PC4,7,0.021624547841625232,positive,Anaerobiospirillum
+397,PC4,8,8.089715556377504,positive,Anaerofustis
+398,PC4,9,6248.9355993782065,positive,Anaerostipes caccae et rel.
+399,PC4,10,542.2898837643058,positive,Anaerotruncus colihominis et rel.
+400,PC4,11,63.881468570815514,negative,Anaerovorax odorimutans et rel.
+401,PC4,12,3.1133120725267363,positive,Aneurinibacillus
+402,PC4,13,5.930022177147938,positive,Aquabacterium
+403,PC4,14,0.6155380241661179,positive,Asteroleplasma et rel.
+404,PC4,15,2.8887574792288273,positive,Atopobium
+405,PC4,16,2.4460661125732277,positive,Bacillus
+406,PC4,17,1868.8117375006316,negative,Bacteroides fragilis et rel.
+407,PC4,18,39.525046358691746,negative,Bacteroides intestinalis et rel.
+408,PC4,19,912.3758847209834,negative,Bacteroides ovatus et rel.
+409,PC4,20,647.228500503753,negative,Bacteroides plebeius et rel.
+410,PC4,21,104.83731322255741,negative,Bacteroides splachnicus et rel.
+411,PC4,22,374.9702455016717,negative,Bacteroides stercoris et rel.
+412,PC4,23,2985.939914756998,negative,Bacteroides uniformis et rel.
+413,PC4,24,11194.064357223764,negative,Bacteroides vulgatus et rel.
+414,PC4,25,1502.5388919517927,positive,Bifidobacterium
+415,PC4,26,0.3888973710283211,positive,Bilophila et rel.
+416,PC4,27,0.11246475440708525,positive,Brachyspira
+417,PC4,28,2398.0109030642475,positive,Bryantella formatexigens et rel.
+418,PC4,29,2.653554638592154,positive,Bulleidia moorei et rel.
+419,PC4,30,1.7979962115144372,negative,Burkholderia
+420,PC4,31,3442.7006023991453,positive,Butyrivibrio crossotus et rel.
+421,PC4,32,4.9902967726733785,positive,Campylobacter
+422,PC4,33,53.75447264132706,positive,Catenibacterium mitsuokai et rel.
+423,PC4,34,0.5475548723231262,positive,Clostridium (sensu stricto)
+424,PC4,35,2447.216915744602,positive,Clostridium cellulosi et rel.
+425,PC4,36,253.71419718598182,positive,Clostridium colinum et rel.
+426,PC4,37,541.312100356914,positive,Clostridium difficile et rel.
+427,PC4,38,1.0696103475829162,positive,Clostridium felsineum et rel.
+428,PC4,39,27.392119631583707,positive,Clostridium leptum et rel.
+429,PC4,40,1659.191676597824,positive,Clostridium nexile et rel.
+430,PC4,41,253.22442383277686,positive,Clostridium orbiscindens et rel.
+431,PC4,42,0.1943328857905004,positive,Clostridium ramosum et rel.
+432,PC4,43,2302.5508000801415,positive,Clostridium sphenoides et rel.
+433,PC4,44,301.9614860817606,positive,Clostridium stercorarium et rel.
+434,PC4,45,1477.694188108882,positive,Clostridium symbiosum et rel.
+435,PC4,46,1.607854299743929,positive,Clostridium thermocellum et rel.
+436,PC4,47,142.3250121330727,positive,Collinsella
+437,PC4,48,24.372832876334773,positive,Coprobacillus catenaformis et rel.
+438,PC4,49,5168.985724345202,positive,Coprococcus eutactus et rel.
+439,PC4,50,4.184977833262524,positive,Corynebacterium
+440,PC4,51,5.791579348674932,negative,Desulfovibrio et rel.
+441,PC4,52,630.4381542614542,negative,Dialister
+442,PC4,53,2578.6993771756956,positive,Dorea formicigenerans et rel.
+443,PC4,54,54.93386978972155,positive,Eggerthella lenta et rel.
+444,PC4,55,47.6906336305818,positive,Enterobacter aerogenes et rel.
+445,PC4,56,76.64472586112639,negative,Enterococcus
+446,PC4,57,29.22099416379924,negative,Escherichia coli et rel.
+447,PC4,58,189.92619488674407,positive,Eubacterium biforme et rel.
+448,PC4,59,5.495229891350772,negative,Eubacterium cylindroides et rel.
+449,PC4,60,1718.667622327398,positive,Eubacterium hallii et rel.
+450,PC4,61,3.1842192634497897,positive,Eubacterium limosum et rel.
+451,PC4,62,2009.9421071316378,positive,Eubacterium rectale et rel.
+452,PC4,63,54.119167756883215,positive,Eubacterium siraeum et rel.
+453,PC4,64,3011.854384253138,positive,Eubacterium ventriosum et rel.
+454,PC4,65,42353.49827886187,positive,Faecalibacterium prausnitzii et rel.
+455,PC4,66,3.6992648650739866,positive,Fusobacteria
+456,PC4,67,0.7678383101329368,positive,Gemella
+457,PC4,68,0.19026769971052224,positive,Granulicatella
+458,PC4,69,0.7151346148880815,positive,Haemophilus
+459,PC4,70,0.6557944921428559,positive,Helicobacter
+460,PC4,71,6.309924782250522,positive,Klebisiella pneumoniae et rel.
+461,PC4,72,6350.127916589341,positive,Lachnobacillus bovis et rel.
+462,PC4,73,4691.355708493862,positive,Lachnospira pectinoschiza et rel.
+463,PC4,74,0.8149138895400718,positive,Lactobacillus catenaformis et rel.
+464,PC4,75,27.846049554886864,positive,Lactobacillus gasseri et rel.
+465,PC4,76,55.92187970717954,positive,Lactobacillus plantarum et rel.
+466,PC4,77,5.157263530901401,positive,Lactobacillus salivarius et rel.
+467,PC4,78,9.46738559304879,positive,Lactococcus
+468,PC4,79,5.287086326402432,negative,Leminorella
+469,PC4,80,4.4818714999792855,positive,Megamonas hypermegale et rel.
+470,PC4,81,72.79751918085218,positive,Megasphaera elsdenii et rel.
+471,PC4,82,0.06834637343676407,positive,Methylobacterium
+472,PC4,83,0.18986767390800127,positive,Micrococcaceae
+473,PC4,84,76.51577808819465,negative,Mitsuokella multiacida et rel.
+474,PC4,85,0.20949419864641194,negative,Moraxellaceae
+475,PC4,86,2.817775356677901,positive,Novosphingobium
+476,PC4,87,12.416083558019503,negative,Oceanospirillum
+477,PC4,88,4704.781480735438,positive,Oscillospira guillermondii et rel.
+478,PC4,89,1497.4324982407409,positive,Outgrouping clostridium cluster XIVa
+479,PC4,90,100.64143867703181,negative,Oxalobacter formigenes et rel.
+480,PC4,91,1386.1934938087154,positive,Papillibacter cinnamivorans et rel.
+481,PC4,92,1694.9229375302268,negative,Parabacteroides distasonis et rel.
+482,PC4,93,9.900417463175845,positive,Peptococcus niger et rel.
+483,PC4,94,0.9329291410994784,positive,Peptostreptococcus anaerobius et rel.
+484,PC4,95,0.1687966870447783,positive,Peptostreptococcus micros et rel.
+485,PC4,96,185.94401191347234,negative,Phascolarctobacterium faecium et rel.
+486,PC4,97,989.7554777421471,negative,Prevotella melaninogenica et rel.
+487,PC4,98,712.5162839043926,negative,Prevotella oralis et rel.
+488,PC4,99,3.8731125737853063,positive,Prevotella ruminicola et rel.
+489,PC4,100,521.2522653009696,negative,Prevotella tannerae et rel.
+490,PC4,101,14.0367030478426,positive,Propionibacterium
+491,PC4,102,0.8016477873033232,positive,Proteus et rel.
+492,PC4,103,2.1167728707130204,positive,Pseudomonas
+493,PC4,104,1272.0605054960167,positive,Roseburia intestinalis et rel.
+494,PC4,105,1561.247569105404,positive,Ruminococcus bromii et rel.
+495,PC4,106,1729.6477896175065,positive,Ruminococcus callidus et rel.
+496,PC4,107,598.3719335937086,positive,Ruminococcus gnavus et rel.
+497,PC4,108,1277.5852872941716,positive,Ruminococcus lactaris et rel.
+498,PC4,109,5821.297566864227,positive,Ruminococcus obeum et rel.
+499,PC4,110,4.431972989430548,negative,Serratia
+500,PC4,111,2676.3333927932713,positive,Sporobacter termitidis et rel.
+501,PC4,112,2.9749228275013264,positive,Staphylococcus
+502,PC4,113,382.78371766413403,positive,Streptococcus bovis et rel.
+503,PC4,114,33.58997692753419,positive,Streptococcus intermedius et rel.
+504,PC4,115,222.1397586709574,positive,Streptococcus mitis et rel.
+505,PC4,116,26152.611603532896,positive,Subdoligranulum variable at rel.
+506,PC4,117,18.096153180782768,positive,Sutterella wadsworthia et rel.
+507,PC4,118,500.5567995395995,negative,Tannerella et rel.
+508,PC4,119,36.77542895010756,negative,Uncultured Bacteroidetes
+509,PC4,120,51.95026007201001,positive,Uncultured Chroococcales
+510,PC4,121,3159.3172348072603,positive,Uncultured Clostridium (sensu stricto)les I
+511,PC4,122,3719.272999725559,positive,Uncultured Clostridium (sensu stricto)les II
+512,PC4,123,100.19378444761462,positive,Uncultured Mollicutes
+513,PC4,124,0.4283616143152072,positive,Uncultured Selenomonadaceae
+514,PC4,125,2.263779945760341,positive,Veillonella
+515,PC4,126,11.468403809528905,positive,Vibrio
+516,PC4,127,18.370660165991954,positive,Weissella et rel.
+517,PC4,128,14.376658111553015,positive,Wissella et rel.
+518,PC4,129,7.3411619523635645,positive,Xanthomonadaceae
+519,PC4,130,1.3324170135460265,positive,Yersinia et rel.

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+<center>
+    <p style="font-family: Arial, Verdana" >
+        The human intestines have a variety of 
+        microbiomes that can provide 
+        indications <br />
+        about health aspects of certain population groups. To 
+        explore the relationship of 
+        microbiomes and health <br />
+        within population, the respective 
+        abundance distributions of the microbiomes can be 
+        investigated. The following interactive <br /> 
+        visualizations contain information about distributions and correlations of
+        microbiomes and the corresponding<br />  
+        population groups, as well as clustering of some interesting aspects of the abundances.<br /> 
+    </p>
+    <h2><a href="{{ url_for('sidebyside') }}">CLICK HERE TO EXPLORE</a></h2>
+    <br />
+    <a href="{{ url_for('sidebyside') }}"><img src="../static/images/microbiome_image.jpg" width="500" height="200"></a>
+    <br />
+
+    <p>
+    <a href="{{ url_for('sunburst') }}">Sunburst</a>
+    <a href="{{ url_for('treeplot') }}">Taxonomy</a>
+    <a href="{{ url_for('histograms') }}">Histograms</a>
+    <a href="{{ url_for('clustering') }}">Clustering</a>
+    <a href="{{ url_for('male') }}">PCA</a>
+    <a href="{{ url_for('sex_heatmap') }}">Heatmap</a>
+    </p>
+</center>
+
+{% endblock %}

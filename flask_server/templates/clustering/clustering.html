@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="subtitle" value='clustering'>Clustering of Samples:</h2>
+
+<div id="clusterFlexbox">
+<div id="clusterHeader">
+<button type="button" id="resetSelection">Reset Sample Selection.</button>
+<br></br>
+<label for="#reAssignClusters">Change Clustering Method:</label>
+<select type="button" id="reAssignClusters"></select>
+<br></br>
+<label for="#changeDimRedMethod">Change Dimensionality Reduction Method:</label>
+<select type="button" id="changeDimRedMethod">Change DimRed method</select>
+<br></br>
+<div id="clusterInfoBox"></div>
+    </div>
+    <div id = "clustercontent">
+<svg id="clusterPlot"></svg>
+    </div>
+</div>
+
+<script type="text/javascript" >
+    dataset = {{ data | safe }};
+</script>
+
+<script src="{{ url_for('static', filename='visualizations/clustering/clustering.js') }}"></script>
+
+{% endblock %}

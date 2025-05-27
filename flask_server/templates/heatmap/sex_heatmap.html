@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}	
+
+<body>
+	<form>
+		<b> Select a heatmap between a specific group and some important bacteria </b>
+		<select id = "myList" onchange = "window.location.href=this.value" >
+			<option> ---Choose group--- </option>
+			<option value="sex_heatmap"> sex </a></option>
+			<option value="nationality_heatmap"> nationality </a></option>
+			<option value="BMI_heatmap"> BMI </a></option>
+			<option value="age_heatmap"> age </a></option>
+		</select>
+	</form>
+</body>
+
+<div id="sexheatmap"></div>
+
+<link rel="stylesheet" type="text/css" href= "{{ url_for('static', filename='visualizations/sex_micro_heatmap/sex_heatmap.css') }}" >
+<script type="text/javascript" >
+    dataset = {{ data | safe }};
+</script>
+<script src="{{ url_for('static', filename='visualizations/sex_micro_heatmap/sex_heatmap.js') }}"></script>
+
+
+{% endblock %}

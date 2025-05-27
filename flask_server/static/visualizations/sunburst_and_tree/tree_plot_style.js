@@ -1,0 +1,15 @@
+p{
+  font: 12pt sans-serif;
+  margin: 3px;
+  color: black;
+}
+
+.histo {
+  background-color: rgb(122, 135, 163);
+}
+
+.rectStyle {
+  stroke: black;
+  stroke-width: 1px;
+  fill:rgb(44, 173, 113);
+}

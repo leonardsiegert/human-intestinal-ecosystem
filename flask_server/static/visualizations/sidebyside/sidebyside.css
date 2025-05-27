@@ -1,0 +1,107 @@
+body{
+     font-size: 11pt;
+     background-color: white:rgb(248, 248, 233);
+    /*background-color: #d9edfc;*/
+   /*  background-color: #cfe6f7 */;
+    }
+
+iframe{border:none;
+     border-radius: 10px;
+       width: 100%;
+    height: 100%; 
+} 
+/*iframe:hover{border:1px solid black;}*/
+.rowwrap{
+    overflow-x: auto;
+    overflow-y: hidden;
+     flex-direction: column;
+      position: relative ;
+       left: 0;
+        height: 1150px;
+        column-gap: 30px;
+        width: 100%; display: flex; justify-content: flex-start;  flex-wrap : wrap; align-items:flex-start ;  align-content:flex-start; 
+    }
+/*  .colwrap{display: flex; flex-direction: column; row-gap: -30px; justify-content: space-around;} */
+
+.rowwrap-{
+     flex-direction: row;
+      position: absolute ;
+       left: 0;
+        height: 1100px;
+        row-gap: 50px;
+        width: 120%; display: flex; justify-content: space-evenly;  flex-wrap : nowrap; align-items:flex-start ;  align-content:stretch; }
+/*  .colwrap{display: flex; flex-direction: column; row-gap: -30px; justify-content: space-around;} */
+
+
+#leftvis{ 
+    display: flex;
+    width: 1000px; height: 1600px;
+    position: relative;
+    overflow: hidden;
+    flex:0 0 auto;
+    transform: scale(1);
+    transform-origin: 0 0;
+} 
+#middlevis{ 
+   /*  width: 600px; height: 1000px;*/ 
+    width: 320px; height: 1600px;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    flex: 0 0 auto;
+/*  float:left;*/    
+} 
+#rightvis{
+display: flex;
+   /* position: relative;*/
+    /*width: 570px; height: 900px;*/
+    width: 650px; height: 1600px;
+    overflow: hidden;
+/*  float:right;*/    
+    flex: 0 0 auto
+} 
+#leftvis2{
+   width: 800px; height: 1000px;
+    display: flex;
+    /*position: relative;*/
+    overflow: hidden;
+    float:left;
+} 
+#rightvis2{
+    display: flex;
+    width: 900px; height: 1100px;
+    position: relative;
+    overflow: hidden;
+    float:right;
+} 
+
+#sunBurst{float:right;}
+#cluster_plot_wrapper{float:left;}
+
+#updateData{opacity: 0.0}
+
+#colwrap_sbs{display: flex;
+            flex-direction: column;             
+            align-items: center; 
+        }
+
+.rowwrap2{
+     flex-direction: row;
+      position: absolute;
+      top: 1440px;
+        height: 1100px;
+        row-gap: 50px;
+        width: 100%; display: flex; justify-content: space-evenly;  flex-wrap : nowrap; align-items:flex-start ;  align-content:center; }
+/*  .colwrap{display: flex; flex-direction: column; row-gap: -30px; justify-content: space-around;} */
+
+#butt{flex: 0 0 ;
+    align-self: flex-end
+    }
+
+button{font-size: 15pt;
+   align-self: flex-end;
+   opacity: 0.7;
+background-color: white;
+}
+
+.whitetext{color:white}
