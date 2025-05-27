@@ -33,7 +33,7 @@ def clustering():
 
 @app.route('/sidebyside')
 def sidebyside():
-    return render_template('sunburst/sidebyside.html', data="'static/data/clustering/cluster_data.csv'", data_taxo="'static/data/lineage/lineage_data.csv'", data_sampl="'static/data/data_cleaned.csv'")
+    return render_template('sidebyside.html', data="'static/data/clustering/cluster_data.csv'", data_taxo="'static/data/lineage/lineage_data.csv'", data_sampl="'static/data/data_cleaned.csv'")
 
 @app.route('/sunburst_test')
 def sunburst_test():
@@ -46,7 +46,6 @@ def clustering_test():
 @app.route('/histograms')
 def histograms():
     return render_template('histograms.html', data="'static/data/data_cleaned.csv'")
-
 
 
 @app.route('/sex_heatmap')
@@ -65,9 +64,7 @@ def BMI_heatmap():
 def age_heatmap():
     return render_template('heatmap/age_heatmap.html', data="'static/data/pca/age_bacteria.csv'")
 
-
-
-
+""" 
 
 @app.route('/male')
 def male():
@@ -145,6 +142,6 @@ def Age65_74():
 def Age75_84():
     return render_template('pca/Age75_84.html', data="'static/data/pca/Age75_84_loading.csv'")
 
-
+ """
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

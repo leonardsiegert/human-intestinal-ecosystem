@@ -20,12 +20,7 @@
 	<div id = "middlevis"><iframe src="{{url_for('histograms')}}"  name = 'middlevis' scrolling = "no"></iframe></div>
 	<div id = "rightvis"><iframe src="{{url_for('clustering')}}"  name = 'rightvis' scrolling = "no"></iframe></div>
 </div>
-<div class = "rowwrap2"> 
-	<div id = "leftvis2" ><iframe src="{{url_for('male')}}" name = "leftvis2" scrolling = "no" ></iframe></div>
-	<div id = "rightvis2"><iframe src="{{url_for('BMI_heatmap')}}"  name = 'rightvis2' scrolling = "no" ></iframe></div>
 
  <script src="{{ url_for('static', filename='visualizations/sidebyside/sidebyside.js') }}"></script>  
-
-</div>
 
 {% endblock %}
