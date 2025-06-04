@@ -176,8 +176,6 @@ d3.csv(dataset).then(function(data){
             });;
     }
 
-        
-        
     function drawLegend(){
         let legendX = svgWidth/numClusters;
         let legendRadius = 15;
@@ -437,8 +435,13 @@ d3.csv(dataset).then(function(data){
             console.log("selectedCluster");
             console.log(selectedCluster);
             reAssignClusters(selectedCluster);
+        })
+        ;
+    d3.select("#reAssignClusters")
+        .on("change", function (event) {
+            let selectedCluster = d3.select(this).property("value");
+            reAssignClusters(selectedCluster);
         });
-
     // Button to change method of dimensionality reduction
     d3.select("#changeDimRedMethod")
         .selectAll('myOptions')
@@ -450,6 +453,12 @@ d3.csv(dataset).then(function(data){
         .on("click", function (event) {
             let selectedDimRed = d3.select(this).property("value");
             changeDimRedMethod(selectedDimRed);
+        })
+        ;
+    d3.select("#changeDimRedMethod")
+        .on("change", function (event) {
+        let selectedDimRed = d3.select(this).property("value");
+        changeDimRedMethod(selectedDimRed);
         });
         
 }, function(reason){

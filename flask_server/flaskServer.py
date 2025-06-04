@@ -28,7 +28,6 @@ def sunburst():
 def clustering():
     return render_template('clustering/clustering.html', data="'static/data/clustering/cluster_data.csv'")
 
-
 @app.route('/sidebyside')
 def sidebyside():
     return render_template('sidebyside.html', data="'static/data/clustering/cluster_data.csv'", data_taxo="'static/data/lineage/lineage_data.csv'", data_sampl="'static/data/data_cleaned.csv'")
@@ -36,7 +35,6 @@ def sidebyside():
 @app.route('/histograms')
 def histograms():
     return render_template('histograms.html', data="'static/data/data_cleaned.csv'")
-
 
 @app.route('/sex_heatmap')
 def sex_heatmap():
