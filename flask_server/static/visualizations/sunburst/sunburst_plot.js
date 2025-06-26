@@ -1,31 +1,49 @@
-/*  * 
+/*  
  * Group Project Hierarchical Tree Visualization of intestinal gut bacteria taxonomy and species
  * @author: Dexter Frueh
  */
 
+/**
+ * Remove the title element if the script is running inside an iframe.
+ */
 if (window.frameElement) {
-	document.getElementsByClassName("title")[0].remove();
+    document.getElementsByClassName("title")[0].remove();
 }
 
-
+/**
+ * Measure the pixel width of a given text string using a specified font.
+ * @param {string} text - The text to measure.
+ * @param {string} font - The font style to use.
+ * @returns {number} The width of the text in pixels.
+ */
 function measureTextLength(text, font) {
-	const canvas = measureTextLength.canvas || (measureTextLength.canvas = document.createElement("canvas"));
-	const context = canvas.getContext("2d");
-	context.font = font;
-	const metrics = context.measureText(text);
-	return metrics.width;
+    const canvas = measureTextLength.canvas || (measureTextLength.canvas = document.createElement("canvas"));
+    const context = canvas.getContext("2d");
+    context.font = font;
+    const metrics = context.measureText(text);
+    return metrics.width;
 }
 
-
+/**
+ * Get the computed CSS style property value for a given element.
+ * @param {Element} element - The DOM element.
+ * @param {string} prop - The CSS property name.
+ * @returns {string} The computed style value.
+ */
 function getCssStyle(element, prop) {
-	return window.getComputedStyle(element, null).getPropertyValue(prop);
+    return window.getComputedStyle(element, null).getPropertyValue(prop);
 }
 
+/**
+ * Construct a CSS font string from an element's computed styles.
+ * @param {Element} [el=document.body] - The DOM element.
+ * @returns {string} The CSS font string.
+ */
 function getCanvasFontSize(el = document.body) {
-	const fontWeight = getCssStyle(el, 'font-weight') || 'normal';
-	const fontSize = getCssStyle(el, 'font-size') || '16px';
-	const fontFamily = getCssStyle(el, 'font-family') || 'Times New Roman';
-	return `${fontWeight} ${fontSize} ${fontFamily}`;
+    const fontWeight = getCssStyle(el, 'font-weight') || 'normal';
+    const fontSize = getCssStyle(el, 'font-size') || '16px';
+    const fontFamily = getCssStyle(el, 'font-family') || 'Times New Roman';
+    return `${fontWeight} ${fontSize} ${fontFamily}`;
 }
 
 
@@ -59,11 +77,14 @@ function getIndices() {
 	return sessionStorage.getItem("indices");
 }
 
+/**
+ * Calculate the abundance of each bacteria species across all samples.
+ * Updates the global `values` array with normalized abundances.
+ * @param {Array} data_sampl - The sample data array.
+ */
 function calc_bacteria_abundance(data_sampl) {
-	//	"counts amount of bacteria found over the samples"
 	values = []
 	for (ele in data_sampl[0]) {
-		//console.log(ele)
 		values[ele] = 0
 	}
 	let i = 0;
@@ -88,17 +109,22 @@ function calc_bacteria_abundance(data_sampl) {
 d3.csv(dataset_samples).then(function (data_samples) {
 	d3.csv(dataset_taxonomy).then(function (data_taxonomy) {
 		data_taxonomy = data_taxonomy.splice(1)
-		//var values
 
+		/**
+		 * Remove the sunburst SVG and tooltip from the DOM.
+		 */
 		function remove_sunb() {
-			//svg.selectAll("*").remove();
 			basesvg.selectAll("*").remove()
 			tooltip.remove()
-			//centertext.remove()
-		}
-		function remove_data() {
 		}
 
+		function remove_data() {}
+
+		/**
+		 * Create hierarchical data structure for the sunburst plot based on selected indices.
+		 * @param {Array} indices - Indices of selected samples.
+		 * @returns {Array} values - Calculated abundance values.
+		 */
 		function create_data(indices) {
 			data_selection_taxo = []
 			data_selection = []
@@ -115,7 +141,8 @@ d3.csv(dataset_samples).then(function (data_samples) {
 			}
 			group = d3.group(data_selection_taxo, d => d.phylum, d => d.class, d => d.order, d => d.family, d => d.genus, d => d.species)
 			root = d3.hierarchy(group)
-			/////data wrangling ..
+
+			// Data wrangling
 			collapse(root)
 			calc_bacteria_abundance(data_selection)
 			if (first_calc) {
@@ -130,8 +157,12 @@ d3.csv(dataset_samples).then(function (data_samples) {
 			first_calc = 0
 			return values
 
+			/* somehow one layer in the data_taxonomy taxonomy was too much/the last level duplicated. So this function essentially makes the node before the leaves to the new leaves*/
+			/**
+			 * Collapse the hierarchy so that the node before the leaves becomes the new leaf.
+			 * @param {Object} d - The current node in the hierarchy.
+			 */
 			function collapse(d) {
-				/* somehow one layer in the data_taxonomy taxonomy was too much/the last level duplicated. So this function essentially makes the node before the leaves to the new leaves*/
 				if (d.children) { d.children.forEach(collapse) }
 				else {
 					d.parent.data.value = 1
@@ -141,32 +172,26 @@ d3.csv(dataset_samples).then(function (data_samples) {
 			}
 
 		}
+		/**
+		 * Recursively assign calculated values to each node in the hierarchy.
+		 * @param {Object} d - The current node in the hierarchy.
+		 */
 		function giveChildValue(d) {
-			// applies calculated values to the hierarchical data
 			if (d.children) {
 				d.children.forEach(giveChildValue)
-				//d.data.val_total = 
-				//console.log( d.children.reduce(function(sum ,c){ return sum + c.data.val_total}))
 				d.data.val_total = d.sum(d => d.value_total).value;
 				d.data.val = d.sum(d => d.value_).value
 				d.data.val_rel = d.data.val / d.data.val_total
-				//d.data.val_total = d.children.reduce(function(sum ,c){ return sum + c.datakval_total})
-				//d.data.val = d.children.reduce(function(sum, c){ return sum + c.data.val})
-				//console.log(d.data.val_rel)
 			}
 			else {
 				d.data.value_total = values_total[d.data[0]]
 				d.data.val_total = values_total[d.data[0]];
 				d.data.value_rel = values_rel[d.data[0]]
 				d.data.val_rel = values_rel[d.data[0]]
-				//	d.data.val_rel = values_rel[d.data[0]];
-				//		d.data.value_rel = values_rel[d.data[0]]
 				d.data.value_ = values[d.data[0]]
 				d.data.val = values[d.data[0]]
 
 				if (relativeData) {
-					console.log(values_rel[d.data[0]])
-					console.log(values_total[d.data[0]])
 					d.data.value = values_rel[d.data[0]]
 				}
 				else {
@@ -175,10 +200,11 @@ d3.csv(dataset_samples).then(function (data_samples) {
 			}
 		}
 
-
-
+		/**
+		 * Prepare the sunburst data for the current mode (abundance or categorical).
+		 * @param {number} prop_bool - 0 for categorical, 1 for abundance.
+		 */
 		function create_sunb_data(prop_bool) {
-
 			if (prop_bool == 0) {
 				root.sum(function (d) {
 					return d.value;
@@ -190,16 +216,11 @@ d3.csv(dataset_samples).then(function (data_samples) {
 
 			const partition = d3.partition();
 			const degrees = 2 * Math.PI
-			//const radius = 600 
 			partition.size([degrees, radius]);
 
 			partition(root);
-			//console.log(root.descendants());
-
-			//interpolateRainbow// set colors
 
 			TOLColors = ['#77AADD', '#EE8866', '#EEDD88', '#FFAABB', '#99DDFF', '#44BB99', '#BBCC33', '#AAAA00', '#DDDDDD']
-			//TOLColors = ['#CC6677', '#332288', '#DDCC77', '#117733', '#88CCEE', '#882255', '#44AA99', '#999933', '#AA4499']	
 			//Colorblind options
 			switch (prop_bool) {
 				case 1:
@@ -241,6 +262,11 @@ d3.csv(dataset_samples).then(function (data_samples) {
 
 		TTx_offset = -40
 		TTy_offset = 60
+		/**
+		 * Show the tooltip for a sunburst segment.
+		 * @param {Event} event - The mouse event.
+		 * @param {Object} d - The data node.
+		 */
 		function showTooltip(event, d) {
 			TTy_offset_var = TTy_offset;
 			let visibility;
@@ -268,6 +294,11 @@ d3.csv(dataset_samples).then(function (data_samples) {
 				.style("opacity", ttopacity)
 			//.style("color", "red")
 		}
+		/**
+		 * Show detailed information in the tooltip when a segment is clicked.
+		 * @param {Event} event - The mouse event.
+		 * @param {Object} d - The data node.
+		 */
 		function clickTooltip(event, d) {
 			let val = d.data.val
 			let totval = d.data.val_total
@@ -297,14 +328,10 @@ d3.csv(dataset_samples).then(function (data_samples) {
 				.style("visibility", 'hidden')
 		}
 
-
-
-
-
-
-
-
-
+		/**
+		 * Draw the sunburst plot using the current hierarchical data and mode.
+		 * @param {number} prop_bool - 0 for categorical, 1 for abundance.
+		 */
 		function draw_sunb(prop_bool) {
 			//create pie parts from the partition coordinates and everything belonging to that chart
 			svg = basesvg.append("g")
@@ -440,16 +467,6 @@ d3.csv(dataset_samples).then(function (data_samples) {
 				.attr("text-anchor", d => (((d.x1 + d.x0) / 2 * 360 / (2 * Math.PI) - 90) > 90) ? "end" : "start")
 
 
-			//	oft = document.getElementById("sunBurst").offsetTop
-			//	ofl = document.getElementById("sunBurst").offsetLeft
-			//	centertext = d3.select("#sunBurst").append("div")
-			//		.attr("id", "cetertext")
-			//		.attr("style", "pointer-events: none; position: absolute; left:" + (ofl + margin.left + plotwidth / 2 - 35) + "px ; top: " + (oft + margin.top + plotheight / 2 - 20) +
-			//			"px;   width: 70px; text-align: center; color: #FFFFFF; font: 9pt sans-serif; z-index: 12")
-			//	centertext
-			//		.html("switch <br> proportional <br> view")
-			//		//.style("visibility", "hidden")
-
 			d3.select(root.pie).on("mouseover", function (event, d) { showTooltip(event, { data: ["switch to proportional view"] }) })
 				.on("mouseleave", function (event, d) { })
 
@@ -552,6 +569,9 @@ d3.csv(dataset_samples).then(function (data_samples) {
 			}
 		}
 
+		/**
+		 * Update the sunburst plot to show relative data.
+		 */
 		function create_rel_data() {
 			remove_sunb()
 			remove_data()
@@ -561,6 +581,10 @@ d3.csv(dataset_samples).then(function (data_samples) {
 			console.log("should update!")
 		}
 
+		/**
+		 * Update the sunburst plot and data based on the current mode and selection.
+		 * @param {number} prop_bool - 0 for categorical, 1 for abundance.
+		 */
 		function update_page(prop_bool) {
 			//console.log('indices:' + iconst copied = { ...original }
 			indices = sessionStorage.getItem("indices") ? sessionStorage.getItem("indices") : [];
@@ -664,6 +688,9 @@ d3.csv(dataset_samples).then(function (data_samples) {
 
 		infobox = 0
 		changeInfoBox(0)
+		/**
+		 * Toggle the InfoBox display and update its content.
+		 */
 		function changeInfoBox() {
 			text1 = "This plot shows the abundance (amount) of the bacteria over the selected sample, and the taxonomy of the bacteria (which family/ genus/ etc they belong to)."
 			text2 = "Choose between the abundance view, where the sizes of the elements vary according to the amount of bacteria, and the taxonomy/categorical view, where the sizes are the same for each bacteria. The color respectively encodes the other variable, the category or the amount of the bacteria. "
@@ -684,10 +711,14 @@ d3.csv(dataset_samples).then(function (data_samples) {
 				d3.select("#InfoButton").attr("class", 'unclicked')
 			}
 		}
+		/**
+		 * Show the InfoBox.
+		 */
 		function hideInfoBox() {
 			d3.select("#clusterInfoBox").style("visibility", 'visible')
 			infobox = 0
 		}
+
 		d3.select("#InfoButton").on("click", d => changeInfoBox())
 
 		//
