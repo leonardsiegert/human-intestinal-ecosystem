@@ -16,11 +16,11 @@
 <button type="button" id="updateData">update Data</button>
 </div>
 
-<link rel="stylesheet" type="text/css" href= "{{ url_for('static', filename='visualizations/sunburst_and_tree/sunburst_plot_style.css') }}" >
+<link rel="stylesheet" type="text/css" href= "{{ url_for('static', filename='visualizations/sunburst/sunburst_plot_style.css') }}" >
 <script type="text/javascript">
 	dataset_samples = {{ data_sampl | safe}};
 	dataset_taxonomy = {{ data_taxo | safe}};
 </script>
 
-<script src="{{ url_for('static', filename='visualizations/sunburst_and_tree/sunburst_plot.js') }}"></script>
+<script src="{{ url_for('static', filename='visualizations/sunburst/sunburst_plot.js') }}"></script>
 {% endblock %}

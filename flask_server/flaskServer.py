@@ -3,7 +3,6 @@ from flask import Flask, render_template, redirect, url_for
 import os
 import sys
 
-
 app = Flask(__name__)
 app.config['DEBUG'] = True
 
@@ -14,7 +13,6 @@ def index():
 @app.route('/landing_page')
 def landing_page():
     return render_template('landing_page.html')
-
 
 @app.route('/treeplot')
 def treeplot():

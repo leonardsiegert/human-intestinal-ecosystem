@@ -36,7 +36,6 @@ d3.csv(dataset).then(function(data){
     // // incorporate an existing sample selection, e.g. from /histograms
     checkIfClustersSelected();
 
-
     // set the initial dimensionality reduction properties
     DRMethods = ["pca", "kernel_pca", "tsne"];
     DRMethod = DRMethods[0];

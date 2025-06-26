@@ -62,7 +62,6 @@ console.log(root.descendants())
     .style("fill", 'none')
     .attr("stroke", 'black')
 
-
  // Add  for each node.
 
 const node = svg.selectAll("g")
