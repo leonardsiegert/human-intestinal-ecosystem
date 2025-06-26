@@ -19,7 +19,7 @@ var data
 /**
  * Create the SVG container and group element for the tree plot.
  */
-let svg = d3.select("#treePlot")
+let svg = d3.select("#tree")
   .append("svg")
   .attr("width", svgWidth + margin.left + margin.right)
   .attr("height", svgHeight + margin.top + margin.bottom)
