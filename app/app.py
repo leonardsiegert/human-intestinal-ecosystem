@@ -14,25 +14,25 @@ def landing_page():
     """Render the landing page."""
     return render_template('landing_page.html')
 
+@app.route('/sidebyside')
+def sidebyside():
+    """Render the side-by-side comparison page."""
+    return render_template('sidebyside.html', data="'static/data/cluster_data.csv'", data_taxo="'static/data/lineage_data.csv'", data_sample="'static/data/data_cleaned.csv'")
+
 @app.route('/tree')
 def tree():
     """Render the tree plot visualization."""
-    return render_template('tree.html', data="'static/data/lineage/lineage_data.csv'")
+    return render_template('tree.html', data="'static/data/lineage_data.csv'")
 
 @app.route('/sunburst')
 def sunburst():
     """Render the sunburst plot visualization."""
-    return render_template('sunburst.html', data_taxo="'static/data/lineage/lineage_data.csv'", data_sampl="'static/data/data_cleaned.csv'")
+    return render_template('sunburst.html', data_taxo="'static/data/lineage_data.csv'", data_sample="'static/data/data_cleaned.csv'")
 
 @app.route('/clustering')
 def clustering():
     """Render the clustering visualization."""
-    return render_template('clustering.html', data="'static/data/clustering/cluster_data.csv'")
-
-@app.route('/sidebyside')
-def sidebyside():
-    """Render the side-by-side comparison page."""
-    return render_template('sidebyside.html', data="'static/data/clustering/cluster_data.csv'", data_taxo="'static/data/lineage/lineage_data.csv'", data_sampl="'static/data/data_cleaned.csv'")
+    return render_template('clustering.html', data="'static/data/cluster_data.csv'")
 
 @app.route('/histograms')
 def histograms():

@@ -80,18 +80,18 @@ function getIndices() {
 /**
  * Calculate the abundance of each bacteria species across all samples.
  * Updates the global `values` array with normalized abundances.
- * @param {Array} data_sampl - The sample data array.
+ * @param {Array} data_sample - The sample data array.
  */
-function calc_bacteria_abundance(data_sampl) {
+function calc_bacteria_abundance(data_sample) {
 	values = []
-	for (ele in data_sampl[0]) {
+	for (ele in data_sample[0]) {
 		values[ele] = 0
 	}
 	let i = 0;
 	sum = 0
-	for (bacteria_species in data_sampl[0]) {
+	for (bacteria_species in data_sample[0]) {
 		if (i > 6) {
-			for (sample of data_sampl) {
+			for (sample of data_sample) {
 				values[bacteria_species] += parseFloat(sample[bacteria_species]);
 				sum += parseFloat(sample[bacteria_species])
 			};
@@ -99,14 +99,14 @@ function calc_bacteria_abundance(data_sampl) {
 		i = i + 1;
 	}
 	i = 0;
-	for (bacteria_species in data_sampl[0]) {
+	for (bacteria_species in data_sample[0]) {
 		values[bacteria_species] = values[bacteria_species] / sum
 	}
 	console.log("values: ")
 	console.log(values)
 }
 
-d3.csv(dataset_samples).then(function (data_samples) {
+d3.csv(dataset_samples).then(function (data_samplees) {
 	d3.csv(dataset_taxonomy).then(function (data_taxonomy) {
 		data_taxonomy = data_taxonomy.splice(1)
 
@@ -132,11 +132,11 @@ d3.csv(dataset_samples).then(function (data_samples) {
 
 			if ((indices.length == 0)) {
 				data_selection_taxo = data_taxonomy
-				data_selection = data_samples
+				data_selection = data_samplees
 			} else {
 				data_selection_taxo = data_taxonomy
 				for (ind of indices) {
-					data_selection.push(data_samples[ind])
+					data_selection.push(data_samplees[ind])
 				}
 			}
 			group = d3.group(data_selection_taxo, d => d.phylum, d => d.class, d => d.order, d => d.family, d => d.genus, d => d.species)

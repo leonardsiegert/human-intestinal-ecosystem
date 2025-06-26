@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 <script src="https://d3js.org/d3.v7.min.js" charset="utf-8"></script>
-<link rel="stylesheet" type="text/css" href= "{{ url_for('static', filename='visualizations/sidebyside/sidebyside.css') }}" >
+<link rel="stylesheet" type="text/css" href= "{{ url_for('static', filename='css/sidebyside.css') }}" >
 
 <script type="text/javascript">
     dataset = {{ data | safe }};
-	dataset_samples = {{ data_sampl | safe}};
+	dataset_samples = {{ data_sample | safe}};
 	dataset_taxonomy = {{ data_taxo | safe}};
 </script>
 
@@ -21,6 +21,6 @@
 	<div id = "rightvis"><iframe src="{{url_for('clustering')}}"  name = 'rightvis' scrolling = "no"></iframe></div>
 </div>
 
- <script src="{{ url_for('static', filename='visualizations/sidebyside/sidebyside.js') }}"></script>  
+ <script src="{{ url_for('static', filename='js/sidebyside.js') }}"></script>  
 
 {% endblock %}
