@@ -1,7 +1,5 @@
 #!flask/bin/python
 from flask import Flask, render_template, redirect, url_for
-import os
-import sys
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
@@ -34,21 +32,5 @@ def sidebyside():
 def histograms():
     return render_template('histograms.html', data="'static/data/data_cleaned.csv'")
 
-@app.route('/sex_heatmap')
-def sex_heatmap():
-    return render_template('heatmap/sex_heatmap.html', data="'static/data/pca/sex_bacteria.csv'")
-
-@app.route('/nationality_heatmap')
-def nationality_heatmap():
-    return render_template('heatmap/nationality_heatmap.html', data="'static/data/pca/nationality_bacteria.csv'")
-
-@app.route('/BMI_heatmap')
-def BMI_heatmap():
-    return render_template('heatmap/BMI_heatmap.html', data="'static/data/pca/BMI_bacteria.csv'")
-
-@app.route('/age_heatmap')
-
-def age_heatmap():
-    return render_template('heatmap/age_heatmap.html', data="'static/data/pca/age_bacteria.csv'")
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

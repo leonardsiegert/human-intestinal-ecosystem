@@ -3,7 +3,6 @@
  * @author: Dexter Frueh
  */
 
-
 if (window.frameElement) {
 	document.getElementsByClassName("title")[0].remove();
 }
