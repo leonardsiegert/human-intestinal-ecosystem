@@ -1,0 +1,23 @@
+/*body{
+    background-color: rgb(218, 201, 107); 
+}*/
+body{
+    background-color: white/* #D8D8D8 */;
+    font-size: 11pt;
+    font: 11pt sans-serif;
+font-family: Arial, Verdana
+}
+.title{
+    background-color:white ;
+    /*background-color:rgb(81, 134, 134)/* #D8D8D8 */;
+    width: 30%;
+    border-radius: 9px;
+    font-size: 11pt;
+    font: 11pt sans-serif;
+    font-family: Arial, Verdana
+}
+.title:hover{opacity: 1;
+    background-color:white/* #D8D8D8 */
+    /*background-color:rgb(72, 122, 122)/* #D8D8D8 */;}
+
+h2.subtitle{font-family: Arial, Verdana; font-size: 15pt; color: cyan}/*color not final*/

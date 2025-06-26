@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div id = "sunBurstFlexBox">
+	<div><h2 class = "subtitle">Bacterial Lineage and Abundance</h2></div>
+
+	<button type="button" id="ButtonSB">abundance/categorical view</button>
+	<button type="button" id="ButtonSB2">absolute/relative data view</button>
+	<button type="button" id="InfoButton">explanation</button>
+<label for="SBcheckbox">
+	<input type="checkbox" id="SBcheckbox" value="yes">  toggle superclass highlighting
+ </label>
+	<div id="sunBurst"></div>
+	<div id="clusterInfoBox"></div>
+
+<button type="button" id="updateData">update Data</button>
+</div>
+
+<link rel="stylesheet" type="text/css" href= "{{ url_for('static', filename='visualizations/sunburst/sunburst.css') }}" >
+<script type="text/javascript">
+	dataset_samples = {{ data_sampl | safe}};
+	dataset_taxonomy = {{ data_taxo | safe}};
+</script>
+
+<script src="{{ url_for('static', filename='visualizations/sunburst/sunburst.js') }}"></script>
+{% endblock %}
