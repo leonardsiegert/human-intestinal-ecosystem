@@ -14,20 +14,20 @@ def landing_page():
     """Render the landing page."""
     return render_template('landing_page.html')
 
-@app.route('/treeplot')
-def treeplot():
+@app.route('/tree')
+def tree():
     """Render the tree plot visualization."""
-    return render_template('sunburst/tree_plot.html', data="'static/data/lineage/lineage_data.csv'")
+    return render_template('tree.html', data="'static/data/lineage/lineage_data.csv'")
 
 @app.route('/sunburst')
 def sunburst():
     """Render the sunburst plot visualization."""
-    return render_template('sunburst/sunburst_plot.html', data_taxo="'static/data/lineage/lineage_data.csv'", data_sampl="'static/data/data_cleaned.csv'")
+    return render_template('sunburst.html', data_taxo="'static/data/lineage/lineage_data.csv'", data_sampl="'static/data/data_cleaned.csv'")
 
 @app.route('/clustering')
 def clustering():
     """Render the clustering visualization."""
-    return render_template('clustering/clustering.html', data="'static/data/clustering/cluster_data.csv'")
+    return render_template('clustering.html', data="'static/data/clustering/cluster_data.csv'")
 
 @app.route('/sidebyside')
 def sidebyside():
