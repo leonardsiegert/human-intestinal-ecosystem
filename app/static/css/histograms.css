@@ -1,0 +1,7 @@
+.item{
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center subtitle and chart horizontally */
+  min-width: 250px; /* or however wide you want */
+  box-sizing: border-box;
+}
