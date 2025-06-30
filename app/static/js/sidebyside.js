@@ -21,19 +21,12 @@ d3.select("#resetSelection")
             rightvis.window.document.getElementById("resetSelection").click()
             leftvis.window.document.getElementById("updateData").click()
             middlevis.window.document.getElementById("updateSelection").click()
-			//d3.select(this).style("opacity",0.3)
-            //leftvis2.window.document.getElementById("search").click()
 			})
-
-d3.select("#updatePCA")
-        .on("click", function(event){
-            leftvis2.window.document.getElementById("search").click()})
 
 d3.select("#updateData")
         .on("click", function(event){
             middlevis.window.document.getElementById("updateSelection").click()
             leftvis.window.document.getElementById("updateData").click()
-            //leftvis2.window.document.getElementById("search").click()
 			//leftvis.window.d3.select("#sunBurst").style("transform", "scale(0.5)")
 			//leftvis.window.d3.select("#sunBurst").style("transform", "scale(1.2)")
 			//d3.select("#resetSelection").style("opacity", 1)

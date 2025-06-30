@@ -3,7 +3,7 @@
 
 <h2 class="subtitle" value='clustering'>Clustering of Samples:</h2>
 
-<div id="clusterFlexbox">
+<div class="flexbox">
 <div id="clusterHeader">
 <button id="resetSelection">Reset Sample Selection.</button>
 <br></br>
@@ -16,9 +16,13 @@
 <div id="clusterInfoBox"></div>
     </div>
     <div id = "clustercontent">
+
 <svg id="clusterPlot"></svg>
     </div>
 </div>
+
+
+<link rel="stylesheet" type="text/css" href= "{{ url_for('static', filename='css/clustering.css') }}" >
 
 <script type="text/javascript" >
     dataset = {{ data | safe }};

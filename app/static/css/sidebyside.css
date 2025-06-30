@@ -60,20 +60,6 @@ display: flex;
 /*  float:right;*/    
     flex: 0 0 auto
 } 
-#leftvis2{
-   width: 800px; height: 1000px;
-    display: flex;
-    /*position: relative;*/
-    overflow: hidden;
-    float:left;
-} 
-#rightvis2{
-    display: flex;
-    width: 900px; height: 1100px;
-    position: relative;
-    overflow: hidden;
-    float:right;
-} 
 
 #sunBurst{float:right;}
 #cluster_plot_wrapper{float:left;}
