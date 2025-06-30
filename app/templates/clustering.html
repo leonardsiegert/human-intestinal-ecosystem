@@ -4,27 +4,26 @@
 <h2 class="subtitle" value='clustering'>Clustering of Samples:</h2>
 
 <div class="flexbox">
-<div id="clusterHeader">
-<button id="resetSelection">Reset Sample Selection.</button>
-<br></br>
-<label for="#reAssignClusters">Change Clustering Method:</label>
-<select type="button" id="reAssignClusters"></select>
-<br></br>
-<label for="#changeDimRedMethod">Change Dimensionality Reduction Method:</label>
-<select type="button" id="changeDimRedMethod">Change DimRed method</select>
-<br></br>
-<div id="clusterInfoBox"></div>
+    <div id="clusterHeader">
+        <button id="resetSelection">Reset Sample Selection.</button>
+        <br></br>
+        <label for="#reAssignClusters">Change Clustering Method:</label>
+        <select type="button" id="reAssignClusters"></select>
+        <br></br>
+        <label for="#changeDimRedMethod">Change Dimensionality Reduction Method:</label>
+        <select type="button" id="changeDimRedMethod">Change DimRed method</select>
+        <br></br>
+        <div id="clusterInfoBox"></div>
     </div>
-    <div id = "clustercontent">
-
-<svg id="clusterPlot"></svg>
+    <div id="clusterContent">
+        <svg id="clusterPlot"></svg>
     </div>
 </div>
 
 
-<link rel="stylesheet" type="text/css" href= "{{ url_for('static', filename='css/clustering.css') }}" >
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/clustering.css') }}">
 
-<script type="text/javascript" >
+<script type="text/javascript">
     dataset = {{ data | safe }};
 </script>
 

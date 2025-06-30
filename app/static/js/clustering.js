@@ -3,31 +3,42 @@ if (window.frameElement) {
     d3.select("#resetSelection").style("visibility", "hidden");
 }
 
-d3.csv(dataset).then(function(data){
+d3.csv(dataset).then(function (data) {
     //////////////////////////////////////////////////////////////////////////////////////////////////
     ///////  VARIABLE DECLARATIONS  //////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////
 
     // helper function equivalent to numpy.unique()
-    function unique(arr){
+    function unique(arr) {
         return arr.filter((value, index, self) => self.indexOf(value) === index);
     }
 
     // define all the sizes
-    const infoboxSize = 150;
-    const svgWidth = 500;
-    const svgHeight = 300;
-    const margin = { top: 50, bottom: 100, left: 20, right: 20 };
-    bubbleRadius = 5;
-    
+    const container = document.getElementById('clusterContent');
+    const containerWidth = container.clientWidth;
+    const baseWidth = 500;
+    const scaleFactor = containerWidth / baseWidth;
+
+    const margin = {
+        top: 50 * scaleFactor,
+        bottom: 100 * scaleFactor,
+        left: 20 * scaleFactor,
+        right: 20 * scaleFactor
+    };
+    const svgWidth = containerWidth - margin.left - margin.right;
+    const svgHeight = 300 * scaleFactor; // keep aspect ratio as needed
+    bubbleRadius = 5 * scaleFactor;
+
     // set the initial cluster properties
     let selectedClusters = [];
     clusterMethods = ["dbscan", "kmeans_4", "kmeans_8"];
     clusterMethod = clusterMethods[0];
     clusterMethodNames = ["DBSCAN", "K-Means [k=4]", "K-Means[k=8]"];
-    clusterMethodsInfo = { "dbscan": "A density-based clustering method. No pre-determined number of clusters. The gray cluster (cluster -1) represents the data classified as noise.", 
-    "kmeans_4": "A nearest-neighbour-based clustering method. The number of clusters is set manually.", 
-        "kmeans_8": "A nearest-neighbour-based clustering method. The number of clusters is set manually."};
+    clusterMethodsInfo = {
+        "dbscan": "A density-based clustering method. No pre-determined number of clusters. The gray cluster (cluster -1) represents the data classified as noise.",
+        "kmeans_4": "A nearest-neighbour-based clustering method. The number of clusters is set manually.",
+        "kmeans_8": "A nearest-neighbour-based clustering method. The number of clusters is set manually."
+    };
     let clusterLabels = data.map(d => parseFloat(d[clusterMethod]));
     let minCluster = d3.min(clusterLabels);
     let maxCluster = d3.max(clusterLabels);
@@ -40,9 +51,11 @@ d3.csv(dataset).then(function(data){
     DRMethods = ["pca", "kernel_pca", "tsne"];
     DRMethod = DRMethods[0];
     DRMethodNames = ["PCA", "Kernel PCA", "t-SNE"];
-    DRMethodsInfo = { "pca": "A linear dimensionality reduction method minimizing the variance of the data and mapping it onto its first 2 components.", 
-        "kernel_pca": "A non-linear dimensionality reduction method minimizing the variance of the data and mapping it onto its first 2 components.", 
-                        "tsne": "A non-linear dimensionality reduction method optimizing a probability distribution representing similarity between the samples."};
+    DRMethodsInfo = {
+        "pca": "A linear dimensionality reduction method minimizing the variance of the data and mapping it onto its first 2 components.",
+        "kernel_pca": "A non-linear dimensionality reduction method minimizing the variance of the data and mapping it onto its first 2 components.",
+        "tsne": "A non-linear dimensionality reduction method optimizing a probability distribution representing similarity between the samples."
+    };
     DR_x = "x_" + DRMethod;
     DR_y = "y_" + DRMethod;
     let minX = d3.min(data, function (d) { return parseFloat(d[DR_x]); });
@@ -57,10 +70,10 @@ d3.csv(dataset).then(function(data){
     let svg = d3.select("#clusterPlot")
         .attr("width", svgWidth + margin.right + margin.left)
         .attr("height", svgHeight + margin.top + margin.bottom);
-    
+
     // set a color scheme for the clusters
     let colorCircle = setColors();
-    
+
     // draw the chart and corresponding elements
     drawXaxis();
     drawYaxis();
@@ -105,7 +118,7 @@ d3.csv(dataset).then(function(data){
     function setColors() {
         let myColors = ['#CC6677', '#332288', '#DDCC77', '#117733', '#88CCEE', '#882255', '#44AA99', '#999933', '#AA4499', '#DDDDDD']
         // Have grey be the first color of the scheme
-        if (clusterMethod === "dbscan"){
+        if (clusterMethod === "dbscan") {
             let grey = myColors.splice(9, 1)[0];
             myColors.unshift(grey);
         }
@@ -147,7 +160,7 @@ d3.csv(dataset).then(function(data){
 
 
     // create the bubble chart and append it to the SVG
-    function drawBubbleChart(){
+    function drawBubbleChart() {
         svg.append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
             .attr("stroke", "black")
@@ -175,8 +188,8 @@ d3.csv(dataset).then(function(data){
             });;
     }
 
-    function drawLegend(){
-        let legendX = svgWidth/numClusters;
+    function drawLegend() {
+        let legendX = svgWidth / numClusters;
         let legendRadius = 15;
         svg.append("g")
             .attr("class", "legend")
@@ -188,8 +201,8 @@ d3.csv(dataset).then(function(data){
                     .append("circle")
                     .style("cursor", "pointer")
                     .attr("class", "legendCircles")
-                    .attr("cx", i * legendX + margin.left + legendRadius*2)
-                    .attr("cy", margin.top + svgHeight + legendRadius*2.5)
+                    .attr("cx", i * legendX + margin.left + legendRadius * 2)
+                    .attr("cy", margin.top + svgHeight + legendRadius * 2.5)
                     .attr("r", legendRadius)
                     .attr("fill", colorCircle(d))
                     .on("click", function (event, d) {
@@ -210,10 +223,10 @@ d3.csv(dataset).then(function(data){
                         reAssignOpacity();
                     });
             })
-        ;
-            };
-    
-                
+            ;
+    };
+
+
 
 
     //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -228,16 +241,16 @@ d3.csv(dataset).then(function(data){
             if (selectedIndices.length == 0) {
                 parent.document.getElementById("resetSelection").click();
             }
-            else { parent.document.getElementById("updateData").click();}
+            else { parent.document.getElementById("updateData").click(); }
         }
     }
 
     // sessionStorage["indices"] getter method
-    function getSessionStorage(){
+    function getSessionStorage() {
         let mySession = JSON.parse(sessionStorage.getItem("indices"));
-        if (mySession === null){
+        if (mySession === null) {
             return [];
-        }else{
+        } else {
             return mySession;
         }
     }
@@ -263,7 +276,7 @@ d3.csv(dataset).then(function(data){
     }
 
     // when called by clicking on legend, adds/removes clicked cluster to/from cluster selection
-    function changeClusterSelection(clickedCluster){
+    function changeClusterSelection(clickedCluster) {
         indices = getSessionStorage();
         if (selectedClusters.includes(clickedCluster)) {
             // remove cluster from selection if there already
@@ -272,15 +285,15 @@ d3.csv(dataset).then(function(data){
         } else {
             // add cluster to selection if not there yet
             selectedClusters.push(clickedCluster);
-            data.forEach((d, i) => selectedClusters.includes(parseFloat(d[clusterMethod]))  ? indices.push(i) : null);
+            data.forEach((d, i) => selectedClusters.includes(parseFloat(d[clusterMethod])) ? indices.push(i) : null);
         }
         setSessionStorage(indices);
 
     }
 
-    
+
     // highlight the selected clusters - to be called due to cluster selection
-    function reAssignOpacity(){
+    function reAssignOpacity() {
         let currSession = getSessionStorage();
         d3.select("#clusterPlot").transition().duration(250)
             .selectAll(".clusterCircles")
@@ -303,7 +316,7 @@ d3.csv(dataset).then(function(data){
 
     // assign each circle a new cluster and redraw the legend
     // to be called when changing clustering_method
-    function reAssignClusters(selectedCluster){
+    function reAssignClusters(selectedCluster) {
         clusterMethod = selectedCluster;
         console.log(clusterMethod);
         clusterLabels = data.map(d => parseFloat(d[clusterMethod]));
@@ -326,7 +339,7 @@ d3.csv(dataset).then(function(data){
             .attr("fill", function (d) {
                 return colorCircle(parseFloat(d[clusterMethod]));
             });
-        
+
         // redraw the legend
         d3.selectAll(".legendCircles").remove();
         d3.selectAll(".legendText").remove();
@@ -340,7 +353,7 @@ d3.csv(dataset).then(function(data){
     }
 
     // change method of dimensionality reduction, and recalculate positions
-    function changeDimRedMethod(selectedDimRed){
+    function changeDimRedMethod(selectedDimRed) {
         // recalculate scales and sizes
         DRMethod = selectedDimRed
         DR_x = "x_" + DRMethod
@@ -365,7 +378,7 @@ d3.csv(dataset).then(function(data){
     }
 
     //  move circles to new position - to be called when changing DRMethod
-    function reAssignPositions(){
+    function reAssignPositions() {
         d3.select("#clusterPlot").transition().duration(250)
             .selectAll(".clusterCircles")
             .attr("cx", function (d) {
@@ -376,7 +389,7 @@ d3.csv(dataset).then(function(data){
             });
     }
 
-    function changeInfoBox(){
+    function changeInfoBox() {
         // choose the appropriate text options
         let text1;
         let text2;
@@ -391,17 +404,17 @@ d3.csv(dataset).then(function(data){
             console.log("PROBLEM: clusterMethod not recognized by changeInfoBox()!!");
         }
         // text for dimensionality reduction method
-        if (DRMethod === "pca"){
+        if (DRMethod === "pca") {
             text2 = DRMethodsInfo["pca"];
-        }else if (DRMethod === "kernel_pca"){
+        } else if (DRMethod === "kernel_pca") {
             text2 = DRMethodsInfo["kernel_pca"];
-        }else if (DRMethod === "tsne"){
+        } else if (DRMethod === "tsne") {
             text2 = DRMethodsInfo["tsne"];
-        }else{
+        } else {
             console.log("PROBLEM: DRMethod not recognized by changeInfoBox()!!");
         }
-        d3.select("#clusterInfoBoxHead1").text(clusterMethodNames[clusterMethods.indexOf(clusterMethod)]+":");
-        d3.select("#clusterInfoBoxHead2").text(DRMethodNames[DRMethods.indexOf(DRMethod)]+":");
+        d3.select("#clusterInfoBoxHead1").text(clusterMethodNames[clusterMethods.indexOf(clusterMethod)] + ":");
+        d3.select("#clusterInfoBoxHead2").text(DRMethodNames[DRMethods.indexOf(DRMethod)] + ":");
         d3.select("#clusterInfoBox1").text(text1);
         d3.select("#clusterInfoBox2").text(text2);
     }
@@ -419,7 +432,7 @@ d3.csv(dataset).then(function(data){
             selectedClusters = [];
             reAssignOpacity();
         });
-    
+
 
     // Dropdown button to re-assign Clusters
     d3.select("#reAssignClusters")
@@ -456,13 +469,13 @@ d3.csv(dataset).then(function(data){
         ;
     d3.select("#changeDimRedMethod")
         .on("change", function (event) {
-        let selectedDimRed = d3.select(this).property("value");
-        changeDimRedMethod(selectedDimRed);
+            let selectedDimRed = d3.select(this).property("value");
+            changeDimRedMethod(selectedDimRed);
         });
-        
-}, function(reason){
+
+}, function (reason) {
     console.log(reason);
     d3.select("body")
-    .append("p")
-    .text("Failed to load data, see console!")
+        .append("p")
+        .text("Failed to load data, see console!")
 })
