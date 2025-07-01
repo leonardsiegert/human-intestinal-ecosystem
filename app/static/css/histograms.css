@@ -1,7 +1,25 @@
-.item{
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* center subtitle and chart horizontally */
-  min-width: 250px; /* or however wide you want */
+#resetSelection {
+    margin-left: 1.5rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+  }
+
+h2.subtitle {
+  margin-bottom: 0rem;
+}
+
+h4.subtitle {
+  margin-left: 1.5rem;
+  margin-bottom: 0rem;
+}
+
+.item {
+  flex: 1 1 calc(50% - 1rem);
   box-sizing: border-box;
+  margin-top: 0rem;
+}
+@media (max-width: 768px) {
+  .item {
+    flex: 1 1 100%;
+  }
 }

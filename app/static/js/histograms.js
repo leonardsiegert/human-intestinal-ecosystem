@@ -32,10 +32,22 @@ function getSessionStorage() {
 //////////////////////////////////////////////// Constants ////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// Get container's computed size
+const container = document.getElementsByClassName('hist')[0];
+const isMobile = window.innerWidth <= 768;
+const containerWidth = isMobile ? 
+                        container.clientWidth * 0.9:
+                        container.clientWidth * 0.5;
 
-const svgWidth = 200 ;
-const svgHeight = 120;
-const margin = {top: 0, right: 0, bottom: 70, left: 50};
+// Set margins relative to the container's width
+const margin = {
+  top: containerWidth / 30,
+  right: containerWidth / 30,
+  bottom: containerWidth / 5,
+  left: containerWidth / 7
+};
+const svgWidth = containerWidth - margin.left - margin.right;
+const svgHeight = containerWidth/1.5 - margin.top - margin.bottom;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////// Defining Histograms ///////////////////////////////////////////////////////////
