@@ -1,10 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div id="colwrap_sbs">
-	<div id="butt"><button type="button" id="resetSelection">Reset Sample Selection.</button></div>
-	<button type="button" id="updateData">Update Plots with Selection</button>
-</div>
+<button type="button" id="resetSelection">Reset Sample Selection</button>
+<button type="button" id="updateData">Update Plots with Selection</button>
 <div class="rowwrap">
 	<div id="leftvis"><iframe src="{{url_for('sunburst')}}" name="leftvis" scrolling="no"></iframe></div>
 	<div id="middlevis"><iframe src="{{url_for('histograms')}}" name='middlevis' scrolling="no"></iframe></div>

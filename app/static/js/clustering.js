@@ -325,12 +325,9 @@ d3.csv(dataset).then(function (data) {
     // to be called when changing clustering_method
     function reAssignClusters(selectedCluster) {
         clusterMethod = selectedCluster;
-        console.log(clusterMethod);
         clusterLabels = data.map(d => parseFloat(d[clusterMethod]));
         uniqueClusters = unique(clusterLabels);
         numClusters = uniqueClusters.length;
-        console.log("clusterLabels")
-        console.log(clusterLabels)
         minCluster = d3.min(data, function (d) { return parseFloat(d[clusterMethod]); });
         maxCluster = d3.max(data, function (d) { return parseFloat(d[clusterMethod]); });
         colorCircle = d3.scaleOrdinal()
@@ -435,7 +432,6 @@ d3.csv(dataset).then(function (data) {
     d3.select("#resetSelection")
         .on("click", function (event) {
             sessionStorage.removeItem("indices");
-            console.log(getSessionStorage());
             selectedClusters = [];
             reAssignOpacity();
         });
@@ -450,8 +446,6 @@ d3.csv(dataset).then(function (data) {
         .attr("value", function (d) { return d; }) // corresponding value returned by the button
         .on("click", function (event) {
             let selectedCluster = d3.select(this).property("value");
-            console.log("selectedCluster");
-            console.log(selectedCluster);
             reAssignClusters(selectedCluster);
         })
         ;
