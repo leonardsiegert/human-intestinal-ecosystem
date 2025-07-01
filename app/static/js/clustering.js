@@ -19,12 +19,21 @@ d3.csv(dataset).then(function (data) {
     const baseWidth = 500;
     const scaleFactor = containerWidth / baseWidth;
 
-    const margin = {
-        top: 50 * scaleFactor,
-        bottom: 100 * scaleFactor,
-        left: 20 * scaleFactor,
-        right: 20 * scaleFactor
-    };
+    // Use smaller margins on mobile
+    const isMobile = window.innerWidth <= 768;
+
+    const margin = isMobile
+        ? {
+            top: 15 * scaleFactor,
+            bottom: 25 * scaleFactor,
+            left: 20 * scaleFactor,
+            right: 20 * scaleFactor
+        } : {
+            top: 20 * scaleFactor,
+            bottom: 100 * scaleFactor,
+            left: 20 * scaleFactor,
+            right: 20 * scaleFactor
+        };
     const svgWidth = containerWidth - margin.left - margin.right;
     const svgHeight = 300 * scaleFactor; // keep aspect ratio as needed
     bubbleRadius = 5 * scaleFactor;
@@ -44,7 +53,7 @@ d3.csv(dataset).then(function (data) {
     let maxCluster = d3.max(clusterLabels);
     let uniqueClusters = unique(clusterLabels);
     let numClusters = uniqueClusters.length;
-    // // incorporate an existing sample selection, e.g. from /histograms
+    // // incorporate an existing sample selection
     checkIfClustersSelected();
 
     // set the initial dimensionality reduction properties
@@ -92,7 +101,8 @@ d3.csv(dataset).then(function (data) {
     d3.select("#clusterInfoBox")
         .style("background", "rgb(185, 205, 207)")
         .style("border", "solid")
-        .style("border-radius", "25px");
+        .style("border-radius", "25px")
+        .style("padding", "0.5rem");
     d3.select("#clusterInfoBox")
         .append("h3")
         .attr("id", "clusterInfoBoxHead1");
@@ -226,9 +236,6 @@ d3.csv(dataset).then(function (data) {
             ;
     };
 
-
-
-
     //////////////////////////////////////////////////////////////////////////////////////////////////
     ///////  FUNCTIONS FOR INTERACTIVITY  ////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -290,7 +297,6 @@ d3.csv(dataset).then(function (data) {
         setSessionStorage(indices);
 
     }
-
 
     // highlight the selected clusters - to be called due to cluster selection
     function reAssignOpacity() {
@@ -432,7 +438,6 @@ d3.csv(dataset).then(function (data) {
             selectedClusters = [];
             reAssignOpacity();
         });
-
 
     // Dropdown button to re-assign Clusters
     d3.select("#reAssignClusters")

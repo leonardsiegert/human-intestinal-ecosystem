@@ -52,13 +52,40 @@
   color: #555;
 }
 
+body{
+    background-color: white;
+    font-size: 11pt;
+    font: 11pt sans-serif;
+font-family: Arial, Verdana
+}
+
+h2.subtitle{
+  font-family: Arial, Verdana;
+  font-size: 15pt;
+  color: black;
+  padding: 1.5rem;
+}
+
+.flexbox{
+  display:flex;
+  flex-wrap: wrap;
+  width:100%;
+  justify-content: center;
+  gap: 1rem;
+  box-sizing: border-box;
+}
+
 @media (max-width: 600px) {
   .title-text h1 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   .title-text h2 {
     font-size: 1rem;
+  }
+
+  h2.subtitle{
+  padding: 1.25rem;
   }
 
   .logo-img {
@@ -70,22 +97,4 @@
     text-align: center;
   }
 
-}
-
-body{
-    background-color: white
-    font-size: 11pt;
-    font: 11pt sans-serif;
-font-family: Arial, Verdana
-}
-
-h2.subtitle{font-family: Arial, Verdana; font-size: 15pt; color: black}
-
-.flexbox{
-  display:flex;
-  flex-wrap: wrap;
-  width:100%;
-  justify-content: center;
-  gap: 1rem;
-  box-sizing: border-box;
 }

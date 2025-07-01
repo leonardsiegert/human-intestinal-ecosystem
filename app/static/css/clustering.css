@@ -17,3 +17,22 @@
   height: auto;
   display: block;
 }
+
+/* For mobile */
+@media(max-width: 600px) {
+
+  .flexbox {
+    flex-direction: column-reverse;
+  }
+
+  #clusterInfoBox {
+    margin-top: .5rem;
+  }
+  h2.subtitle{
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+  }
+  #clusterContent {
+    margin-bottom: 0rem;
+  }
+}
