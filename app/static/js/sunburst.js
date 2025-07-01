@@ -1,13 +1,9 @@
-/*  
- * Group Project Hierarchical Tree Visualization of intestinal gut bacteria taxonomy and species
- * @author: Dexter Frueh
- */
-
 /**
  * Remove the title element if the script is running inside an iframe.
  */
 if (window.frameElement) {
     document.getElementsByClassName("title")[0].remove();
+	d3.select("#updateData").style('visibility', "hidden");
 }
 
 /**
@@ -425,9 +421,6 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 					if (d.parent) {
 						if (!d.children) {
 							setSessionStorage(d.data[0]);
-							if (window.frameElement) {
-								parent.document.getElementById("updatePCA").click();
-							}
 						}
 						clickTooltip(event, d)
 					}
@@ -478,9 +471,6 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 			complNode
 				.on("click", function (event, d) {
 					setSessionStorage(d.data[0]);
-					if (window.frameElement) {
-						parent.document.getElementById("updatePCA").click();
-					}
 				})
 
 			tooltip =
@@ -658,7 +648,7 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 			});
 
 		d3.select("#updateData")
-			.style("visibility", "visible")
+			// .style("visibility", "visible")
 			.on("click", function (event) {
 				console.log("update Data " + prop)
 				update_page(prop)

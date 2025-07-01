@@ -5,7 +5,10 @@
 
 if (window.frameElement){
 document.getElementsByClassName("title")[0].remove();
-d3.select("#resetSelection").style("opacity", "0")
+// set visibility to hidden and  set maxheight to zero
+d3.select("#resetSelection").style("visibility","hidden");
+d3.select("#resetSelection").style("max-height", 0);
+
 }
 
 // returns unique values of array, equivalent to numpy.unique()
@@ -323,7 +326,6 @@ d3.csv(dataset).then(function(initial_data) {
   // Updates all Histograms and draw them again with updated data
   d3.select("#updateSelection")
     .on("click", function (event) {
-  console.log("works!!")
       d3.selectAll(".histo").remove();
       drawEverything();
     });

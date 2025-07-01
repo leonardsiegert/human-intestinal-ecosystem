@@ -1,6 +1,7 @@
 if (window.frameElement) {
     document.getElementsByClassName("title")[0].remove();
     d3.select("#resetSelection").style("visibility", "hidden");
+    d3.select("#resetSelection").style("max-height", 0);
 }
 
 d3.csv(dataset).then(function (data) {

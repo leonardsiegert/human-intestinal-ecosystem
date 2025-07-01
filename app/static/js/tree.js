@@ -1,8 +1,3 @@
-/*  
- * Group Project Hierarchical Tree Visualization of intestinal gut bacteria taxonomy and species.
- * @author: Dexter Frueh
- */
-
 /**
  * SVG canvas dimensions and margins for the tree plot visualization.
  */
