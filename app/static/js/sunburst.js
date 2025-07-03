@@ -50,7 +50,7 @@ const plotheight = 800
 const plotwidth = 800
 const radius = 380
 const margin = { top: 80, right: 0, bottom: 80, left: 100 };
-
+ 
 var text;
 var dataframe = []
 var coldat = []
@@ -656,24 +656,18 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 
 
 		// InfoBox
-		d3.select("#clusterInfoBox")
-			.style("background", "rgb(185, 205, 207)")
-			.style("margin-left", 20 + "px")
-			.style("width", svgWidth -50+ "px")
-			.style("border", "solid")
-			.style("padding", "2px")
-			.style("border-radius", "25px")
+		d3.select("#infoBox")
 			.on("click",function(){changeInfoBox()})
 
-		d3.select("#clusterInfoBox")
+		d3.select("#infoBox")
 			.append("p")
-			.attr("id", "clusterInfoBox1");
-		d3.select("#clusterInfoBox")
+			.attr("id", "infoBox1");
+		d3.select("#infoBox")
 			.append("p")
-			.attr("id", "clusterInfoBox2");
-		d3.select("#clusterInfoBox")
+			.attr("id", "infoBox2");
+		d3.select("#infoBox")
 			.append("p")
-			.attr("id", "clusterInfoBox3");
+			.attr("id", "infoBox3");
 
 
 		infobox = 0
@@ -690,13 +684,13 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 				d3.select("#InfoButton").attr("class", 'clicked')
 			}
 			else {
-				d3.select("#clusterInfoBox1")
+				d3.select("#infoBox1")
 					.text(text1);
-				d3.select("#clusterInfoBox2")
+				d3.select("#infoBox2")
 					.text(text2);
-				d3.select("#clusterInfoBox3")
+				d3.select("#infoBox3")
 					.text(text3);
-				d3.select("#clusterInfoBox").style("visibility", "hidden")
+				d3.select("#infoBox").style("visibility", "hidden")
 				infobox = 1
 				d3.select("#InfoButton").attr("class", 'unclicked')
 			}
@@ -705,7 +699,7 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 		 * Show the InfoBox.
 		 */
 		function hideInfoBox() {
-			d3.select("#clusterInfoBox").style("visibility", 'visible')
+			d3.select("#infoBox").style("visibility", 'visible')
 			infobox = 0
 		}
 
