@@ -43,13 +43,31 @@ function getCanvasFontSize(el = document.body) {
 }
 
 
+const container = document.getElementById("sunBurst");
+const svgWidth = container.clientWidth;
+const svgHeight = svgWidth;
+const plotwidth = svgWidth;
+// const plotwidth = Math.min(svgWidth, svgHeight) * 0.9;
+const plotheight = svgHeight;
+const radius = plotwidth / 2 - 20;
+const margin = {
+  top: svgWidth / 10,
+  right: svgWidth / 7,
+  bottom: svgWidth / 4,
+  left: svgWidth / 10
+};
+// log the margin
+console.log("margin: " + JSON.stringify(margin));
+// const margin = { top: 0, right: 0, bottom: 0, left: 0 };
+// const margin = { top: 80, right: 0, bottom: 80, left: 100 };
+console.log("svgWidth: " + svgWidth + " svgHeight: " + svgHeight + " plotwidth: " + plotwidth + " plotheight: " + plotheight + " radius: " + radius);
 
-const svgWidth = 1000;
-const svgHeight = 1200;
-const plotheight = 800
-const plotwidth = 800
-const radius = 380
-const margin = { top: 80, right: 0, bottom: 80, left: 100 };
+// const svgWidth = 1000;
+// const svgHeight = 1200;
+// const plotheight = 800
+// const plotwidth = 800
+// const radius = 380
+// const margin = { top: 80, right: 0, bottom: 80, left: 100 };
  
 var text;
 var dataframe = []
@@ -113,8 +131,6 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 			basesvg.selectAll("*").remove()
 			tooltip.remove()
 		}
-
-		function remove_data() {}
 
 		/**
 		 * Create hierarchical data structure for the sunburst plot based on selected indices.
@@ -332,7 +348,7 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 			//create pie parts from the partition coordinates and everything belonging to that chart
 			svg = basesvg.append("g")
 				.attr("id", "sunburstsvg")
-				.attr("transform", "translate(" + (margin.left + plotwidth / 2) + "," + (margin.top + plotheight / 2) + ")");
+				.attr("transform", "translate(" + (margin.left + svgWidth / 2) + "," + (margin.top + svgHeight / 2) + ")");
 
 			const pie = d3.arc()
 				.startAngle(d => d.x0)
@@ -346,16 +362,13 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 			/// add partition plot
 			node = svg.selectAll('g')
 				.data(root.descendants())
-			//	const node = basenode.data(root.descendants())
 
 			function applyparents(d, select, val) {
 				if (d.parent.parent) {
 					applyparents(d.parent, select, val);
 				}
 				if (d.parent) { 
-				//d3.select(d.parent.pie).style(select, val) ;
 				d3.select(d.pie).style(select, val) ;}
-				//d3.select(d.pie).style("fill", "black") ;
 			}
 
 			function switch_mode() {
@@ -476,7 +489,6 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 			tooltip =
 				d3.select("#sunBurst")
 					.append("div")
-					.style("position", "absolute")
 					.attr("class", "tooltip")
 					.attr("font", "11pt")
 					.attr("id", "tooltiptext")
@@ -484,11 +496,14 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 					.style("visibility", "visible")
 
 			// Add the legend for the colors
-			let legendx = -380
-			let legendy = 480
+			let rectWidth = svgWidth / 23;
+			let rectHeight = svgHeight / 50;
+			let legendx = - ((svgWidth - margin.left - margin.right) / 2);
+			let legendy = svgHeight - margin.bottom - margin.top;
+			let legendwidth = svgWidth - margin.left - margin.right;
+
 
 			if (!prop) {
-				legendwidth = 900
 				// Add one rectangle in the legend for each name.
 				var legend = svg.selectAll(".legend")
 					.data(root.children)
@@ -497,8 +512,8 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 					.enter()
 					.append("rect")
 					.attr("class", "sunBurst_field")
-					.attr("width", 27)
-					.attr("height", 9)
+					.attr("width", rectWidth)
+					.attr("height", rectHeight)
 					.attr("y", legendy)
 					.attr("x", function (d, i) { return legendx + i * (size) })
 					.style("fill", d => !relativeData ?color(d.index) : color(d.index))//
@@ -507,8 +522,8 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 					.enter()
 					.append("text")
 					.attr("class", "categorical")
-					.attr("x", (d, i) => legendx + i * size - 20)
-					.attr("y", legendy + 35)
+					.attr("x", (d, i) => legendx + i * size - svgWidth / 50)
+					.attr("y", legendy + svgHeight / 25)
 					.attr("transform", (d, i) => "rotate(-00 " + (legendx + i * size) + " " + legendy + ")")
 					.style("fill", d => !relativeData ? color(d.index) : color(d.index)) //color[d.index]: color[d.index])p
 					.text(d => !prop_bool ? (d.data[0]) : 200 * d.index / 10)
@@ -516,7 +531,6 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 					.style("alignment-baseline", "middle")
 			}
 			else {
-				legendwidth = 300
 				var hundredArray = Array.from(Array(100).keys());
 				var xcolorScale = d3.scaleLinear()
 					.domain([0, 99])
@@ -531,7 +545,7 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 					.attr("class", "continuous, sunBurst_field")
 					.attr("x", (d) => legendx + Math.floor(xcolorScale(d)))
 					.attr("y", legendy)
-					.attr("height", 20)
+					.attr("height", rectHeight)
 					.attr("width", (d) => {
 						if (d == 1) {
 							return 6;
@@ -564,7 +578,6 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 		 */
 		function create_rel_data() {
 			remove_sunb()
-			remove_data()
 			giveChildValue(root)
 			create_sunb_data(prop)
 			draw_sunb(prop)
@@ -584,7 +597,6 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 				indices = Array.from(indices.split(','), Number)
 			} else { indices = []; }
 			remove_sunb()
-			remove_data()
 			create_data(indices)
 			//calc_bacteria_abundance(data_selection)
 			create_sunb_data(prop_bool)
