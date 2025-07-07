@@ -6,6 +6,17 @@
     gap: 1rem; */
 }
 
+#resetSelection {
+    margin-left: 1.5rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+  }
+
+h2.subtitle {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+
 #sunBurst {
     width: 100%;
     max-width: 700px;
