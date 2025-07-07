@@ -17,6 +17,10 @@ h2.subtitle {
   margin-bottom: 0rem;
 }
 
+#buttonRow {
+    margin-left: 1.5rem;
+}
+
 #sunBurst {
     width: 100%;
     max-width: 700px;
