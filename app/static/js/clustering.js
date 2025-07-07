@@ -102,20 +102,33 @@ d3.csv(dataset).then(function (data) {
     d3.select("#clusterInfoBox")
         .style("background", "rgb(185, 205, 207)")
         .style("border", "solid")
-        .style("border-radius", "25px")
-        .style("padding", "0.5rem");
+        .style("border-radius", "1.5rem")
+        .style("padding", "0rem")
+        .style("padding-left", "0.5rem")
+        .style("padding-right", "0.5rem");
     d3.select("#clusterInfoBox")
         .append("h3")
-        .attr("id", "clusterInfoBoxHead1");
+        .attr("id", "clusterInfoBoxHead1")
+        .style("margin", "0rem")
+        .style("margin-top", "0.5rem")
+        .style("padding", "0rem");
     d3.select("#clusterInfoBox")
         .append("p")
-        .attr("id", "clusterInfoBox1");
+        .attr("id", "clusterInfoBox1")
+        .style("margin", "0rem")
+        .style("padding", "0rem");
     d3.select("#clusterInfoBox")
         .append("h3")
-        .attr("id", "clusterInfoBoxHead2");
+        .attr("id", "clusterInfoBoxHead2")
+        .style("margin", "0rem")
+        .style("margin-top", "0.5rem")
+        .style("padding", "0rem");
     d3.select("#clusterInfoBox")
         .append("p")
-        .attr("id", "clusterInfoBox2");
+        .attr("id", "clusterInfoBox2")
+        .style("margin", "0rem")
+        .style("margin-bottom", "0.5rem")
+        .style("padding", "0rem");
 
     changeInfoBox();
 
