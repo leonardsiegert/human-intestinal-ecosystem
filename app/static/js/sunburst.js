@@ -4,7 +4,23 @@
 if (window.frameElement) {
 	document.getElementsByClassName("title")[0].remove();
 	d3.select("#updateData").style('visibility', "hidden");
-    d3.select("#resetSelection").style("max-height", 0);
+	d3.select("#resetSelection").style("max-height", 0);
+	// add a link to the h2.subtitle
+	d3.select("h2.subtitle")
+		.style("hover", "text-decoration: underline;")
+		.on("click", () => {
+			window.top.location.href = "/sunburst";
+		})
+		// when hovering over the subtitle, underline it and change cursor
+		.style("cursor", "pointer")
+		.on("mouseover", function () {
+			d3.select(this)
+				.style("text-decoration", "underline");
+		})
+		.on("mouseout", function () {
+			d3.select(this)
+				.style("text-decoration", "none");
+		});
 }
 
 /**
@@ -45,7 +61,7 @@ function getCanvasFontSize(el = document.body) {
 
 
 const container = document.getElementById("sunBurst");
-const svgWidth = container.clientWidth*0.75;
+const svgWidth = container.clientWidth * 0.75;
 const svgHeight = svgWidth;
 const radius = svgWidth / 2 - 20;
 const isMobile = window.innerWidth <= 768;
@@ -64,7 +80,7 @@ const margin = isMobile
 
 const fontSizeCompl = isMobile ? "3pt" : "6pt";
 const strokeWidthCompl = isMobile ? 0.3 : 1;
-	
+
 var text;
 var dataframe = []
 var coldat = []

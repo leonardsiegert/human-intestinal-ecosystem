@@ -2,6 +2,22 @@ if (window.frameElement) {
     document.getElementsByClassName("title")[0].remove();
     d3.select("#resetSelection").style("visibility", "hidden");
     d3.select("#resetSelection").style("max-height", 0);
+    // add a link to the h2.subtitle
+    d3.select("h2.subtitle")
+        .style("hover", "text-decoration: underline;")
+        .on("click", () => {
+            window.top.location.href = "/clustering";
+        })
+        // when hovering over the subtitle, underline it and change cursor
+        .style("cursor", "pointer")
+        .on("mouseover", function () {
+            d3.select(this)
+                .style("text-decoration", "underline");
+        })
+        .on("mouseout", function () {
+            d3.select(this)
+                .style("text-decoration", "none");
+        });
 }
 
 d3.csv(dataset).then(function (data) {
