@@ -77,12 +77,10 @@ iframe {
     }
 
     #leftvis {
-        /* flex: 1 1 45%;
-        min-width: 300px; */
-        /* aspect-ratio: 2 / 3;
-        max-width: 50%;
-        overflow: hidden; */
-        transform: scale(0.7);
+        aspect-ratio: 1 / 3;
+        max-width: 90%;
+        overflow: hidden;
+        transform: scale(1);
         transform-origin: 0 0;
     }
 }

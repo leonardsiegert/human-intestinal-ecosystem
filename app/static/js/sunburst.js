@@ -2,7 +2,7 @@
  * Remove the title element if the script is running inside an iframe.
  */
 if (window.frameElement) {
-    document.getElementsByClassName("title")[0].remove();
+	document.getElementsByClassName("title")[0].remove();
 	d3.select("#updateData").style('visibility', "hidden");
 }
 
@@ -13,11 +13,11 @@ if (window.frameElement) {
  * @returns {number} The width of the text in pixels.
  */
 function measureTextLength(text, font) {
-    const canvas = measureTextLength.canvas || (measureTextLength.canvas = document.createElement("canvas"));
-    const context = canvas.getContext("2d");
-    context.font = font;
-    const metrics = context.measureText(text);
-    return metrics.width;
+	const canvas = measureTextLength.canvas || (measureTextLength.canvas = document.createElement("canvas"));
+	const context = canvas.getContext("2d");
+	context.font = font;
+	const metrics = context.measureText(text);
+	return metrics.width;
 }
 
 /**
@@ -27,7 +27,7 @@ function measureTextLength(text, font) {
  * @returns {string} The computed style value.
  */
 function getCssStyle(element, prop) {
-    return window.getComputedStyle(element, null).getPropertyValue(prop);
+	return window.getComputedStyle(element, null).getPropertyValue(prop);
 }
 
 /**
@@ -36,39 +36,34 @@ function getCssStyle(element, prop) {
  * @returns {string} The CSS font string.
  */
 function getCanvasFontSize(el = document.body) {
-    const fontWeight = getCssStyle(el, 'font-weight') || 'normal';
-    const fontSize = getCssStyle(el, 'font-size') || '16px';
-    const fontFamily = getCssStyle(el, 'font-family') || 'Times New Roman';
-    return `${fontWeight} ${fontSize} ${fontFamily}`;
+	const fontWeight = getCssStyle(el, 'font-weight') || 'normal';
+	const fontSize = getCssStyle(el, 'font-size') || '16px';
+	const fontFamily = getCssStyle(el, 'font-family') || 'Times New Roman';
+	return `${fontWeight} ${fontSize} ${fontFamily}`;
 }
 
 
 const container = document.getElementById("sunBurst");
-const svgWidth = container.clientWidth;
+const svgWidth = container.clientWidth*0.75;
 const svgHeight = svgWidth;
-const plotwidth = svgWidth;
-// const plotwidth = Math.min(svgWidth, svgHeight) * 0.9;
-const plotheight = svgHeight;
-const radius = plotwidth / 2 - 20;
-const margin = {
-  top: svgWidth / 10,
-  right: svgWidth / 7,
-  bottom: svgWidth / 4,
-  left: svgWidth / 10
-};
-// log the margin
-console.log("margin: " + JSON.stringify(margin));
-// const margin = { top: 0, right: 0, bottom: 0, left: 0 };
-// const margin = { top: 80, right: 0, bottom: 80, left: 100 };
-console.log("svgWidth: " + svgWidth + " svgHeight: " + svgHeight + " plotwidth: " + plotwidth + " plotheight: " + plotheight + " radius: " + radius);
+const radius = svgWidth / 2 - 20;
+const isMobile = window.innerWidth <= 768;
+const margin = isMobile
+	? {
+		top: svgWidth / 4,
+		bottom: svgWidth / 6,
+		left: svgWidth / 5,
+		right: svgWidth / 4
+	} : {
+		top: svgWidth / 10,
+		right: svgWidth / 7,
+		bottom: svgWidth / 4,
+		left: svgWidth / 10
+	};
 
-// const svgWidth = 1000;
-// const svgHeight = 1200;
-// const plotheight = 800
-// const plotwidth = 800
-// const radius = 380
-// const margin = { top: 80, right: 0, bottom: 80, left: 100 };
- 
+const fontSizeCompl = isMobile ? "3pt" : "6pt";
+const strokeWidthCompl = isMobile ? 0.3 : 1;
+	
 var text;
 var dataframe = []
 var coldat = []
@@ -248,7 +243,7 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 				case 0:
 					switch (relativeData) {
 						case 1:
-							color =  d3.scaleOrdinal([0, root.children.length], d3.schemeTableau10)// TOLColors
+							color = d3.scaleOrdinal([0, root.children.length], d3.schemeTableau10)// TOLColors
 							break;
 						case 0:
 							color = d3.scaleOrdinal([0, root.children.length], d3.schemeTableau10)// TOLColors
@@ -281,10 +276,9 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 		 */
 		function showTooltip(event, d) {
 			TTy_offset_var = TTy_offset;
-			let visibility;
 			let ttopacity = 1;
 			let ttcolor = "black";
-			visibility = "visible"
+			let visibility = "visible"
 			if (d.parent) { tooltiptext = d.data[0]; }
 			else { ttcolor = ' black', ttopacity = .8; tooltiptext = (!prop ? "switch to categorical view" : "switch to abundance view"); }
 			tooltiptextwidth = measureTextLength(tooltiptext, getCanvasFontSize(document.getElementById("tooltiptext")))
@@ -297,7 +291,7 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 			tooltip
 				.style("visibility", visibility)
 				.style("position", "fixed")
-				.style("width", tooltiptext + "px")
+				.style("width", tooltiptextwidth + "px")
 				.html("<strong>" + tooltiptext + "</strong>")//+ " "+ d.data.val.toExponential(3))
 				.style("text-align", text_anchor)
 				.style("left", (event.x) - TTx_offset_var + "px")
@@ -324,8 +318,10 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 					'<br>'
 					+ '<br> ' + getparentnames(d)
 				)
-				//	.transition().duration(2000)
-				//	.style("color","red")
+				.style("visibility", 'visible')
+				// suggest some transition effects
+				.style("transition", "all 2s ease-in-out")
+				.style("transition-delay", "0s")
 				.style("left", (event.x) - TTx_offset_var + "px")
 				.style("top", (event.y) - TTy_offset_var + "px")
 		}
@@ -367,8 +363,9 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 				if (d.parent.parent) {
 					applyparents(d.parent, select, val);
 				}
-				if (d.parent) { 
-				d3.select(d.pie).style(select, val) ;}
+				if (d.parent) {
+					d3.select(d.pie).style(select, val);
+				}
 			}
 
 			function switch_mode() {
@@ -387,7 +384,7 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 
 								break;
 							case 0:
-								return  color(d.ancestors().reverse()[1]?.index);//color[(d.ancestors().reverse()[1]?.index)]/
+								return color(d.ancestors().reverse()[1]?.index);//color[(d.ancestors().reverse()[1]?.index)]/
 								break;
 						}
 						break;
@@ -413,9 +410,9 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 				.attr('class', 'sunBurst_field')
 				.on("mouseover", function (event, d) {
 					if (d.parent) {
-						if (hl){ applyparents(d, 'opacity', 0.65)};
+						if (hl) { applyparents(d, 'opacity', 0.65) };
 						showTooltip(event, d);
-						if (!d.children){ d3.select(d.label).attr("class", "textlabels--active")}
+						if (!d.children) { d3.select(d.label).attr("class", "textlabels--active") }
 						d3.select(this).style("stroke", 'red'); d3.select(this).style("stroke-width", '1px');
 						d3.select(this).style("opacity", '1');
 					}
@@ -425,7 +422,7 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 				.on("scroll", moveTooltip)
 				.on("mouseleave", function (event, d) {
 					if (d.parent) {
-						if (hl){applyparents(d, 'opacity', 0.9)};
+						if (hl) { applyparents(d, 'opacity', 0.9) };
 						d3.select(d.label).attr("class", "textlabels"); d3.select(this).style("stroke-width", "0.7"); d3.select(this).style("stroke", 'black'); d3.select(this).style('fill-opacity', 1);
 						d3.select(this).style("opacity", '0.9');
 					}; hideTooltip()
@@ -452,8 +449,9 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 				.attr("cursor", d => (d.children ? "none" : "pointer"))
 				.attr("class", "textlabels")
 				//	.style("font-size", d => (1/Math.sqrt(measureTextLength(d.data[0], getCanvasFontSize(document.getElementsByClassName("textlabels")[0])))* 20 +"px"))
-				.style("font-size", "6pt")
+				.style("font-size", fontSizeCompl)
 				.style("stroke", 'black')
+				.style("stroke-width", strokeWidthCompl)
 				.each(function (d) { d.label = this; })
 				.attr("transform",
 					function (d) {
@@ -493,10 +491,10 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 					.attr("font", "11pt")
 					.attr("id", "tooltiptext")
 					.style("z-index", "10")
-					.style("visibility", "visible")
+					.style("visibility", "hidden")
 
 			// Add the legend for the colors
-			let rectWidth = svgWidth / 23;
+			let rectWidth = svgWidth / 20;
 			let rectHeight = svgHeight / 50;
 			let legendx = - ((svgWidth - margin.left - margin.right) / 2);
 			let legendy = svgHeight - margin.bottom - margin.top;
@@ -516,15 +514,17 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 					.attr("height", rectHeight)
 					.attr("y", legendy)
 					.attr("x", function (d, i) { return legendx + i * (size) })
-					.style("fill", d => !relativeData ?color(d.index) : color(d.index))//
+					.style("fill", d => !relativeData ? color(d.index) : color(d.index))//
 				// Add labels beside legend 
 				legend
 					.enter()
 					.append("text")
 					.attr("class", "categorical")
-					.attr("x", (d, i) => legendx + i * size - svgWidth / 50)
-					.attr("y", legendy + svgHeight / 25)
-					.attr("transform", (d, i) => "rotate(-00 " + (legendx + i * size) + " " + legendy + ")")
+					.attr("x", (d, i) => legendx + i * size - (size / 2))
+					.attr("y", legendy + svgHeight / 15)
+					.attr("transform", (d, i) => "rotate(-20 " + (legendx + i * size) + " " + legendy + ")")
+					.style("font-size", fontSizeCompl)
+					.style("stroke-width", strokeWidthCompl)
 					.style("fill", d => !relativeData ? color(d.index) : color(d.index)) //color[d.index]: color[d.index])p
 					.text(d => !prop_bool ? (d.data[0]) : 200 * d.index / 10)
 					.attr("text-anchor", "left")
@@ -616,9 +616,9 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 		//root = create_data([])
 		//create_sunb_data(prop)
 		//let svg = draw_sunb(prop)
-		d3.select("#SBcheckbox").on("click", function(){
-					hl	= !hl
-			})
+		d3.select("#SBcheckbox").on("click", function () {
+			hl = !hl
+		})
 
 		d3.select("#ButtonSB2")
 			.attr("class", "unclicked")
@@ -669,7 +669,7 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 
 		// InfoBox
 		d3.select("#infoBox")
-			.on("click",function(){changeInfoBox()})
+			.on("click", function () { changeInfoBox() })
 
 		d3.select("#infoBox")
 			.append("p")
