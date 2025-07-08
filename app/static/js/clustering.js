@@ -51,7 +51,6 @@ d3.csv(dataset).then(function (data) {
         return isMobileUserAgent || isTouchDevice;
     }
     const isMobile = checkMobile();
-    // const isMobile = window.innerWidth <= 768;
 
     const margin = isMobile
         ? {

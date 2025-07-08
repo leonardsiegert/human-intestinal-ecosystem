@@ -67,8 +67,8 @@ function checkMobile() {
   return isMobileUserAgent || isTouchDevice;
 }
 const isMobile = checkMobile();
-// const isMobile = window.innerWidth <= 768;
-const containerWidth = isMobile ?
+// Both if on mobile and if in the iframe, we want to use a smaller width for the histograms
+const containerWidth = isMobile || window.frameElement ?
   container.clientWidth * 0.9 :
   container.clientWidth * 0.5;
 

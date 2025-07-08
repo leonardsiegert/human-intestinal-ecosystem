@@ -63,7 +63,6 @@ const container = document.getElementById("sunBurst");
 const svgWidth = container.clientWidth * 0.75;
 const svgHeight = svgWidth;
 const radius = svgWidth / 2 - 20;
-// const isMobile = window.innerWidth <= 768;
 function checkMobile() {
   const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
