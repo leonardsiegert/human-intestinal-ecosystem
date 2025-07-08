@@ -7,7 +7,6 @@ if (window.frameElement) {
 	d3.select("#resetSelection").style("max-height", 0);
 	// add a link to the h2.subtitle
 	d3.select("h2.subtitle")
-		.style("hover", "text-decoration: underline;")
 		.on("click", () => {
 			window.top.location.href = "/sunburst";
 		})
@@ -64,7 +63,21 @@ const container = document.getElementById("sunBurst");
 const svgWidth = container.clientWidth * 0.75;
 const svgHeight = svgWidth;
 const radius = svgWidth / 2 - 20;
-const isMobile = window.innerWidth <= 768;
+// const isMobile = window.innerWidth <= 768;
+function checkMobile() {
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+  // Check for common mobile indicators in the user agent string
+  const isTouchDevice =
+    'ontouchstart' in window ||
+    navigator.maxTouchPoints > 0 ||
+    navigator.msMaxTouchPoints > 0;
+
+  const isMobileUserAgent = /android|iphone|ipad|ipod|mobile|blackberry|iemobile|opera mini/i.test(userAgent);
+
+  return isMobileUserAgent || isTouchDevice;
+}
+const isMobile = checkMobile();
 const margin = isMobile
 	? {
 		top: svgWidth / 4,
@@ -78,7 +91,7 @@ const margin = isMobile
 		left: svgWidth / 10
 	};
 
-const fontSizeCompl = isMobile ? "3pt" : "6pt";
+const fontSizeCompl = isMobile ? "3pt" : "8pt";
 const strokeWidthCompl = isMobile ? 0.3 : 1;
 
 var text;

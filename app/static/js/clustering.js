@@ -37,7 +37,21 @@ d3.csv(dataset).then(function (data) {
     const scaleFactor = containerWidth / baseWidth;
 
     // Use smaller margins on mobile
-    const isMobile = window.innerWidth <= 768;
+    function checkMobile() {
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+        // Check for common mobile indicators in the user agent string
+        const isTouchDevice =
+            'ontouchstart' in window ||
+            navigator.maxTouchPoints > 0 ||
+            navigator.msMaxTouchPoints > 0;
+
+        const isMobileUserAgent = /android|iphone|ipad|ipod|mobile|blackberry|iemobile|opera mini/i.test(userAgent);
+
+        return isMobileUserAgent || isTouchDevice;
+    }
+    const isMobile = checkMobile();
+    // const isMobile = window.innerWidth <= 768;
 
     const margin = isMobile
         ? {

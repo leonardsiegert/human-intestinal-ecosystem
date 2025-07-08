@@ -52,7 +52,22 @@ function getSessionStorage() {
 
 // Get container's computed size
 const container = document.getElementsByClassName('hist')[0];
-const isMobile = window.innerWidth <= 768;
+// Use smaller margins on mobile
+function checkMobile() {
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+  // Check for common mobile indicators in the user agent string
+  const isTouchDevice =
+    'ontouchstart' in window ||
+    navigator.maxTouchPoints > 0 ||
+    navigator.msMaxTouchPoints > 0;
+
+  const isMobileUserAgent = /android|iphone|ipad|ipod|mobile|blackberry|iemobile|opera mini/i.test(userAgent);
+
+  return isMobileUserAgent || isTouchDevice;
+}
+const isMobile = checkMobile();
+// const isMobile = window.innerWidth <= 768;
 const containerWidth = isMobile ?
   container.clientWidth * 0.9 :
   container.clientWidth * 0.5;
