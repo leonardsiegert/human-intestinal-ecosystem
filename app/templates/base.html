@@ -4,25 +4,22 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}">
     <script src="https://d3js.org/d3.v7.min.js" charset="utf-8"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Human Intestinal Ecosystem</title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon_HIE_notransp.ico') }}">
 </head>
 <body>
-    <center>
-<a href="{{ url_for('landing_page') }}" style = "text-decoration: none; color: black">
-    <div class = "title" onclick="location.href='{{url_for('landing_page')}}';" style="cursor: pointer;"> 
-        <div style = "display: flex; flex-direction: column; row-gap: -30px; justify-content: space-around;">
-            <div style = "display: flex; justify-content: center;  align-items: center;">
-                <div style = "float:left; margin-right:15px"> <img src="{{url_for('static', filename='images/favicon_HIE_large.ico')}}" /></div>
-                <div style = "float:left"><h1 style="font-family: Arial, Verdana;">Human Intestinal Ecosystem </h1></div>
+    <header class="site-header">
+        <a href="{{ url_for('landing_page') }}" class="logo-link">
+        <div class="title logo-container">
+            <img src="{{ url_for('static', filename='images/favicon_HIE_large.ico') }}" alt="HIE Logo" class="logo-img">
+            <div class="title-text">
+            <h1>Human Intestinal Ecosystem</h1>
+            <h2>Microbiomes and Health</h2>
             </div>
-        <div >
-             <h2 style="font-family: Arial, Verdana;"> Microbiomes and Health</a> </h2>
         </div>
-        </div>
-    </div>
-    </a>
-    </center>
+        </a>
+    </header>
     {% block content %}
     {% endblock %}
 

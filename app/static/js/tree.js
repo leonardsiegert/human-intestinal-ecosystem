@@ -1,14 +1,28 @@
-/*  
- * Group Project Hierarchical Tree Visualization of intestinal gut bacteria taxonomy and species.
- * @author: Dexter Frueh
- */
-
 /**
  * SVG canvas dimensions and margins for the tree plot visualization.
  */
-const svgWidth = 1200 ;
-const svgHeight = 2400;
-const margin = {top: 20, right: 300, bottom: 300, left: 300};
+const container = document.getElementById("tree");
+console.log(container.clientHeight, container.clientWidth);
+const svgWidth = container.clientWidth;
+const svgHeight = svgWidth * 2;
+// const svgWidth = 1200 ;
+// const svgHeight = 2400;
+const margin = {
+  top: svgWidth / 10,
+  right: svgWidth / 7,
+  bottom: svgWidth / 4,
+  left: svgWidth / 50
+};
+// const margin = {top: 20, right: 300, bottom: 300, left: 300};
+
+// if on mobile, change font size and such
+const isMobile = window.innerWidth <= 768;
+
+const pathsize = isMobile ? 1 : 50;
+const textx = isMobile ? 2 : 6;
+const texty = isMobile ? 2 : 6;
+const fontsize_tree = isMobile ? "4pt" : "8pt";
+const strokeWidth = isMobile ? 0.3 : 1;
 
 var text;
 var dataframe = []
@@ -62,7 +76,9 @@ d3.csv(dataset).then(function(data){
     collapse(root)
     console.log(root)
 
-    tree.size([2400,1200])
+    // Set the size of the tree layout based on the SVG dimensions.
+    // Adjust the size for mobile view
+    tree.size(isMobile ? [svgHeight*0.9,svgWidth*0.75] : [svgHeight*0.5,svgWidth*0.85]);
     tree(root);
 
     console.log(root.descendants())
@@ -76,8 +92,8 @@ d3.csv(dataset).then(function(data){
         .append('path')
         .attr("d", function(d) {
             return "M" + d.y + "," + d.x
-                + "C" + (d.parent.y + 50) + "," + d.x
-                + " " + (d.parent.y + 150) + "," + d.parent.x
+                + "C" + (d.parent.y + pathsize) + "," + d.x
+                + " " + (d.parent.y + pathsize*3) + "," + d.parent.x
                 + " " + d.parent.y + "," + d.parent.x;
         })
         .style("fill", 'none')
@@ -96,11 +112,11 @@ d3.csv(dataset).then(function(data){
     node.append("circle")
         .attr("r", 2.5)
     node.append("text")
-        .attr("y", d => d.children ? -6 : 5)
-        .attr("x", d => d.children ? -6 : 6)
+        .attr("y", d => d.children ? -texty : texty)
+        .attr("x", d => d.children ? -textx : textx)
         .style("text-anchor", d => d.children ? "end" : "start")
-        .style("font-size", "8pt")
-        .style("stroke-width", 1)
+        .style("font-size", fontsize_tree)
+        .style("stroke-width", strokeWidth)
         .style("stroke", 'black')
         .text(function(d) { return d.data[0] })
 

@@ -1,0 +1,54 @@
+.main-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: Arial, Verdana, sans-serif;
+}
+
+.landing-intro {
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.cta-container {
+  margin-top: 1rem;
+}
+
+.explore-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.explore-button:hover {
+  background-color: #0056b3;
+}
+
+.landing-image {
+  text-align: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.landing-image img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.footer-links {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1rem;
+}

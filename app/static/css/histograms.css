@@ -1,0 +1,26 @@
+#resetSelection {
+    margin-left: 1.5rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+  }
+
+h2.subtitle {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+
+h4.subtitle {
+  margin-left: 1.5rem;
+  margin-bottom: 0rem;
+}
+
+.item {
+  flex: 1 1 calc(50% - 1rem);
+  box-sizing: border-box;
+  margin-top: 0rem;
+}
+@media (max-width: 768px) {
+  .item {
+    flex: 1 1 100%;
+  }
+}

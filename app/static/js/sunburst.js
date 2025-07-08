@@ -1,13 +1,25 @@
-/*  
- * Group Project Hierarchical Tree Visualization of intestinal gut bacteria taxonomy and species
- * @author: Dexter Frueh
- */
-
 /**
  * Remove the title element if the script is running inside an iframe.
  */
 if (window.frameElement) {
-    document.getElementsByClassName("title")[0].remove();
+	document.getElementsByClassName("title")[0].remove();
+	d3.select("#updateData").style('visibility', "hidden");
+	d3.select("#resetSelection").style("max-height", 0);
+	// add a link to the h2.subtitle
+	d3.select("h2.subtitle")
+		.on("click", () => {
+			window.top.location.href = "/sunburst";
+		})
+		// when hovering over the subtitle, underline it and change cursor
+		.style("cursor", "pointer")
+		.on("mouseover", function () {
+			d3.select(this)
+				.style("text-decoration", "underline");
+		})
+		.on("mouseout", function () {
+			d3.select(this)
+				.style("text-decoration", "none");
+		});
 }
 
 /**
@@ -17,11 +29,11 @@ if (window.frameElement) {
  * @returns {number} The width of the text in pixels.
  */
 function measureTextLength(text, font) {
-    const canvas = measureTextLength.canvas || (measureTextLength.canvas = document.createElement("canvas"));
-    const context = canvas.getContext("2d");
-    context.font = font;
-    const metrics = context.measureText(text);
-    return metrics.width;
+	const canvas = measureTextLength.canvas || (measureTextLength.canvas = document.createElement("canvas"));
+	const context = canvas.getContext("2d");
+	context.font = font;
+	const metrics = context.measureText(text);
+	return metrics.width;
 }
 
 /**
@@ -31,7 +43,7 @@ function measureTextLength(text, font) {
  * @returns {string} The computed style value.
  */
 function getCssStyle(element, prop) {
-    return window.getComputedStyle(element, null).getPropertyValue(prop);
+	return window.getComputedStyle(element, null).getPropertyValue(prop);
 }
 
 /**
@@ -40,20 +52,46 @@ function getCssStyle(element, prop) {
  * @returns {string} The CSS font string.
  */
 function getCanvasFontSize(el = document.body) {
-    const fontWeight = getCssStyle(el, 'font-weight') || 'normal';
-    const fontSize = getCssStyle(el, 'font-size') || '16px';
-    const fontFamily = getCssStyle(el, 'font-family') || 'Times New Roman';
-    return `${fontWeight} ${fontSize} ${fontFamily}`;
+	const fontWeight = getCssStyle(el, 'font-weight') || 'normal';
+	const fontSize = getCssStyle(el, 'font-size') || '16px';
+	const fontFamily = getCssStyle(el, 'font-family') || 'Times New Roman';
+	return `${fontWeight} ${fontSize} ${fontFamily}`;
 }
 
 
+const container = document.getElementById("sunBurst");
+const svgWidth = container.clientWidth * 0.75;
+const svgHeight = svgWidth;
+const radius = svgWidth / 2 - 20;
+function checkMobile() {
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-const svgWidth = 1000;
-const svgHeight = 1200;
-const plotheight = 800
-const plotwidth = 800
-const radius = 380
-const margin = { top: 80, right: 0, bottom: 80, left: 100 };
+  // Check for common mobile indicators in the user agent string
+  const isTouchDevice =
+    'ontouchstart' in window ||
+    navigator.maxTouchPoints > 0 ||
+    navigator.msMaxTouchPoints > 0;
+
+  const isMobileUserAgent = /android|iphone|ipad|ipod|mobile|blackberry|iemobile|opera mini/i.test(userAgent);
+
+  return isMobileUserAgent || isTouchDevice;
+}
+const isMobile = checkMobile();
+const margin = isMobile
+	? {
+		top: svgWidth / 4,
+		bottom: svgWidth / 6,
+		left: svgWidth / 5,
+		right: svgWidth / 4
+	} : {
+		top: svgWidth / 10,
+		right: svgWidth / 7,
+		bottom: svgWidth / 4,
+		left: svgWidth / 10
+	};
+
+const fontSizeCompl = isMobile ? "3pt" : "8pt";
+const strokeWidthCompl = isMobile ? 0.3 : 1;
 
 var text;
 var dataframe = []
@@ -117,8 +155,6 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 			basesvg.selectAll("*").remove()
 			tooltip.remove()
 		}
-
-		function remove_data() {}
 
 		/**
 		 * Create hierarchical data structure for the sunburst plot based on selected indices.
@@ -236,7 +272,7 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 				case 0:
 					switch (relativeData) {
 						case 1:
-							color =  d3.scaleOrdinal([0, root.children.length], d3.schemeTableau10)// TOLColors
+							color = d3.scaleOrdinal([0, root.children.length], d3.schemeTableau10)// TOLColors
 							break;
 						case 0:
 							color = d3.scaleOrdinal([0, root.children.length], d3.schemeTableau10)// TOLColors
@@ -269,10 +305,9 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 		 */
 		function showTooltip(event, d) {
 			TTy_offset_var = TTy_offset;
-			let visibility;
 			let ttopacity = 1;
 			let ttcolor = "black";
-			visibility = "visible"
+			let visibility = "visible"
 			if (d.parent) { tooltiptext = d.data[0]; }
 			else { ttcolor = ' black', ttopacity = .8; tooltiptext = (!prop ? "switch to categorical view" : "switch to abundance view"); }
 			tooltiptextwidth = measureTextLength(tooltiptext, getCanvasFontSize(document.getElementById("tooltiptext")))
@@ -285,7 +320,7 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 			tooltip
 				.style("visibility", visibility)
 				.style("position", "fixed")
-				.style("width", tooltiptext + "px")
+				.style("width", tooltiptextwidth + "px")
 				.html("<strong>" + tooltiptext + "</strong>")//+ " "+ d.data.val.toExponential(3))
 				.style("text-align", text_anchor)
 				.style("left", (event.x) - TTx_offset_var + "px")
@@ -312,8 +347,10 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 					'<br>'
 					+ '<br> ' + getparentnames(d)
 				)
-				//	.transition().duration(2000)
-				//	.style("color","red")
+				.style("visibility", 'visible')
+				// suggest some transition effects
+				.style("transition", "all 2s ease-in-out")
+				.style("transition-delay", "0s")
 				.style("left", (event.x) - TTx_offset_var + "px")
 				.style("top", (event.y) - TTy_offset_var + "px")
 		}
@@ -336,7 +373,7 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 			//create pie parts from the partition coordinates and everything belonging to that chart
 			svg = basesvg.append("g")
 				.attr("id", "sunburstsvg")
-				.attr("transform", "translate(" + (margin.left + plotwidth / 2) + "," + (margin.top + plotheight / 2) + ")");
+				.attr("transform", "translate(" + (margin.left + svgWidth / 2) + "," + (margin.top + svgHeight / 2) + ")");
 
 			const pie = d3.arc()
 				.startAngle(d => d.x0)
@@ -350,16 +387,14 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 			/// add partition plot
 			node = svg.selectAll('g')
 				.data(root.descendants())
-			//	const node = basenode.data(root.descendants())
 
 			function applyparents(d, select, val) {
 				if (d.parent.parent) {
 					applyparents(d.parent, select, val);
 				}
-				if (d.parent) { 
-				//d3.select(d.parent.pie).style(select, val) ;
-				d3.select(d.pie).style(select, val) ;}
-				//d3.select(d.pie).style("fill", "black") ;
+				if (d.parent) {
+					d3.select(d.pie).style(select, val);
+				}
 			}
 
 			function switch_mode() {
@@ -378,7 +413,7 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 
 								break;
 							case 0:
-								return  color(d.ancestors().reverse()[1]?.index);//color[(d.ancestors().reverse()[1]?.index)]/
+								return color(d.ancestors().reverse()[1]?.index);//color[(d.ancestors().reverse()[1]?.index)]/
 								break;
 						}
 						break;
@@ -404,9 +439,9 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 				.attr('class', 'sunBurst_field')
 				.on("mouseover", function (event, d) {
 					if (d.parent) {
-						if (hl){ applyparents(d, 'opacity', 0.65)};
+						if (hl) { applyparents(d, 'opacity', 0.65) };
 						showTooltip(event, d);
-						if (!d.children){ d3.select(d.label).attr("class", "textlabels--active")}
+						if (!d.children) { d3.select(d.label).attr("class", "textlabels--active") }
 						d3.select(this).style("stroke", 'red'); d3.select(this).style("stroke-width", '1px');
 						d3.select(this).style("opacity", '1');
 					}
@@ -416,7 +451,7 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 				.on("scroll", moveTooltip)
 				.on("mouseleave", function (event, d) {
 					if (d.parent) {
-						if (hl){applyparents(d, 'opacity', 0.9)};
+						if (hl) { applyparents(d, 'opacity', 0.9) };
 						d3.select(d.label).attr("class", "textlabels"); d3.select(this).style("stroke-width", "0.7"); d3.select(this).style("stroke", 'black'); d3.select(this).style('fill-opacity', 1);
 						d3.select(this).style("opacity", '0.9');
 					}; hideTooltip()
@@ -425,9 +460,6 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 					if (d.parent) {
 						if (!d.children) {
 							setSessionStorage(d.data[0]);
-							if (window.frameElement) {
-								parent.document.getElementById("updatePCA").click();
-							}
 						}
 						clickTooltip(event, d)
 					}
@@ -446,8 +478,9 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 				.attr("cursor", d => (d.children ? "none" : "pointer"))
 				.attr("class", "textlabels")
 				//	.style("font-size", d => (1/Math.sqrt(measureTextLength(d.data[0], getCanvasFontSize(document.getElementsByClassName("textlabels")[0])))* 20 +"px"))
-				.style("font-size", "6pt")
+				.style("font-size", fontSizeCompl)
 				.style("stroke", 'black')
+				.style("stroke-width", strokeWidthCompl)
 				.each(function (d) { d.label = this; })
 				.attr("transform",
 					function (d) {
@@ -478,27 +511,26 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 			complNode
 				.on("click", function (event, d) {
 					setSessionStorage(d.data[0]);
-					if (window.frameElement) {
-						parent.document.getElementById("updatePCA").click();
-					}
 				})
 
 			tooltip =
 				d3.select("#sunBurst")
 					.append("div")
-					.style("position", "absolute")
 					.attr("class", "tooltip")
 					.attr("font", "11pt")
 					.attr("id", "tooltiptext")
 					.style("z-index", "10")
-					.style("visibility", "visible")
+					.style("visibility", "hidden")
 
 			// Add the legend for the colors
-			let legendx = -380
-			let legendy = 480
+			let rectWidth = svgWidth / 20;
+			let rectHeight = svgHeight / 50;
+			let legendx = - ((svgWidth - margin.left - margin.right) / 2);
+			let legendy = svgHeight - margin.bottom - margin.top;
+			let legendwidth = svgWidth - margin.left - margin.right;
+
 
 			if (!prop) {
-				legendwidth = 900
 				// Add one rectangle in the legend for each name.
 				var legend = svg.selectAll(".legend")
 					.data(root.children)
@@ -507,26 +539,27 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 					.enter()
 					.append("rect")
 					.attr("class", "sunBurst_field")
-					.attr("width", 27)
-					.attr("height", 9)
+					.attr("width", rectWidth)
+					.attr("height", rectHeight)
 					.attr("y", legendy)
 					.attr("x", function (d, i) { return legendx + i * (size) })
-					.style("fill", d => !relativeData ?color(d.index) : color(d.index))//
+					.style("fill", d => !relativeData ? color(d.index) : color(d.index))//
 				// Add labels beside legend 
 				legend
 					.enter()
 					.append("text")
 					.attr("class", "categorical")
-					.attr("x", (d, i) => legendx + i * size - 20)
-					.attr("y", legendy + 35)
-					.attr("transform", (d, i) => "rotate(-00 " + (legendx + i * size) + " " + legendy + ")")
+					.attr("x", (d, i) => legendx + i * size - (size / 2))
+					.attr("y", legendy + svgHeight / 15)
+					.attr("transform", (d, i) => "rotate(-20 " + (legendx + i * size) + " " + legendy + ")")
+					.style("font-size", fontSizeCompl)
+					.style("stroke-width", strokeWidthCompl)
 					.style("fill", d => !relativeData ? color(d.index) : color(d.index)) //color[d.index]: color[d.index])p
 					.text(d => !prop_bool ? (d.data[0]) : 200 * d.index / 10)
 					.attr("text-anchor", "left")
 					.style("alignment-baseline", "middle")
 			}
 			else {
-				legendwidth = 300
 				var hundredArray = Array.from(Array(100).keys());
 				var xcolorScale = d3.scaleLinear()
 					.domain([0, 99])
@@ -541,7 +574,7 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 					.attr("class", "continuous, sunBurst_field")
 					.attr("x", (d) => legendx + Math.floor(xcolorScale(d)))
 					.attr("y", legendy)
-					.attr("height", 20)
+					.attr("height", rectHeight)
 					.attr("width", (d) => {
 						if (d == 1) {
 							return 6;
@@ -574,7 +607,6 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 		 */
 		function create_rel_data() {
 			remove_sunb()
-			remove_data()
 			giveChildValue(root)
 			create_sunb_data(prop)
 			draw_sunb(prop)
@@ -594,7 +626,6 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 				indices = Array.from(indices.split(','), Number)
 			} else { indices = []; }
 			remove_sunb()
-			remove_data()
 			create_data(indices)
 			//calc_bacteria_abundance(data_selection)
 			create_sunb_data(prop_bool)
@@ -614,9 +645,9 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 		//root = create_data([])
 		//create_sunb_data(prop)
 		//let svg = draw_sunb(prop)
-		d3.select("#SBcheckbox").on("click", function(){
-					hl	= !hl
-			})
+		d3.select("#SBcheckbox").on("click", function () {
+			hl = !hl
+		})
 
 		d3.select("#ButtonSB2")
 			.attr("class", "unclicked")
@@ -658,7 +689,7 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 			});
 
 		d3.select("#updateData")
-			.style("visibility", "visible")
+			// .style("visibility", "visible")
 			.on("click", function (event) {
 				console.log("update Data " + prop)
 				update_page(prop)
@@ -666,24 +697,18 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 
 
 		// InfoBox
-		d3.select("#clusterInfoBox")
-			.style("background", "rgb(185, 205, 207)")
-			.style("margin-left", 20 + "px")
-			.style("width", svgWidth -50+ "px")
-			.style("border", "solid")
-			.style("padding", "2px")
-			.style("border-radius", "25px")
-			.on("click",function(){changeInfoBox()})
+		d3.select("#infoBox")
+			.on("click", function () { changeInfoBox() })
 
-		d3.select("#clusterInfoBox")
+		d3.select("#infoBox")
 			.append("p")
-			.attr("id", "clusterInfoBox1");
-		d3.select("#clusterInfoBox")
+			.attr("id", "infoBox1");
+		d3.select("#infoBox")
 			.append("p")
-			.attr("id", "clusterInfoBox2");
-		d3.select("#clusterInfoBox")
+			.attr("id", "infoBox2");
+		d3.select("#infoBox")
 			.append("p")
-			.attr("id", "clusterInfoBox3");
+			.attr("id", "infoBox3");
 
 
 		infobox = 0
@@ -700,13 +725,13 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 				d3.select("#InfoButton").attr("class", 'clicked')
 			}
 			else {
-				d3.select("#clusterInfoBox1")
+				d3.select("#infoBox1")
 					.text(text1);
-				d3.select("#clusterInfoBox2")
+				d3.select("#infoBox2")
 					.text(text2);
-				d3.select("#clusterInfoBox3")
+				d3.select("#infoBox3")
 					.text(text3);
-				d3.select("#clusterInfoBox").style("visibility", "hidden")
+				d3.select("#infoBox").style("visibility", "hidden")
 				infobox = 1
 				d3.select("#InfoButton").attr("class", 'unclicked')
 			}
@@ -715,7 +740,7 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 		 * Show the InfoBox.
 		 */
 		function hideInfoBox() {
-			d3.select("#clusterInfoBox").style("visibility", 'visible')
+			d3.select("#infoBox").style("visibility", 'visible')
 			infobox = 0
 		}
 
