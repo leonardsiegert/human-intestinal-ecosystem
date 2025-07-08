@@ -154,7 +154,7 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 		 */
 		function remove_sunb() {
 			basesvg.selectAll("*").remove()
-			tooltip.remove()
+			// tooltip.remove()
 		}
 
 		/**
@@ -311,24 +311,29 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 			let visibility = "visible"
 			if (d.parent) { tooltiptext = d.data[0]; }
 			else { ttcolor = ' black', ttopacity = .8; tooltiptext = (!prop ? "switch to categorical view" : "switch to abundance view"); }
-			tooltiptextwidth = measureTextLength(tooltiptext, getCanvasFontSize(document.getElementById("tooltiptext")))
+			tooltiptextwidth = measureTextLength(tooltiptext, getCanvasFontSize(document.getElementById("tooltiptext")))+7
 			tooltiptextwidth_large = 250
 			if (svgWidth - event.x < tooltiptextwidth_large) {
 				TTx_offset_var = tooltiptextwidth
 			}
 			else { TTx_offset_var = document.getElementById("sunBurst").offsetLeft - TTx_offset - 40; }
 			text_anchor = "left"
+			let leftttloc = (event.x) - TTx_offset_var 
+			if (leftttloc < 0) leftttloc = 0
+			if (leftttloc + tooltiptextwidth_large > window.innerWidth) {
+        		leftttloc = window.innerWidth - tooltiptextwidth_large;}
 			tooltip
 				.style("visibility", visibility)
 				.style("position", "fixed")
 				.style("width", tooltiptextwidth + "px")
 				.html("<strong>" + tooltiptext + "</strong>")//+ " "+ d.data.val.toExponential(3))
 				.style("text-align", text_anchor)
-				.style("left", (event.x) - TTx_offset_var + "px")
+				.style("left", leftttloc + "px")
 				.style("top", (event.y) - TTy_offset_var + "px")
 				.style("background-color", ttcolor)
 				.style("opacity", ttopacity)
-			//.style("color", "red")
+			    .style("pointer-events", "none");
+			//.style("color", "red"r)
 		}
 		/**
 		 * Show detailed information in the tooltip when a segment is clicked.
@@ -339,22 +344,33 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 			let val = d.data.val
 			let totval = d.data.val_total
 			let relval = d.data.val_rel
-			console.log(val, totval, relval, d)
+			//console.log(val, totval, relval, d)
+			let leftttloc = (event.x) - TTx_offset_var 
+			if (leftttloc < 0) leftttloc = 0
+			if (leftttloc + tooltiptextwidth_large > window.innerWidth) {
+        		leftttloc = window.innerWidth - tooltiptextwidth_large;}
 			tooltip
-				//.style("width", tooltiptextwidth_large)
 				.html('<strong> ' + d.data[0] +
 					'</strong> <br>' + parseFloat((val * 100).toFixed(1 - Math.floor(Math.log(val) / Math.log(10)))) + "% of total bacteria abundance" +
 					'<br>' + parseFloat((relval * 100).toFixed(1 - Math.floor(Math.log(relval) / Math.log(10)))) + "% compared to average abundance " +
 					'<br>'
 					+ '<br> ' + getparentnames(d)
 				)
+				.style("width", tooltiptextwidth_large + "px")
 				.style("visibility", 'visible')
-				// suggest some transition effects
-				.style("transition", "all 2s ease-in-out")
-				.style("transition-delay", "0s")
-				.style("left", (event.x) - TTx_offset_var + "px")
+				.style("left", leftttloc+ "px")
 				.style("top", (event.y) - TTy_offset_var + "px")
+				
+			if (isMobile) {
+				tooltip.transition()
+					.delay(2000)
+					.style("opacity", 0)
+					.on("end", function() {
+						tooltip.style("visibility", "hidden").style("opacity", 1);
+					});
+			}
 		}
+		
 
 		const moveTooltip = function (event, d) {
 			tooltip
@@ -365,6 +381,16 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 			tooltip
 				.style("visibility", 'hidden')
 		}
+		tooltip =
+				d3.select("#sunBurst")
+					.append("div")
+					.attr("class", "tooltip")
+					.attr("font", "11pt")
+					.attr("id", "tooltiptext")
+					.style("z-index", "10")
+					.style("visibility", "hidden")
+					.style("padding","4px 4px")
+				//	.on("mousemove", moveTooltip)
 
 		/**
 		 * Draw the sunburst plot using the current hierarchical data and mode.
@@ -439,6 +465,7 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 				.style("cursor", d => d.parent ? "pointer" : "pointer")
 				.attr('class', 'sunBurst_field')
 				.on("mouseover", function (event, d) {
+					if (!isMobile){
 					if (d.parent) {
 						if (hl) { applyparents(d, 'opacity', 0.65) };
 						showTooltip(event, d);
@@ -447,7 +474,7 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 						d3.select(this).style("opacity", '1');
 					}
 					else { showTooltip(event, { data: ["switch to proportional view"] }) }
-				})
+				}})
 				.on("mousemove", moveTooltip)
 				.on("scroll", moveTooltip)
 				.on("mouseleave", function (event, d) {
@@ -455,14 +482,16 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 						if (hl) { applyparents(d, 'opacity', 0.9) };
 						d3.select(d.label).attr("class", "textlabels"); d3.select(this).style("stroke-width", "0.7"); d3.select(this).style("stroke", 'black'); d3.select(this).style('fill-opacity', 1);
 						d3.select(this).style("opacity", '0.9');
-					}; hideTooltip()
+					};// hideTooltip()
 				})
+			//	.on("touchdown", showTooltip)
 				.on("click", function (event, d) {
-					if (d.parent) {
+				showTooltip(event, d);
+				if (d.parent) {
+						clickTooltip(event, d)
 						if (!d.children) {
 							setSessionStorage(d.data[0]);
 						}
-						clickTooltip(event, d)
 					}
 					else {
 						hideTooltip();
@@ -514,14 +543,6 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 					setSessionStorage(d.data[0]);
 				})
 
-			tooltip =
-				d3.select("#sunBurst")
-					.append("div")
-					.attr("class", "tooltip")
-					.attr("font", "11pt")
-					.attr("id", "tooltiptext")
-					.style("z-index", "10")
-					.style("visibility", "hidden")
 
 			// Add the legend for the colors
 			let rectWidth = svgWidth / 20;
