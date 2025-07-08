@@ -11,13 +11,6 @@ body {
     max-height: 0;
 }
 
-#resetSelection {
-    font-size: 1.5rem;
-    align-self: flex-end;
-    opacity: 0.9;
-    margin-top: 1rem;
-}
-
 iframe {
     display: block;
     border: none;
@@ -27,6 +20,22 @@ iframe {
     margin: 0;
     padding: 0;
 }
+
+.mini-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#resetSelection {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    margin-left: auto;
+    margin-right: 1.5rem;
+    cursor: pointer;
+}
+
 
 /* Responsive row layout for visualizations */
 .rowwrap {
@@ -84,5 +93,14 @@ iframe {
         overflow: hidden;
         transform: scale(1);
         transform-origin: 0 0;
+    }
+
+    #resetSelection {
+        font-size: 1rem;
+        margin-right: 0.25rem;
+    }
+
+    .mini-header {
+        font-size: 0.5rem;
     }
 }
