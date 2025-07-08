@@ -1,7 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 
-<button type="button" id="resetSelection">Reset Sample Selection</button>
+<div class="mini-header">
+	
+	<a href="{{ url_for('landing_page') }}"><img src="{{ url_for('static', filename='images/favicon_HIE_large.ico') }}" alt="Logo" class="mini-logo">
+	</a>
+	<a href="{{ url_for('landing_page') }}" style="text-decoration: none; color: black;">
+	<h1 style="text-decoration: none;">Human Intestinal Ecosystem</h1>
+	</a>
+	<button type="button" id="resetSelection">Reset Sample Selection</button>
+</div>
 <button type="button" id="updateData">Update Plots with Selection</button>
 <div class="rowwrap">
 	<div id="leftvis"><iframe src="{{url_for('sunburst')}}" name="leftvis" scrolling="no"></iframe></div>
