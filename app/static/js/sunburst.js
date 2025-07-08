@@ -3,6 +3,7 @@
  */
 if (window.frameElement) {
 	document.getElementsByClassName("title")[0].remove();
+    d3.select(".site-header").style("display", "none");
 	d3.select("#updateData").style('visibility', "hidden");
 	d3.select("#resetSelection").style("max-height", 0);
 	// add a link to the h2.subtitle

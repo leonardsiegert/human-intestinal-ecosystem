@@ -1,5 +1,6 @@
 if (window.frameElement) {
     document.getElementsByClassName("title")[0].remove();
+    d3.select(".site-header").style("display", "none");
     d3.select("#resetSelection").style("visibility", "hidden");
     d3.select("#resetSelection").style("max-height", 0);
     // add a link to the h2.subtitle
@@ -60,7 +61,7 @@ d3.csv(dataset).then(function (data) {
             right: 20 * scaleFactor
         } : {
             top: 20 * scaleFactor,
-            bottom: 100 * scaleFactor,
+            bottom: 0,
             left: 20 * scaleFactor,
             right: 20 * scaleFactor
         };
@@ -124,7 +125,8 @@ d3.csv(dataset).then(function (data) {
     // header with buttons and infobox
     d3.select("#clusterHeader")
         .style("margin-left", margin.left + "px")
-        .style("margin-top", margin.top + "px")
+        .style("margin-top", window.frameElement ? 0 : margin.top + "px")
+        // .style("margin-top", margin.top + "px")
         .style("width", svgWidth + "px");
 
     // InfoBox
