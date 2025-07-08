@@ -348,7 +348,6 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 			if (leftttloc < 0) leftttloc = 0
 			if (leftttloc + tooltiptextwidth_large > window.innerWidth) {
         		leftttloc = window.innerWidth - tooltiptextwidth_large;}
-
 			tooltip
 				.html('<strong> ' + d.data[0] +
 					'</strong> <br>' + parseFloat((val * 100).toFixed(1 - Math.floor(Math.log(val) / Math.log(10)))) + "% of total bacteria abundance" +
@@ -360,7 +359,17 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 				.style("visibility", 'visible')
 				.style("left", leftttloc+ "px")
 				.style("top", (event.y) - TTy_offset_var + "px")
+				
+			if (isMobile) {
+				tooltip.transition()
+					.delay(2000)
+					.style("opacity", 0)
+					.on("end", function() {
+						tooltip.style("visibility", "hidden").style("opacity", 1);
+					});
+			}
 		}
+		
 
 		const moveTooltip = function (event, d) {
 			tooltip
@@ -455,6 +464,7 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 				.style("cursor", d => d.parent ? "pointer" : "pointer")
 				.attr('class', 'sunBurst_field')
 				.on("mouseover", function (event, d) {
+					if (!isMobile){
 					if (d.parent) {
 						if (hl) { applyparents(d, 'opacity', 0.65) };
 						showTooltip(event, d);
@@ -463,7 +473,7 @@ d3.csv(dataset_samples).then(function (data_samplees) {
 						d3.select(this).style("opacity", '1');
 					}
 					else { showTooltip(event, { data: ["switch to proportional view"] }) }
-				})
+				}})
 				.on("mousemove", moveTooltip)
 				.on("scroll", moveTooltip)
 				.on("mouseleave", function (event, d) {
