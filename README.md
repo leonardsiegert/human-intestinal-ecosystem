@@ -15,10 +15,10 @@ The human gut contains a rich microbiome whose composition can reflect or influe
 ---
 
 ## Live Demo
+<!-- 
+**[Try it live on Render](https://your-render-app-url.com)** -->
 
-[Try it live]<!-- **(https://your-render-app-url.com)**   -->
-
-**[Watch the demo video](#)**<!-- ** _(insert link or GIF here)_
+**[Watch the demo video](demo.webm)**
 
 ---
 
@@ -73,16 +73,16 @@ We followed a **real-world Git workflow**: using feature branches, code reviews,
 ### Clone the repository
 
 ```bash
-git clone https://github.com/yourname/microbiome-visualization.git
-cd microbiome-visualization
+git clone https://github.com/leonardsiegert/human-intestinal-ecosystem.git
+cd human-intestinal-ecosystem
 ```
 
-### Build And Run Using Docker
+<!-- ### Build And Run Using Docker
 
 ```bash
 docker build -t microbiome-app .
 docker run -p 5000:5000 microbiome-app
-```
+``` -->
 
 ### Using A Virtual Environment
 
@@ -101,11 +101,20 @@ pip install -r requirements.txt
 
 ### 3. Start the Flask server
 
+For development server:
+
 ```bash
-python app.py
+python app/app.py
 ```
 
 Then open http://localhost:5000 in your browser.
+
+For production server:
+
+```bash
+gunicorn app.app:app
+```
+Then open http://127.0.0.1:8000 in your browser.
 
 ---
 ## Data & Licensing
