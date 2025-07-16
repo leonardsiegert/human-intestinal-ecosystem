@@ -7,7 +7,7 @@ The cleaned dataset (`data_cleaned.csv`) is used as the base for all preprocessi
 
 ---
 
-## 📊 Dataset Descriptions
+## Dataset Descriptions
 
 ### `data_cleaned.csv`
 A cleaned and reindexed version of the original dataset. This is used by the **sunburst** and **histogram** visualizations in the Flask app. Only minimal corrections and reindexing are made.
@@ -27,7 +27,7 @@ Used in the **sunburst** and **tree plot** visualizations.
 
 ---
 
-## 🧪 Data Preprocessing Setup
+## Data Preprocessing Setup
 
 This data preprocessing environment requires **Python 3.11 or lower**, due to compatibility issues with the `taxonomy-ranks` package.
 
