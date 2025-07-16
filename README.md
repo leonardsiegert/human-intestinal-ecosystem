@@ -2,8 +2,6 @@
 
 An interactive web application for exploring microbiome distributions and their correlation with population health factors. Built as a data-driven visualization tool with a focus on clarity, usability, and responsive design.
 
----
-
 ## Purpose
 
 The human gut contains a rich microbiome whose composition can reflect or influence various aspects of population health. This project provides interactive visualizations to:
@@ -18,7 +16,7 @@ The human gut contains a rich microbiome whose composition can reflect or influe
 <!-- 
 **[Try it live on Render](https://your-render-app-url.com)** -->
 
-**[Watch the demo video](demo.webm)**
+**[Watch the demo video](demo.gif)**
 
 ---
 
@@ -36,14 +34,13 @@ The human gut contains a rich microbiome whose composition can reflect or influe
 ---
 
 ## Authorship & Contributions
----
 
 #### [Leonard Siegert] (https://github.com/leonardsiegert)
 - Clustering visualizations and interactive selection (D3.js)
 - Data preprocessing and project structure organization
 - Responsive design for mobile and desktop
 - Flask server co-development and GitHub management
-- Planned Dockerization and CI/CD setup
+<!-- - Planned Dockerization and CI/CD setup -->
 - README writing
 
 #### [Dexter Früh] (https://github.com/dexterfrueh)
@@ -53,7 +50,7 @@ The human gut contains a rich microbiome whose composition can reflect or influe
 - Histogram visualizations (co-developed)
 - Flask server co-development and GitHub management
 
-We followed a **real-world Git workflow**: using feature branches, code reviews, and pull requests to simulate a professional development process.
+We followed a real-world Git workflow: using feature branches, code reviews, and pull requests to simulate a professional development process.
 
 ---
 
@@ -73,7 +70,7 @@ We followed a **real-world Git workflow**: using feature branches, code reviews,
 ### Clone the repository
 
 ```bash
-git clone https://github.com/leonardsiegert/human-intestinal-ecosystem.git
+git clone git@github.com:leonardsiegert/human-intestinal-ecosystem.git
 cd human-intestinal-ecosystem
 ```
 
@@ -87,7 +84,13 @@ docker run -p 5000:5000 microbiome-app
 ### Using A Virtual Environment
 
 ### 1. Create and activate a virtual environment
+With conda:
 
+```bash
+conda create --name venv pip
+conda activate venv
+```
+Otherwise:
 ```bash
 python3 -m venv venv
 source venv/bin/activate     # On Windows: venv\Scripts\activate
@@ -114,7 +117,7 @@ For production server:
 ```bash
 gunicorn app.app:app
 ```
-Then open http://127.0.0.1:8000 in your browser.
+Then open http://localhost:8000 in your browser.
 
 ---
 ## Data & Licensing
