@@ -16,7 +16,7 @@ The human gut contains a rich microbiome whose composition can reflect or influe
 <!-- 
 **[Try it live on Render](https://your-render-app-url.com)** -->
 
-**[Watch the demo video](demo.gif)**
+**![Watch the demo video](demo.gif)**
 
 ---
 
