@@ -31,11 +31,24 @@ Used in the **sunburst** and **tree plot** visualizations.
 
 This data preprocessing environment requires **Python 3.11 or lower**, due to compatibility issues with the `taxonomy-ranks` package.
 
-You can use either **conda** or **virtualenv** to set up an environment for data exploration.
+You can use **Docker**, **conda** or **virtualenv** to set up an environment for data exploration.
 
 ---
 
-### Option 1: Using Conda
+### Option 1: Using Docker
+In the root folder, run:
+```bash
+docker compose run --build --service-ports dev bash
+```
+
+Inside the container:
+```bash
+cd data
+jupyter notebook --ip=0.0.0.0 --port=8888 --allow-root
+```
+Then visit http://127.0.0.1:8888.
+
+### Option 2: Using Conda
 
 Create and activate a conda environment with Python 3.11:
 ```bash
@@ -48,7 +61,7 @@ Install dependencies:
 pip install -r requirements-data.txt
 ```
 
-### Option 2: Using Virtualenv (venv)
+### Option 3: Using Virtualenv (venv)
 
 Create and activate a virtual environment (requires Python 3.11):
 ```bash
