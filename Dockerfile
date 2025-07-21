@@ -5,18 +5,16 @@ WORKDIR /app
 
 # copy the requirements file into the container at /app
 COPY requirements.txt requirements.txt
-COPY data/requirements-data.txt data/requirements-data.txt
 
 # update pip and install dependencies
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
-RUN pip install -r data/requirements-data.txt
 
 # copy the current directory contents into the container at /app
-COPY . .
+COPY app/ app/
 
 # expose the port the app runs on
-EXPOSE 5000 8000 8888
+EXPOSE 8000
 
-# # run the application
-# CMD ["python", "app/app.py"]
+# run the application
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "app.app:app"]

@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5000:5000"   # Flask
+      - "8000:8000"   # Gunicorn
+      - "8888:8888"   # Jupyter
+    volumes:
+      - .:/app
+    environment:
+      - FLASK_HOST=0.0.0.0
+    working_dir: /app
+    stdin_open: true     # Keeps STDIN open for the terminal
+    tty: true            # Allocates a pseudo-TTY
+    command: bash     # user can start Flask or Jupyter manually
