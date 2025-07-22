@@ -12,12 +12,12 @@ The human gut contains a rich microbiome whose composition can reflect or influe
 
 ---
 
-## Live Demo
-<!-- 
-**[Try it live on Render](https://your-render-app-url.com)** -->
-
-**![Watch the demo video](demo.gif)**
-
+## Live Demo 
+#### Try it live on Render:
+[human-intestinal-ecosystem.onrender.com](https://human-intestinal-ecosystem.onrender.com/landing_page)
+ 
+#### Watch the demo video:
+![Watch the demo video](demo.gif)
 ---
 
 ## Tech Stack
@@ -27,8 +27,8 @@ The human gut contains a rich microbiome whose composition can reflect or influe
 - **Data Handling**: Pandas, Numpy, sklearn, JSON
 - **Visualization**: D3.js interactive SVGs
 - **Containerization**: Docker, Docker Compose v2
-<!-- - **Deployment**: Render
-- **CI/CD**: GitHub Actions -->
+- **Deployment**: Render
+<!-- - **CI/CD**: GitHub Actions -->
 - **Version Control Workflow**: Git, feature branches, pull requests
 
 ---
@@ -37,6 +37,7 @@ The human gut contains a rich microbiome whose composition can reflect or influe
 
 #### [Leonard Siegert] (https://github.com/leonardsiegert)
 - Clustering visualizations and interactive selection (D3.js)
+- Histogram visualization (co-developed)
 - Data preprocessing and project structure organization
 - Responsive design for mobile and desktop
 - Flask server co-development and GitHub management
@@ -45,9 +46,9 @@ The human gut contains a rich microbiome whose composition can reflect or influe
 
 #### [Dexter Früh] (https://github.com/dexterfrueh)
 - Sunburst and tree visualizations (D3.js)
+- Histogram visualization (co-developed)
 - Side-by-side layout and selection syncing across views
 - Code cleanup and documentation with docstrings
-- Histogram visualizations (co-developed)
 - Flask server co-development and GitHub management
 
 We followed a real-world Git workflow: using feature branches, code reviews, and pull requests to simulate a professional development process.
@@ -58,9 +59,9 @@ We followed a real-world Git workflow: using feature branches, code reviews, and
 
 - Designing mobile-responsive data visualizations with D3
 - Collaborative software engineering practices via GitHub
-<!-- - Building production-ready Flask apps with Docker
+- Building production-ready Flask apps with Docker
 - Deploying containerized apps on cloud platforms like Render
-- Managing CI/CD workflows with GitHub Actions -->
+<!-- - Managing CI/CD workflows with GitHub Actions -->
 - Writing clear documentation and modular code
 
 ---
