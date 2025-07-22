@@ -26,8 +26,8 @@ The human gut contains a rich microbiome whose composition can reflect or influe
 - **Backend**: Flask (Python)
 - **Data Handling**: Pandas, Numpy, sklearn, JSON
 - **Visualization**: D3.js interactive SVGs
+- **Containerization**: Docker, Docker Compose v2
 <!-- - **Deployment**: Render
-- **Containerization**: Docker
 - **CI/CD**: GitHub Actions -->
 - **Version Control Workflow**: Git, feature branches, pull requests
 
@@ -40,7 +40,7 @@ The human gut contains a rich microbiome whose composition can reflect or influe
 - Data preprocessing and project structure organization
 - Responsive design for mobile and desktop
 - Flask server co-development and GitHub management
-<!-- - Planned Dockerization and CI/CD setup -->
+- Dockerization and CI/CD setup
 - README writing
 
 #### [Dexter Früh] (https://github.com/dexterfrueh)
@@ -65,7 +65,7 @@ We followed a real-world Git workflow: using feature branches, code reviews, and
 
 ---
 
-## How to Run Locally
+## Run the Project
 
 ### Clone the repository
 
@@ -74,12 +74,50 @@ git clone git@github.com:leonardsiegert/human-intestinal-ecosystem.git
 cd human-intestinal-ecosystem
 ```
 
-<!-- ### Build And Run Using Docker
+### Using Docker (Recommended)
 
+#### Run the production Server:
 ```bash
-docker build -t microbiome-app .
-docker run -p 5000:5000 microbiome-app
-``` -->
+docker compose up --build prod
+```
+This starts the production web server (Gunicorn) at http://localhost:8000.
+
+#### Start a Development Environment:
+```bash
+docker compose run --build --service-ports dev bash
+```
+This opens an interactive terminal in the container.
+
+From there, you can:
+
+#### Run the development Flask server:
+```bash
+python app/app.py
+```
+#### Launch Jupyter Notebook:
+```bash
+cd data
+jupyter notebook --ip=0.0.0.0 --port=8888 --allow-root
+``` 
+Then open http://localhost:8888 in your browser.
+
+#### Shut down the containers:
+```bash
+docker compose down
+```
+
+#### One-Click Setup in VS Code (Optional)
+
+If you use Visual Studio Code, you can launch a fully-configured containerized environment instantly:
+1. Install the Dev Containers extension
+2. Open this repository in VS Code
+3. When prompted, select "Reopen in Container"
+
+This will:
+- Build and start the Docker development container
+- Mount the project inside
+- Forward ports (Flask, Gunicorn, Jupyter)
+- Install recommended extensions for Python and Jupyter
 
 ### Using A Virtual Environment
 

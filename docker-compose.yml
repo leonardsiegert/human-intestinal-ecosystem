@@ -1,0 +1,23 @@
+services:
+  dev:
+    build:
+      context: .
+      target: dev
+    ports:
+      - "5000:5000"   # Flask
+      - "8888:8888"   # Jupyter
+    volumes:
+      - .:/code
+    environment:
+      - FLASK_HOST=0.0.0.0
+    working_dir: /code
+    stdin_open: true     # Keeps STDIN open for the terminal
+    tty: true            # Allocates a pseudo-TTY
+    command: bash     # user can start Flask or Jupyter manually
+
+  prod:
+    build:
+      context: .
+      target: prod
+    ports:
+      - "8000:8000"   # Gunicorn

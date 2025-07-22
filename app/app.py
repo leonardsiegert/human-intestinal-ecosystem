@@ -39,5 +39,13 @@ def histograms():
     """Render the histograms page."""
     return render_template('histograms.html', data="'static/data/data_cleaned.csv'")
 
+# if __name__ == '__main__':
+#     app.run(debug=True, port=5000)
+
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    import os
+    app.run(
+        host=os.environ.get("FLASK_HOST", "127.0.0.1"),
+        port=int(os.environ.get("FLASK_PORT", 5000)),
+        debug=True
+    )
