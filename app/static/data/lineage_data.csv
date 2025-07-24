@@ -1,131 +1,131 @@
 ,phylum,class,order,family,genus,species
-0,Actinobacteria,Actinomycetia,Actinomycetales,Actinomycetaceae,Actinomycetaceae,Actinomycetaceae
-1,Firmicutes,Bacilli,Lactobacillales,Aerococcaceae,Aerococcus,Aerococcus
-2,Proteobacteria,Gammaproteobacteria,Aeromonadales,Aeromonadaceae,Aeromonas,Aeromonas
-3,Verrucomicrobia,Verrucomicrobiae,Verrucomicrobiales,Akkermansiaceae,Akkermansia,Akkermansia
-4,Proteobacteria,Betaproteobacteria,Burkholderiales,Alcaligenaceae,Alcaligenes,Alcaligenes faecalis et rel.
-5,Bacteroidetes,Bacteroidia,Bacteroidales,Rikenellaceae,Alistipes,Allistipes et rel.
-6,Proteobacteria,Gammaproteobacteria,Aeromonadales,Succinivibrionaceae,Anaerobiospirillum,Anaerobiospirillum
-7,Firmicutes,Clostridia,Eubacteriales,Eubacteriaceae,Anaerofustis,Anaerofustis
-8,Firmicutes,Clostridia,Eubacteriales,Lachnospiraceae,Anaerostipes,Anaerostipes caccae et rel.
-9,Firmicutes,Clostridia,Eubacteriales,Oscillospiraceae,Anaerotruncus,Anaerotruncus colihominis et rel.
-10,Firmicutes,Clostridia,Eubacteriales,Eubacteriales Family XIII. Incertae Sedis,Anaerovorax,Anaerovorax odorimutans et rel.
-11,Firmicutes,Bacilli,Bacillales,Paenibacillaceae,Aneurinibacillus,Aneurinibacillus
-12,Proteobacteria,Betaproteobacteria,Burkholderiales,Aquabacterium,Aquabacterium,Aquabacterium
-13,Tenericutes,Mollicutes,Anaeroplasmatales,Anaeroplasmataceae,Asteroleplasma,Asteroleplasma et rel.
-14,Actinobacteria,Coriobacteriia,Coriobacteriales,Atopobiaceae,Atopobium,Atopobium
-15,Firmicutes,Bacilli,Bacillales,Bacillaceae,Bacillus,Bacillus
-16,Bacteroidetes,Bacteroidia,Bacteroidales,Bacteroidaceae,Bacteroides,Bacteroides fragilis et rel.
-17,Bacteroidetes,Bacteroidia,Bacteroidales,Bacteroidaceae,Bacteroides,Bacteroides intestinalis et rel.
-18,Bacteroidetes,Bacteroidia,Bacteroidales,Bacteroidaceae,Bacteroides,Bacteroides ovatus et rel.
-19,Bacteroidetes,Bacteroidia,Bacteroidales,Bacteroidaceae,Bacteroides,Bacteroides plebeius et rel.
-20,Bacteroidetes,Bacteroidia,Bacteroidales,Bacteroidaceae,Bacteroides,Bacteroides splachnicus et rel.
-21,Bacteroidetes,Bacteroidia,Bacteroidales,Bacteroidaceae,Bacteroides,Bacteroides stercoris et rel.
-22,Bacteroidetes,Bacteroidia,Bacteroidales,Bacteroidaceae,Bacteroides,Bacteroides uniformis et rel.
-23,Bacteroidetes,Bacteroidia,Bacteroidales,Bacteroidaceae,Bacteroides,Bacteroides vulgatus et rel.
-24,Actinobacteria,Actinomycetia,Bifidobacteriales,Bifidobacteriaceae,Bifidobacterium,Bifidobacterium
-25,Proteobacteria,Deltaproteobacteria,Desulfovibrionales,Desulfovibrionaceae,Bilophila,Bilophila et rel.
-26,Spirochaetes,Spirochaetia,Brachyspirales,Brachyspiraceae,Brachyspira,Brachyspira
-27,Firmicutes,Clostridia,Eubacteriales,Lachnospiraceae,Marvinbryantia,Bryantella formatexigens et rel.
-28,Firmicutes,Erysipelotrichia,Erysipelotrichales,Erysipelotrichaceae,Bulleidia,Bulleidia moorei et rel.
-29,Proteobacteria,Betaproteobacteria,Burkholderiales,Burkholderiaceae,Burkholderia,Burkholderia
-30,Firmicutes,Clostridia,Eubacteriales,Lachnospiraceae,Butyrivibrio,Butyrivibrio crossotus et rel.
-31,Proteobacteria,Epsilonproteobacteria,Campylobacterales,Campylobacteraceae,Campylobacter,Campylobacter
-32,Firmicutes,Erysipelotrichia,Erysipelotrichales,Coprobacillaceae,Catenibacterium,Catenibacterium mitsuokai et rel.
-33,Firmicutes,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Clostridium (sensu stricto)
-34,Firmicutes,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Clostridium cellulosi et rel.
-35,Firmicutes,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Clostridium colinum et rel.
-36,Firmicutes,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Clostridium difficile et rel.
-37,Firmicutes,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Clostridium felsineum et rel.
-38,Firmicutes,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Clostridium leptum et rel.
-39,Firmicutes,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Clostridium nexile et rel.
-40,Firmicutes,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Clostridium orbiscindens et rel.
-41,Firmicutes,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Clostridium ramosum et rel.
-42,Firmicutes,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Clostridium sphenoides et rel.
-43,Firmicutes,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Clostridium stercorarium et rel.
-44,Firmicutes,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Clostridium symbiosum et rel.
-45,Firmicutes,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Clostridium thermocellum et rel.
-46,Actinobacteria,Coriobacteriia,Coriobacteriales,Coriobacteriaceae,Collinsella,Collinsella
-47,Firmicutes,Erysipelotrichia,Erysipelotrichales,Coprobacillaceae,Coprobacillus,Coprobacillus catenaformis et rel.
-48,Firmicutes,Clostridia,Eubacteriales,Lachnospiraceae,Coprococcus,Coprococcus eutactus et rel.
-49,Actinobacteria,Actinomycetia,Corynebacteriales,Corynebacteriaceae,Corynebacterium,Corynebacterium
-50,Proteobacteria,Deltaproteobacteria,Desulfovibrionales,Desulfovibrionaceae,Desulfovibrio,Desulfovibrio et rel.
-51,Firmicutes,Negativicutes,Veillonellales,Veillonellaceae,Dialister,Dialister
-52,Firmicutes,Clostridia,Eubacteriales,Lachnospiraceae,Dorea,Dorea formicigenerans et rel.
-53,Actinobacteria,Coriobacteriia,Eggerthellales,Eggerthellaceae,Eggerthella,Eggerthella lenta et rel.
-54,Proteobacteria,Gammaproteobacteria,Enterobacterales,Enterobacteriaceae,Enterobacter,Enterobacter aerogenes et rel.
-55,Firmicutes,Bacilli,Lactobacillales,Enterococcaceae,Enterococcus,Enterococcus
-56,Proteobacteria,Gammaproteobacteria,Enterobacterales,Enterobacteriaceae,Escherichia,Escherichia coli et rel.
-57,Firmicutes,Clostridia,Eubacteriales,Eubacteriaceae,Eubacterium,Eubacterium biforme et rel.
-58,Firmicutes,Clostridia,Eubacteriales,Eubacteriaceae,Eubacterium,Eubacterium cylindroides et rel.
-59,Firmicutes,Clostridia,Eubacteriales,Eubacteriaceae,Eubacterium,Eubacterium hallii et rel.
-60,Firmicutes,Clostridia,Eubacteriales,Eubacteriaceae,Eubacterium,Eubacterium limosum et rel.
-61,Firmicutes,Clostridia,Eubacteriales,Eubacteriaceae,Eubacterium,Eubacterium rectale et rel.
-62,Firmicutes,Clostridia,Eubacteriales,Eubacteriaceae,Eubacterium,Eubacterium siraeum et rel.
-63,Firmicutes,Clostridia,Eubacteriales,Eubacteriaceae,Eubacterium,Eubacterium ventriosum et rel.
-64,Firmicutes,Clostridia,Eubacteriales,Oscillospiraceae,Faecalibacterium,Faecalibacterium prausnitzii et rel.
-65,Fusobacteria,Fusobacteria,Fusobacteria,Fusobacteria,Fusobacteria,Fusobacteria
-66,Firmicutes,Bacilli,Bacillales,Gemella,Gemella,Gemella
-67,Firmicutes,Bacilli,Lactobacillales,Carnobacteriaceae,Granulicatella,Granulicatella
-68,Proteobacteria,Gammaproteobacteria,Pasteurellales,Pasteurellaceae,Haemophilus,Haemophilus
-69,Proteobacteria,Epsilonproteobacteria,Campylobacterales,Helicobacteraceae,Helicobacter,Helicobacter
-70,Proteobacteria,Gammaproteobacteria,Enterobacterales,Enterobacteriaceae,Klebsiella,Klebisiella pneumoniae et rel.
-71,Firmicutes,Clostridia,Eubacteriales,Lachnospiraceae,Lachnobacterium,Lachnobacillus bovis et rel.
-72,Firmicutes,Clostridia,Eubacteriales,Lachnospiraceae,Lachnospira,Lachnospira pectinoschiza et rel.
-73,Firmicutes,Bacilli,Lactobacillales,Lactobacillaceae,Lactobacillus,Lactobacillus catenaformis et rel.
-74,Firmicutes,Bacilli,Lactobacillales,Lactobacillaceae,Lactobacillus,Lactobacillus gasseri et rel.
-75,Firmicutes,Bacilli,Lactobacillales,Lactobacillaceae,Lactobacillus,Lactobacillus plantarum et rel.
-76,Firmicutes,Bacilli,Lactobacillales,Lactobacillaceae,Lactobacillus,Lactobacillus salivarius et rel.
-77,Firmicutes,Bacilli,Lactobacillales,Streptococcaceae,Lactococcus,Lactococcus
-78,Proteobacteria,Gammaproteobacteria,Enterobacterales,Budviciaceae,Leminorella,Leminorella
-79,Firmicutes,Negativicutes,Selenomonadales,Selenomonadaceae,Megamonas,Megamonas hypermegale et rel.
-80,Firmicutes,Negativicutes,Veillonellales,Veillonellaceae,Megasphaera,Megasphaera elsdenii et rel.
-81,Proteobacteria,Alphaproteobacteria,Hyphomicrobiales,Methylobacteriaceae,Methylobacterium,Methylobacterium
-82,Actinobacteria,Actinomycetia,Micrococcales,Micrococcaceae,Micrococcaceae,Micrococcaceae
-83,Firmicutes,Negativicutes,Selenomonadales,Selenomonadaceae,Mitsuokella,Mitsuokella multiacida et rel.
-84,Proteobacteria,Gammaproteobacteria,Moraxellales,Moraxellaceae,Moraxellaceae,Moraxellaceae
-85,Proteobacteria,Alphaproteobacteria,Sphingomonadales,Sphingomonadaceae,Novosphingobium,Novosphingobium
-86,Proteobacteria,Gammaproteobacteria,Oceanospirillales,Oceanospirillaceae,Oceanospirillum,Oceanospirillum
-87,Firmicutes,Clostridia,Eubacteriales,Oscillospiraceae,Oscillospira,Oscillospira guillermondii et rel.
-88,Firmicutes,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Outgrouping clostridium cluster XIVa
-89,Proteobacteria,Betaproteobacteria,Burkholderiales,Oxalobacteraceae,Oxalobacter,Oxalobacter formigenes et rel.
-90,Firmicutes,Clostridia,Eubacteriales,Oscillospiraceae,Papillibacter,Papillibacter cinnamivorans et rel.
-91,Bacteroidetes,Bacteroidia,Bacteroidales,Tannerellaceae,Parabacteroides,Parabacteroides distasonis et rel.
-92,Firmicutes,Clostridia,Eubacteriales,Peptococcaceae,Peptococcus,Peptococcus niger et rel.
-93,Firmicutes,Clostridia,Eubacteriales,Peptostreptococcaceae,Peptostreptococcus,Peptostreptococcus anaerobius et rel.
-94,Firmicutes,Clostridia,Eubacteriales,Peptostreptococcaceae,Peptostreptococcus,Peptostreptococcus micros et rel.
-95,Firmicutes,Negativicutes,Acidaminococcales,Acidaminococcaceae,Phascolarctobacterium,Phascolarctobacterium faecium et rel.
-96,Bacteroidetes,Bacteroidia,Bacteroidales,Prevotellaceae,Prevotella,Prevotella melaninogenica et rel.
-97,Bacteroidetes,Bacteroidia,Bacteroidales,Prevotellaceae,Prevotella,Prevotella oralis et rel.
-98,Bacteroidetes,Bacteroidia,Bacteroidales,Prevotellaceae,Prevotella,Prevotella ruminicola et rel.
-99,Bacteroidetes,Bacteroidia,Bacteroidales,Prevotellaceae,Prevotella,Prevotella tannerae et rel.
-100,Actinobacteria,Actinomycetia,Propionibacteriales,Propionibacteriaceae,Propionibacterium,Propionibacterium
-101,Proteobacteria,Gammaproteobacteria,Enterobacterales,Morganellaceae,Proteus,Proteus et rel.
-102,Proteobacteria,Gammaproteobacteria,Pseudomonadales,Pseudomonadaceae,Pseudomonas,Pseudomonas
-103,Firmicutes,Clostridia,Eubacteriales,Lachnospiraceae,Roseburia,Roseburia intestinalis et rel.
-104,Firmicutes,Clostridia,Eubacteriales,Oscillospiraceae,Ruminococcus,Ruminococcus bromii et rel.
-105,Firmicutes,Clostridia,Eubacteriales,Oscillospiraceae,Ruminococcus,Ruminococcus callidus et rel.
-106,Firmicutes,Clostridia,Eubacteriales,Oscillospiraceae,Ruminococcus,Ruminococcus gnavus et rel.
-107,Firmicutes,Clostridia,Eubacteriales,Oscillospiraceae,Ruminococcus,Ruminococcus lactaris et rel.
-108,Firmicutes,Clostridia,Eubacteriales,Oscillospiraceae,Ruminococcus,Ruminococcus obeum et rel.
-109,Proteobacteria,Gammaproteobacteria,Enterobacterales,Yersiniaceae,Serratia,Serratia
-110,Firmicutes,Clostridia,Eubacteriales,Oscillospiraceae,Sporobacter,Sporobacter termitidis et rel.
-111,Firmicutes,Bacilli,Bacillales,Staphylococcaceae,Staphylococcus,Staphylococcus
-112,Firmicutes,Bacilli,Lactobacillales,Streptococcaceae,Streptococcus,Streptococcus bovis et rel.
-113,Firmicutes,Bacilli,Lactobacillales,Streptococcaceae,Streptococcus,Streptococcus intermedius et rel.
-114,Firmicutes,Bacilli,Lactobacillales,Streptococcaceae,Streptococcus,Streptococcus mitis et rel.
-115,Firmicutes,Clostridia,Eubacteriales,Oscillospiraceae,Subdoligranulum,Subdoligranulum variable at rel.
-116,Proteobacteria,Betaproteobacteria,Burkholderiales,Sutterellaceae,Sutterella,Sutterella wadsworthia et rel.
-117,Bacteroidetes,Bacteroidia,Bacteroidales,Tannerellaceae,Tannerella,Tannerella et rel.
-118,Bacteroidetes,Bacteroidetes,Bacteroidetes,Bacteroidetes,Bacteroidetes,Uncultured Bacteroidetes
+0,Actinomycetota,Actinomycetes,Actinomycetales,Actinomycetaceae,Actinomycetaceae,Actinomycetaceae
+1,Bacillota,Bacilli,Lactobacillales,Aerococcaceae,Aerococcus,Aerococcus
+2,Pseudomonadota,Gammaproteobacteria,Aeromonadales,Aeromonadaceae,Aeromonas,Aeromonas
+3,Verrucomicrobiota,Verrucomicrobiia,Verrucomicrobiales,Akkermansiaceae,Akkermansia,Akkermansia
+4,Pseudomonadota,Betaproteobacteria,Burkholderiales,Alcaligenaceae,Alcaligenes,Alcaligenes faecalis et rel.
+5,Bacteroidota,Bacteroidia,Bacteroidales,Rikenellaceae,Alistipes,Allistipes et rel.
+6,Pseudomonadota,Gammaproteobacteria,Aeromonadales,Succinivibrionaceae,Anaerobiospirillum,Anaerobiospirillum
+7,Bacillota,Clostridia,Eubacteriales,Eubacteriaceae,Anaerofustis,Anaerofustis
+8,Bacillota,Clostridia,Lachnospirales,Lachnospiraceae,Anaerostipes,Anaerostipes caccae et rel.
+9,Bacillota,Clostridia,Eubacteriales,Oscillospiraceae,Anaerotruncus,Anaerotruncus colihominis et rel.
+10,Bacillota,Clostridia,Peptostreptococcales,Anaerovoracaceae,Anaerovorax,Anaerovorax odorimutans et rel.
+11,Bacillota,Bacilli,Bacillales,Paenibacillaceae,Aneurinibacillus,Aneurinibacillus
+12,Pseudomonadota,Betaproteobacteria,Burkholderiales,Aquabacterium,Aquabacterium,Aquabacterium
+13,Mycoplasmatota,Mollicutes,Anaeroplasmatales,Anaeroplasmataceae,Asteroleplasma,Asteroleplasma et rel.
+14,Actinomycetota,Coriobacteriia,Coriobacteriales,Atopobiaceae,Atopobium,Atopobium
+15,Bacillota,Bacilli,Bacillales,Bacillaceae,Bacillus,Bacillus
+16,Bacteroidota,Bacteroidia,Bacteroidales,Bacteroidaceae,Bacteroides,Bacteroides fragilis et rel.
+17,Bacteroidota,Bacteroidia,Bacteroidales,Bacteroidaceae,Bacteroides,Bacteroides intestinalis et rel.
+18,Bacteroidota,Bacteroidia,Bacteroidales,Bacteroidaceae,Bacteroides,Bacteroides ovatus et rel.
+19,Bacteroidota,Bacteroidia,Bacteroidales,Bacteroidaceae,Bacteroides,Bacteroides plebeius et rel.
+20,Bacteroidota,Bacteroidia,Bacteroidales,Bacteroidaceae,Bacteroides,Bacteroides splachnicus et rel.
+21,Bacteroidota,Bacteroidia,Bacteroidales,Bacteroidaceae,Bacteroides,Bacteroides stercoris et rel.
+22,Bacteroidota,Bacteroidia,Bacteroidales,Bacteroidaceae,Bacteroides,Bacteroides uniformis et rel.
+23,Bacteroidota,Bacteroidia,Bacteroidales,Bacteroidaceae,Bacteroides,Bacteroides vulgatus et rel.
+24,Actinomycetota,Actinomycetes,Bifidobacteriales,Bifidobacteriaceae,Bifidobacterium,Bifidobacterium
+25,Thermodesulfobacteriota,Desulfovibrionia,Desulfovibrionales,Desulfovibrionaceae,Bilophila,Bilophila et rel.
+26,Spirochaetota,Spirochaetia,Brachyspirales,Brachyspiraceae,Brachyspira,Brachyspira
+27,Bacillota,Clostridia,Lachnospirales,Lachnospiraceae,Marvinbryantia,Bryantella formatexigens et rel.
+28,Bacillota,Erysipelotrichia,Erysipelotrichales,Erysipelotrichaceae,Bulleidia,Bulleidia moorei et rel.
+29,Pseudomonadota,Betaproteobacteria,Burkholderiales,Burkholderiaceae,Burkholderia,Burkholderia
+30,Bacillota,Clostridia,Lachnospirales,Lachnospiraceae,Butyrivibrio,Butyrivibrio crossotus et rel.
+31,Campylobacterota,Epsilonproteobacteria,Campylobacterales,Campylobacteraceae,Campylobacter,Campylobacter
+32,Bacillota,Erysipelotrichia,Erysipelotrichales,Coprobacillaceae,Catenibacterium,Catenibacterium mitsuokai et rel.
+33,Bacillota,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Clostridium (sensu stricto)
+34,Bacillota,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Clostridium cellulosi et rel.
+35,Bacillota,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Clostridium colinum et rel.
+36,Bacillota,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Clostridium difficile et rel.
+37,Bacillota,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Clostridium felsineum et rel.
+38,Bacillota,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Clostridium leptum et rel.
+39,Bacillota,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Clostridium nexile et rel.
+40,Bacillota,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Clostridium orbiscindens et rel.
+41,Bacillota,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Clostridium ramosum et rel.
+42,Bacillota,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Clostridium sphenoides et rel.
+43,Bacillota,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Clostridium stercorarium et rel.
+44,Bacillota,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Clostridium symbiosum et rel.
+45,Bacillota,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Clostridium thermocellum et rel.
+46,Actinomycetota,Coriobacteriia,Coriobacteriales,Coriobacteriaceae,Collinsella,Collinsella
+47,Bacillota,Erysipelotrichia,Erysipelotrichales,Coprobacillaceae,Coprobacillus,Coprobacillus catenaformis et rel.
+48,Bacillota,Clostridia,Lachnospirales,Lachnospiraceae,Coprococcus,Coprococcus eutactus et rel.
+49,Actinomycetota,Actinomycetes,Mycobacteriales,Corynebacteriaceae,Corynebacterium,Corynebacterium
+50,Thermodesulfobacteriota,Desulfovibrionia,Desulfovibrionales,Desulfovibrionaceae,Desulfovibrio,Desulfovibrio et rel.
+51,Bacillota,Negativicutes,Veillonellales,Veillonellaceae,Dialister,Dialister
+52,Bacillota,Clostridia,Lachnospirales,Lachnospiraceae,Dorea,Dorea formicigenerans et rel.
+53,Actinomycetota,Coriobacteriia,Eggerthellales,Eggerthellaceae,Eggerthella,Eggerthella lenta et rel.
+54,Pseudomonadota,Gammaproteobacteria,Enterobacterales,Enterobacteriaceae,Enterobacter,Enterobacter aerogenes et rel.
+55,Bacillota,Bacilli,Lactobacillales,Enterococcaceae,Enterococcus,Enterococcus
+56,Pseudomonadota,Gammaproteobacteria,Enterobacterales,Enterobacteriaceae,Escherichia,Escherichia coli et rel.
+57,Bacillota,Clostridia,Eubacteriales,Eubacteriaceae,Eubacterium,Eubacterium biforme et rel.
+58,Bacillota,Clostridia,Eubacteriales,Eubacteriaceae,Eubacterium,Eubacterium cylindroides et rel.
+59,Bacillota,Clostridia,Eubacteriales,Eubacteriaceae,Eubacterium,Eubacterium hallii et rel.
+60,Bacillota,Clostridia,Eubacteriales,Eubacteriaceae,Eubacterium,Eubacterium limosum et rel.
+61,Bacillota,Clostridia,Eubacteriales,Eubacteriaceae,Eubacterium,Eubacterium rectale et rel.
+62,Bacillota,Clostridia,Eubacteriales,Eubacteriaceae,Eubacterium,Eubacterium siraeum et rel.
+63,Bacillota,Clostridia,Eubacteriales,Eubacteriaceae,Eubacterium,Eubacterium ventriosum et rel.
+64,Bacillota,Clostridia,Eubacteriales,Oscillospiraceae,Faecalibacterium,Faecalibacterium prausnitzii et rel.
+65,Fusobacteriota,Fusobacteriota,Fusobacteriota,Fusobacteriota,Fusobacteriota,Fusobacteria
+66,Bacillota,Bacilli,Bacillales,Gemella,Gemella,Gemella
+67,Bacillota,Bacilli,Lactobacillales,Carnobacteriaceae,Granulicatella,Granulicatella
+68,Pseudomonadota,Gammaproteobacteria,Pasteurellales,Pasteurellaceae,Haemophilus,Haemophilus
+69,Campylobacterota,Epsilonproteobacteria,Campylobacterales,Helicobacteraceae,Helicobacter,Helicobacter
+70,Pseudomonadota,Gammaproteobacteria,Enterobacterales,Enterobacteriaceae,Klebsiella,Klebisiella pneumoniae et rel.
+71,Bacillota,Clostridia,Lachnospirales,Lachnospiraceae,Lachnobacterium,Lachnobacillus bovis et rel.
+72,Bacillota,Clostridia,Lachnospirales,Lachnospiraceae,Lachnospira,Lachnospira pectinoschiza et rel.
+73,Bacillota,Bacilli,Lactobacillales,Lactobacillaceae,Lactobacillus,Lactobacillus catenaformis et rel.
+74,Bacillota,Bacilli,Lactobacillales,Lactobacillaceae,Lactobacillus,Lactobacillus gasseri et rel.
+75,Bacillota,Bacilli,Lactobacillales,Lactobacillaceae,Lactobacillus,Lactobacillus plantarum et rel.
+76,Bacillota,Bacilli,Lactobacillales,Lactobacillaceae,Lactobacillus,Lactobacillus salivarius et rel.
+77,Bacillota,Bacilli,Lactobacillales,Streptococcaceae,Lactococcus,Lactococcus
+78,Pseudomonadota,Gammaproteobacteria,Enterobacterales,Budviciaceae,Leminorella,Leminorella
+79,Bacillota,Negativicutes,Selenomonadales,Selenomonadaceae,Megamonas,Megamonas hypermegale et rel.
+80,Bacillota,Negativicutes,Veillonellales,Veillonellaceae,Megasphaera,Megasphaera elsdenii et rel.
+81,Pseudomonadota,Alphaproteobacteria,Hyphomicrobiales,Methylobacteriaceae,Methylobacterium,Methylobacterium
+82,Actinomycetota,Actinomycetes,Micrococcales,Micrococcaceae,Micrococcaceae,Micrococcaceae
+83,Bacillota,Negativicutes,Selenomonadales,Selenomonadaceae,Mitsuokella,Mitsuokella multiacida et rel.
+84,Pseudomonadota,Gammaproteobacteria,Moraxellales,Moraxellaceae,Moraxellaceae,Moraxellaceae
+85,Pseudomonadota,Alphaproteobacteria,Sphingomonadales,Sphingomonadaceae,Novosphingobium,Novosphingobium
+86,Pseudomonadota,Gammaproteobacteria,Oceanospirillales,Oceanospirillaceae,Oceanospirillum,Oceanospirillum
+87,Bacillota,Clostridia,Eubacteriales,Oscillospiraceae,Oscillospira,Oscillospira guillermondii et rel.
+88,Bacillota,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Outgrouping clostridium cluster XIVa
+89,Pseudomonadota,Betaproteobacteria,Burkholderiales,Oxalobacteraceae,Oxalobacter,Oxalobacter formigenes et rel.
+90,Bacillota,Clostridia,Eubacteriales,Oscillospiraceae,Papillibacter,Papillibacter cinnamivorans et rel.
+91,Bacteroidota,Bacteroidia,Bacteroidales,Tannerellaceae,Parabacteroides,Parabacteroides distasonis et rel.
+92,Bacillota,Clostridia,Eubacteriales,Peptococcaceae,Peptococcus,Peptococcus niger et rel.
+93,Bacillota,Clostridia,Peptostreptococcales,Peptostreptococcaceae,Peptostreptococcus,Peptostreptococcus anaerobius et rel.
+94,Bacillota,Clostridia,Peptostreptococcales,Peptostreptococcaceae,Peptostreptococcus,Peptostreptococcus micros et rel.
+95,Bacillota,Negativicutes,Acidaminococcales,Acidaminococcaceae,Phascolarctobacterium,Phascolarctobacterium faecium et rel.
+96,Bacteroidota,Bacteroidia,Bacteroidales,Prevotellaceae,Prevotella,Prevotella melaninogenica et rel.
+97,Bacteroidota,Bacteroidia,Bacteroidales,Prevotellaceae,Prevotella,Prevotella oralis et rel.
+98,Bacteroidota,Bacteroidia,Bacteroidales,Prevotellaceae,Prevotella,Prevotella ruminicola et rel.
+99,Bacteroidota,Bacteroidia,Bacteroidales,Prevotellaceae,Prevotella,Prevotella tannerae et rel.
+100,Actinomycetota,Actinomycetes,Propionibacteriales,Propionibacteriaceae,Propionibacterium,Propionibacterium
+101,Pseudomonadota,Gammaproteobacteria,Enterobacterales,Morganellaceae,Proteus,Proteus et rel.
+102,Pseudomonadota,Gammaproteobacteria,Pseudomonadales,Pseudomonadaceae,Pseudomonas,Pseudomonas
+103,Bacillota,Clostridia,Lachnospirales,Lachnospiraceae,Roseburia,Roseburia intestinalis et rel.
+104,Bacillota,Clostridia,Eubacteriales,Oscillospiraceae,Ruminococcus,Ruminococcus bromii et rel.
+105,Bacillota,Clostridia,Eubacteriales,Oscillospiraceae,Ruminococcus,Ruminococcus callidus et rel.
+106,Bacillota,Clostridia,Eubacteriales,Oscillospiraceae,Ruminococcus,Ruminococcus gnavus et rel.
+107,Bacillota,Clostridia,Eubacteriales,Oscillospiraceae,Ruminococcus,Ruminococcus lactaris et rel.
+108,Bacillota,Clostridia,Eubacteriales,Oscillospiraceae,Ruminococcus,Ruminococcus obeum et rel.
+109,Pseudomonadota,Gammaproteobacteria,Enterobacterales,Yersiniaceae,Serratia,Serratia
+110,Bacillota,Clostridia,Eubacteriales,Oscillospiraceae,Sporobacter,Sporobacter termitidis et rel.
+111,Bacillota,Bacilli,Bacillales,Staphylococcaceae,Staphylococcus,Staphylococcus
+112,Bacillota,Bacilli,Lactobacillales,Streptococcaceae,Streptococcus,Streptococcus bovis et rel.
+113,Bacillota,Bacilli,Lactobacillales,Streptococcaceae,Streptococcus,Streptococcus intermedius et rel.
+114,Bacillota,Bacilli,Lactobacillales,Streptococcaceae,Streptococcus,Streptococcus mitis et rel.
+115,Bacillota,Clostridia,Eubacteriales,Oscillospiraceae,Subdoligranulum,Subdoligranulum variable at rel.
+116,Pseudomonadota,Betaproteobacteria,Burkholderiales,Sutterellaceae,Sutterella,Sutterella wadsworthia et rel.
+117,Bacteroidota,Bacteroidia,Bacteroidales,Tannerellaceae,Tannerella,Tannerella et rel.
+118,Bacteroidota,Bacteroidota,Bacteroidota,Bacteroidota,Bacteroidota,Uncultured Bacteroidetes
 119,Chlorophyta,Chlorophyceae,Chlamydomonadales,Chlamydomonadales,Chlamydomonadales,Uncultured Chroococcales
-120,Firmicutes,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Uncultured Clostridium (sensu stricto)les I
-121,Firmicutes,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Uncultured Clostridium (sensu stricto)les II
-122,Tenericutes,Mollicutes,Mollicutes,Mollicutes,Mollicutes,Uncultured Mollicutes
-123,Firmicutes,Negativicutes,Selenomonadales,Selenomonadaceae,Selenomonadaceae,Uncultured Selenomonadaceae
-124,Firmicutes,Negativicutes,Veillonellales,Veillonellaceae,Veillonella,Veillonella
-125,Proteobacteria,Gammaproteobacteria,Vibrionales,Vibrionaceae,Vibrio,Vibrio
-126,Firmicutes,Bacilli,Lactobacillales,Lactobacillaceae,Weissella,Weissella et rel.
-127,Firmicutes,Bacilli,Lactobacillales,Lactobacillaceae,Weissella,Wissella et rel.
-128,Proteobacteria,Gammaproteobacteria,Xanthomonadales,Xanthomonadaceae,Xanthomonadaceae,Xanthomonadaceae
-129,Proteobacteria,Gammaproteobacteria,Enterobacterales,Yersiniaceae,Yersinia,Yersinia et rel.
+120,Bacillota,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Uncultured Clostridium (sensu stricto)les I
+121,Bacillota,Clostridia,Eubacteriales,Clostridiaceae,Clostridium,Uncultured Clostridium (sensu stricto)les II
+122,Mycoplasmatota,Mollicutes,Mollicutes,Mollicutes,Mollicutes,Uncultured Mollicutes
+123,Bacillota,Negativicutes,Selenomonadales,Selenomonadaceae,Selenomonadaceae,Uncultured Selenomonadaceae
+124,Bacillota,Negativicutes,Veillonellales,Veillonellaceae,Veillonella,Veillonella
+125,Pseudomonadota,Gammaproteobacteria,Vibrionales,Vibrionaceae,Vibrio,Vibrio
+126,Bacillota,Bacilli,Lactobacillales,Lactobacillaceae,Weissella,Weissella et rel.
+127,Bacillota,Bacilli,Lactobacillales,Lactobacillaceae,Weissella,Wissella et rel.
+128,Pseudomonadota,Gammaproteobacteria,Lysobacterales,Lysobacteraceae,Lysobacteraceae,Xanthomonadaceae
+129,Pseudomonadota,Gammaproteobacteria,Enterobacterales,Yersiniaceae,Yersinia,Yersinia et rel.
