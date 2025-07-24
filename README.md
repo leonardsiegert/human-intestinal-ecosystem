@@ -35,7 +35,7 @@ The human gut contains a rich microbiome whose composition can reflect or influe
 
 ## Authorship & Contributions
 
-#### [Leonard Siegert] (https://github.com/leonardsiegert)
+#### Leonard Siegert (https://github.com/leonardsiegert)
 - Clustering visualizations and interactive selection (D3.js)
 - Histogram visualization (co-developed)
 - Data preprocessing and project structure organization
@@ -44,7 +44,7 @@ The human gut contains a rich microbiome whose composition can reflect or influe
 - Dockerization and CI/CD setup
 - README writing
 
-#### [Dexter Früh] (https://github.com/dexterfrueh)
+#### Dexter Früh (https://github.com/dexterfrueh)
 - Sunburst and tree visualizations (D3.js)
 - Histogram visualization (co-developed)
 - Side-by-side layout and selection syncing across views
@@ -122,7 +122,7 @@ This will:
 
 ### Using A Virtual Environment
 
-### 1. Create and activate a virtual environment
+#### 1. Create and activate a virtual environment
 With conda:
 
 ```bash
@@ -135,13 +135,13 @@ python3 -m venv venv
 source venv/bin/activate     # On Windows: venv\Scripts\activate
 ```
 
-### 2. Install Python dependencies
+#### 2. Install Python dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Start the Flask server
+#### 3. Start the Flask server
 
 For development server:
 
