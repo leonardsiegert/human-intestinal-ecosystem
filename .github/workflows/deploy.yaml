@@ -17,8 +17,32 @@ jobs:
         run: docker compose  build dev
       
       - name: Basic linting
-        continues-on-error: true
+        continue-on-error: true
         run: | 
             docker compose run dev bash -c "
               pip install flake8
               flake8 . "
+    
+      - name: Test flask endpoints
+        continue-on-error: true
+        run: |
+            docker compose run dev bash -c "
+              pip install pytest
+              pytest tests"
+
+      - name: Run Flask app (dev)
+        continue-on-error: true
+        run: |
+            docker compose run dev bash -c "
+              python app/app.py
+              sleep 5
+              curl --fail http://localhost:5000 || exit 1"
+
+      - name: Check if notebooks execute
+        continue-on-error: true
+        run: |
+            docker compose run dev bash -c "
+              pip install nbconvert
+              jupyter nbconvert --to notebook --execute data/clustering/dim_red.ipynb
+              jupyter nbconvert --to notebook --execute data/lineage/taxonomy.ipynb
+              "
