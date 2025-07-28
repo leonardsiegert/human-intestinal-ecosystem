@@ -3,7 +3,7 @@ name: Human Intestinal Ecosystem CI/CD Pipeline
 on:
   push:
     branches:
-      - main
+      - github-actions
   
 jobs:
   build-test-dev:
