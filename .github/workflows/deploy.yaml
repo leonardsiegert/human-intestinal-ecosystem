@@ -3,7 +3,10 @@ name: Human Intestinal Ecosystem CI/CD Pipeline
 on:
   push:
     branches:
-      - github-actions
+      - main
+  pull_request:
+    branches:
+      - main
   
 jobs:
   build-test-dev:
@@ -24,7 +27,6 @@ jobs:
               flake8 . "
     
       - name: Test flask endpoints
-        continue-on-error: true
         run: |
             docker compose run dev bash -c "
               pip install pytest
@@ -45,6 +47,7 @@ jobs:
           args: README.md
 
   build-test-prod:
+    needs: build-test-dev
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
