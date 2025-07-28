@@ -1,0 +1,21 @@
+name: Human Intestinal Ecosystem CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  
+jobs:
+  build-test-dev:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Login to Docker Hub 
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+      - name: Build and run development environment
+        run: docker compose run --build --service-ports dev bash
+      
+      - name: Basic linting
+        run: pip install flake8
+        run: flake8 .
