@@ -1,6 +1,6 @@
 # Microbiome Visualization App
 
-An interactive web application for exploring microbiome distributions and their correlation with population health factors. Built as a data-driven visualization tool with a focus on clarity, usability, and responsive design.
+An interactive web application for exploring microbiome distributions and their correlation with population health factors. Built as a data-driven visualization tool with a responsive design – and embedded in a modern DevOps workflow with Docker containerization, CI/CD with Github Actions and automatic deployment to Render.
 
 ## Purpose
 
@@ -26,10 +26,22 @@ The human gut contains a rich microbiome whose composition can reflect or influe
 - **Backend**: Flask (Python)
 - **Data Handling**: Pandas, Numpy, sklearn, JSON
 - **Visualization**: D3.js interactive SVGs
+- **CI/CD**: GitHub Actions
+- **Deployment**: Auto-deploy to Render
 - **Containerization**: Docker, Docker Compose v2
-- **Deployment**: Render
-<!-- - **CI/CD**: GitHub Actions -->
 - **Version Control Workflow**: Git, feature branches, pull requests
+
+---
+
+## ⚙️ DevOps Features
+
+- **Dockerized development and production environments**
+- **GitHub Actions CI/CD** with:
+  - Linting, unit tests, notebook execution, dead link check
+  - Production image build and local server test
+  - Auto-deployment to Render
+  - Live smoke tests of the deployed site
+- **One-click dev container for VS Code**
 
 ---
 
@@ -61,7 +73,7 @@ We followed a real-world Git workflow: using feature branches, code reviews, and
 - Collaborative software engineering practices via GitHub
 - Building production-ready Flask apps with Docker
 - Deploying containerized apps on cloud platforms like Render
-<!-- - Managing CI/CD workflows with GitHub Actions -->
+- Managing CI/CD workflows with GitHub Actions
 - Writing clear documentation and modular code
 
 ---
@@ -106,6 +118,8 @@ Then open http://localhost:8888 in your browser.
 ```bash
 docker compose down
 ```
+
+All builds and tests are continuously run in GitHub Actions. See `.github/workflows/` for the full CI/CD pipeline.
 
 #### One-Click Setup in VS Code (Optional)
 
@@ -175,13 +189,3 @@ https://creativecommons.org/publicdomain/zero/1.0/
 This project is licensed under the [GNU General Public License v3.0](./LICENSE)
 
 You are free to use, modify, and distribute this software under the same license, provided you disclose source code and keep derivative works open.
-
-<!-- ## Future Work
-
-- Add filtering by species or metadata (e.g. age, diet)
-
-- Include time-series microbiome data (longitudinal tracking)
-
-- Improve accessibility and mobile usability
-
-- Add user-upload feature for custom datasets -->
