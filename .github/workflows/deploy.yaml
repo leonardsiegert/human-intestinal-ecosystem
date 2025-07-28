@@ -43,3 +43,25 @@ jobs:
         uses: lycheeverse/lychee-action@v1.10.0
         with:
           args: README.md
+
+  build-test-prod:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Login to Docker Hub 
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+
+      - name: Build production container
+        run: docker compose build prod
+      
+      - name: Start Gunicorn server and test root endpoint
+        run: |
+            docker compose up -d prod
+            sleep 10 # wait for the server to start
+            curl -f http://localhost:8000 || exit 1
+
+      - name: Shut down container
+        if: always()
+        run: docker compose down
