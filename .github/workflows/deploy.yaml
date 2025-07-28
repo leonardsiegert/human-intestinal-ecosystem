@@ -65,3 +65,9 @@ jobs:
       - name: Shut down container
         if: always()
         run: docker compose down
+  
+  render-deploy:
+    env:
+      deploy_url: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+    run: |
+        curl "$deploy_url"
