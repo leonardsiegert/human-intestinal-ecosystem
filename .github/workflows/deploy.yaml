@@ -60,14 +60,36 @@ jobs:
         run: |
             docker compose up -d prod
             sleep 10 # wait for the server to start
-            curl -f http://localhost:8000 || exit 1
+            curl -f http://localhost:8000 || {
+              echo "Gunicorn server did not start correctly."
+              exit 1
+              }
 
       - name: Shut down container
         if: always()
         run: docker compose down
   
+
   render-deploy:
-    env:
-      deploy_url: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
-    run: |
-        curl "$deploy_url"
+    needs: build-test-prod
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Deploy on Render
+        env:
+          deploy_url: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          curl "$deploy_url"
+
+  smoke-test-render:
+    needs: render-deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for Render to finish deploying
+        run: sleep 60
+        
+      - name: Smoke Test Render Production URL
+        run: |
+          curl -f https://human-intestinal-ecosystem.onrender.com || {
+            echo "Smoke test failed."
+            exit 1
+          }
