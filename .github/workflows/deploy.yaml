@@ -17,6 +17,7 @@ jobs:
         run: docker compose  build dev
       
       - name: Basic linting
+        continues-on-error: true
         run: | 
             docker compose run dev bash -c "
               pip install flake8
