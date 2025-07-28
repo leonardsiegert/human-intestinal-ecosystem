@@ -1,0 +1,98 @@
+name: Human Intestinal Ecosystem CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  
+jobs:
+  build-test-dev:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Login to Docker Hub 
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+      - name: Build development environment
+        run: docker compose  build dev
+      
+      - name: Basic linting
+        continue-on-error: true
+        run: | 
+            docker compose run dev bash -c "
+              pip install flake8
+              flake8 . "
+    
+      - name: Test flask endpoints
+        run: |
+            docker compose run dev bash -c "
+              pip install pytest
+              pytest tests"
+
+      - name: Check if notebooks execute
+        continue-on-error: true
+        run: |
+            docker compose run dev bash -c "
+              pip install nbconvert
+              jupyter nbconvert --to notebook --execute data/clustering/dim_red.ipynb
+              jupyter nbconvert --to notebook --execute data/lineage/taxonomy.ipynb
+              "
+      - name: Check for dead links in README
+        continue-on-error: true
+        uses: lycheeverse/lychee-action@v1.10.0
+        with:
+          args: README.md
+
+  build-test-prod:
+    needs: build-test-dev
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Login to Docker Hub 
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+
+      - name: Build production container
+        run: docker compose build prod
+      
+      - name: Start Gunicorn server and test root endpoint
+        run: |
+            docker compose up -d prod
+            sleep 10 # wait for the server to start
+            curl -f http://localhost:8000 || {
+              echo "Gunicorn server did not start correctly."
+              exit 1
+              }
+
+      - name: Shut down container
+        if: always()
+        run: docker compose down
+  
+
+  render-deploy:
+    needs: build-test-prod
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Deploy on Render
+        env:
+          deploy_url: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          curl "$deploy_url"
+
+  smoke-test-render:
+    needs: render-deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for Render to finish deploying
+        run: sleep 60
+        
+      - name: Smoke Test Render Production URL
+        run: |
+          curl -f https://human-intestinal-ecosystem.onrender.com || {
+            echo "Smoke test failed."
+            exit 1
+          }
